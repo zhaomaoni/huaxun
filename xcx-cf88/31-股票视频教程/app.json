@@ -1,0 +1,41 @@
+{
+  "pages":[
+    "pages/video/video",
+    "pages/content/content",
+    "pages/introduce/introduce",
+    "pages/banner/banner"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#f06920",
+    "navigationBarTitleText": "股票视频教程",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/video/video",
+        "text": "视频",
+        "iconPath": "images/tab_3.png",
+        "selectedIconPath": "images/tab_4.png"
+      },
+      {
+        "pagePath": "pages/introduce/introduce",
+        "text": "简介",
+        "iconPath": "images/tab_1.png",
+        "selectedIconPath": "images/tab_2.png"
+      }
+    ],
+    "color": "#666666",
+    "selectedColor": "#f06920",
+    "backgroundColor": "#fff",
+    "borderStyle": "white"
+  },
+  "debug":true,
+  "plugins":{
+    "tencentvideo":{
+      "version":"1.1.3",
+      "provider":"wxa75efa648b60994b"
+    }
+  }
+}

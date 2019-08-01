@@ -1,0 +1,21 @@
+<view class="white-shou-layer" hidden='{{isShou}}'>
+  <view class="white-shou-logo">
+    <image src="https://api.51gsl.com/program/Win/logo/icon_zg.png"></image>
+  </view>
+  <view class="white-shou-name">股票诊股助手</view>
+  <view class="white-shou-btn">
+    <button open-type='getUserInfo' bindgetuserinfo="bindgetuserinfo">获取微信授权</button>
+  </view>
+</view>
+<view class="shou-quan-layer" hidden="{{isPhone}}">
+  <view class="shou-quan-main">
+    <view class="shou-quan-txt">
+      <image src="../../images/1z.png"></image>
+    </view>
+    <view class="shou-quan-btn">
+      <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+        <image src="../../images/2z.png"></image>
+      </button>
+    </view>
+  </view>
+</view>

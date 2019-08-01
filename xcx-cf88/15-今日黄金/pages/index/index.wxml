@@ -1,0 +1,69 @@
+<!--pages/index/index.wxml-->
+<wxs module="filter" src="../../utils/numbertofix.wxs"></wxs>
+<view class="tabBox">
+  <view>
+    <text bindtap='swichNav1' class="left {{currentTab1 ? 'left2' : ''}}" data-current="0">{{zhou}}</text>
+  </view>
+  <view>
+    <text bindtap='swichNav2' class="right {{currentTab2 ? 'right2' : ''}}" data-current="1" data-index="{{indss}}">{{Jin}}</text>
+  </view>
+</view>
+<!-- <view class="dateBox">
+  <view class="dateCon">
+    <view bindtap='time'>
+      <view>{{date1}}</view>
+      <view>至</view>
+      <view>{{date2}}</view>
+    </view>
+    <view class="dateImg">
+      <text bindtap='find'>查询</text>
+    </view>
+  </view>
+</view> -->
+<view class="listBox" hidden="{{!isShow2}}">
+  <view class="top">
+    <view>品牌/产品名称</view>
+    <view>价格/涨跌</view>
+    <view>更新时间</view>
+  </view>
+  <view class="bottom">
+    <view class="listBom" wx:for="{{list}}" wx:key bindtap='images'>
+      <view>
+        <view>{{item.brandName}}</view>
+        <view>{{item.productName}}</view>
+      </view>
+      <view class="bigSize {{item.raiseDownType==1?'shang':'' || item.raiseDownType==2?'xia':''}}" wx:if="item.raiseDownType==1 || item.raiseDownType==2" bindtap='images'>{{filter.numberToFix(item.price)}}</view>
+      <view class="bigSize" wx:else>{{item.price}}</view>
+      <view>{{item.updateTime}}</view>
+    </view>
+  </view>
+</view>
+<!--  金店名称  -->
+<view class="storeBox {{isHide ? 'storeBox2' : ''}}" current="{{currentTab}}">
+  <view class="store">
+    <view class="storeV {{bg == idx ? 'bgs' : ''}}" wx:for="{{storeList}}" wx:key bindtap='clickLi' data-text="{{item}}" wx:for-index="idx" data-index="{{idx}}">{{item}}</view>
+  </view>
+</view>
+<!--  地区价格  -->
+<view class="priceBox {{isHide3 ? 'priceBox2' : ''}}" current="{{currentTab}}">
+  <view class="price">
+    <view class="priceV {{bg2 == item.id ? 'bgs' : ''}}" wx:for="{{priceList}}" wx:key bindtap='clickJin' data-text="{{item.name}}" data-s="{{bg2}}" data-index="{{item.id}}">{{item.name}}</view>
+  </view>
+</view>
+<!-- 更多小程序 -->
+<view class="layerBoxs" bindtap='moreBtn'>
+    <view>更多小程序</view>
+</view>
+
+<!--  日期选择  -->
+<!-- <view class="dateMain {{isHide2 ? 'dateMain2' : ''}}">
+  <view class="date">
+    <picker mode="date" value="{{date}}" end="{{end}}" bindchange="bindDateChange1">
+      <view class="picker">{{date1}}</view>
+    </picker>
+    <view>至</view>
+    <picker mode="date" value="{{date}}" end="{{end}}" bindchange="bindDateChange2">
+      <view class="picker">{{date2}}</view>
+    </picker>
+  </view>
+</view> -->

@@ -1,0 +1,65 @@
+/* pages/content/content.wxss */
+.body{
+  width: 92%;
+  height: auto;
+  margin: 13px auto;
+  background: #fef0dd;
+  overflow: hidden;
+  border-radius: 13px;
+  padding-bottom:10px;
+}
+.title{
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  padding: 18px 0 19px 0;
+}
+.head{
+  width: 92%;
+  margin: 0 auto;
+  font-size: 15px;
+  padding-top: 10px;
+  font-weight: 600;
+  line-height: 20px;
+}
+.head::before{
+  content: "";
+  border-left: 3px solid #f47528;
+  padding-right: 5px;
+}
+.radio-group{
+  width: 92%;
+  color: #333;
+  margin: 0 auto;
+  padding: 10px 0 20px 0;
+  font-size: 14px;
+}
+.radio{
+  padding: 8px 0;
+  display: flex
+}
+.radio text{
+  flex: 1;
+  line-height: 20px;
+}
+.ti{
+  line-height: 25px;
+  font-size: 15px;
+  padding-bottom: 5px;
+  font-weight:600;
+}
+.WxEmojiView{
+  width: 92%;
+  margin: 0 auto;
+  font-size: 15px;
+  padding-top: 10px;
+  font-weight: 600;
+  line-height: 20px;
+  display: block
+}
+.WxEmojiView:first-child::before{
+  content: "";
+  border-left: 3px solid #f47528;
+  padding-right: 5px;
+}

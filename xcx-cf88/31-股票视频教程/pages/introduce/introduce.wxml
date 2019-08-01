@@ -1,0 +1,11 @@
+<!--pages/introduce/introduce.wxml-->
+<view class="mainBox">
+  <view wx:for="{{imgList}}" wx:key class="picBox" wx:for-index="idx" data-index="{{idx}}" bindtap='jumpPage'>
+    <image src="{{item}}"></image>
+  </view>
+</view>
+
+<!-- 更多小程序 -->
+<view class="layerBoxs">
+  <navigator target="miniProgram" open-type="navigate" app-id="wx81dacf7d77359d1d" path="" extra-data="" version="release">更多小程序</navigator> <!-- release -->
+</view>

@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/banner/banner",
+    "pages/message/message"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#de494b",
+    "navigationBarTitleText": "汽油柴油价格",
+    "navigationBarTextStyle":"white"
+  }
+}

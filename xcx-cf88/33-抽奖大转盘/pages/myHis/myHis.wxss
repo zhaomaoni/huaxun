@@ -1,0 +1,239 @@
+/* pages/myHis/myHis.wxss */
+page { 
+  background: url("https://api.51gsl.com/program/Luckdraw/images/icon_bg.png") no-repeat center center fixed;
+  background-size: 100% 100%;
+}
+/*记录 大奖*/
+.history-msg{
+  width: 93.6%;
+  height: auto;
+  overflow: hidden;
+  margin: 1.2rem auto 1.5rem auto;
+  background: #fff;
+  border-radius: 0.5rem; 
+}
+.tab-title-box{
+  width: 14.5rem;
+  height: 2rem;
+  margin: 1rem auto;
+  color: #f15246;
+  overflow: hidden;
+  border: solid 1px #f15246;
+  border-radius: 0.3125rem;
+}
+.tab-title-box view{
+  float: left;
+  height: 2rem;
+  font-size: 0.75rem;
+  width: 33.048%;
+  text-align: center;
+  line-height: 2rem;
+}
+.tab-title-box view:nth-child(2){
+  border-left: 1px solid #f15246;
+  border-right: 1px solid #f15246;
+}
+.tab-title-box .on{
+  color: #fff;
+  background: #f15246
+}
+.tab-centent-box{
+  width: 91%;
+  height: auto;
+  margin: 0 auto;
+}
+.list-msg-box{
+  width: 100%;
+  height: auto;
+  margin-bottom: 1.5rem;
+  overflow: hidden
+}
+.list-msg-box .list-msg{
+  height: 2.5rem;
+  width: 100%;
+  background: #f6f6f6;
+  overflow: hidden;
+}
+.list-msg-box .list-msg:nth-child(2n){
+  background: #fff
+}
+.list-msg view{
+  width: 33.3%;
+  float: left;
+  color: #333;
+  text-align: center;
+  line-height: 2.5rem;
+  font-size: 0.75rem;
+}
+.list-msg view text{
+  background: #f15246;
+  border-radius: 0.5rem;
+  padding: 0.1rem 0.45rem;
+  font-size: 0.65rem;
+  color: #fff;
+}
+.list-msg .red{
+  color: #f15246
+}
+.noData-box{
+  width: 7rem;
+  height: 9rem;
+  margin: 7.5rem auto;
+}
+.noData-pic{
+  width: 100%;
+  height: 6rem;
+}
+.noData-pic image{
+  width: 100%;
+  height: 100%;
+}
+.noData-txt{
+  color: #999;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+}
+.thead-box{
+  width: 100%;
+  font-size: 0.75rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  color: #666;
+}
+.thead-box view{
+  width: 33.3%;
+  float: left;
+}
+.load-more{
+  width: 100%;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 1rem;
+}
+
+/* 弹层 */
+.jiang-layer-box{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 9999;
+}
+.jiang-box{
+  width: 73%;
+  height: auto;
+  background: #fff;
+  border-radius: 0.3125rem;
+  position: fixed;
+  left: 50%;
+  margin-left: -36.5%;
+  top: 60%;
+  margin-top: -50%;
+}
+.jiang-head{
+  height: 3rem;
+  width: 100%;
+  background: #fd5454;
+  border-radius: 0.3125rem;
+  line-height: 3rem;
+  text-align: center;
+  color: #fff;
+  position: relative
+}
+.close-box{
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  width: 1rem;
+  height: 1rem;
+}
+.close-box image{
+  width: 100%;
+  height: 100%
+}
+.jiang-msg{
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+}
+.jiang-pic-box{
+  width: 4rem;
+  height: 4rem;
+  margin: 1rem 0.4rem
+}
+.jiang-pic-box image{
+  width: 100%;
+  height: 100%;
+}
+.jiang-title{
+  flex: 1;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-top: 1.1rem;
+  line-height: 1.5rem;
+  margin-right: 0.6rem;
+}
+.jiang-txt-ccc{
+  font-size: 0.75rem;
+  color: #999;
+  font-weight: normal;
+  line-height: 1rem;
+}
+.btn-box-jiang{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.btn-box-jiang view{
+  width: 35%;
+  height: 1.8rem;
+  float: left;
+  margin-left: 8%;
+  text-align: center;
+  line-height: 1.8rem;
+  border-radius: 0.3125rem;
+  color: #fd5454;
+  font-size: 0.875rem;
+  border: 1px solid #fd5454;
+}
+.btn-box-jiang view:last-child{
+  margin-right: 8%;
+  float: right;
+  margin-left: 0
+}
+
+.msg-pink{
+  width:86%;
+  height:auto;
+  font-size:0.75rem;
+  color:#666;
+  background:#ffeded;
+  padding: 0.5rem 0;
+  margin:1rem auto;
+  border-radius:0.3125rem;
+}
+.msg-pink view{
+  clear: both;
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  line-height: 1.1rem;
+}
+.btn-box-jiang button{
+  padding: 0;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  line-height: 1.8rem;
+  color:#fd5454;
+  font-size:0.875rem;
+}

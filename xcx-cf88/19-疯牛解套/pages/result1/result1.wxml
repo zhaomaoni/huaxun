@@ -1,0 +1,17 @@
+<!--pages/result1/result1.wxml-->
+<view>
+  <view class="name">
+    <text>{{name}}</text>
+    <text>{{code}}</text>
+  </view>
+  <view class="price">当前价<text>{{price}}</text> 涨跌幅<text class="green">{{down}}%</text></view>
+</view>
+<view class="dlImg">
+  <view class="img">
+    <image src="../../image/icon_no_data.png"></image>
+  </view>
+  <view class="gong">恭喜！您已经成功解套啦！</view>
+</view>
+<view class="pic" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images'></image>
+</view>

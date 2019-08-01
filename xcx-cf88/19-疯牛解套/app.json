@@ -1,0 +1,15 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/content/content",
+    "pages/result2/result2",
+    "pages/result1/result1",
+    "pages/banner/banner"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#de494b",
+    "navigationBarTitleText": "股票解套助手",
+    "navigationBarTextStyle":"white"
+  }
+}

@@ -1,0 +1,13 @@
+<!--pages/news/news.wxml-->
+<wxs module="filter" src="../../utils/date.wxs"></wxs>
+<view class="list-body-box">
+  <view class="list-main-box" wx:for="{{list}}" wx:key bindtap='jumpBtn' data-productId="{{item.viewId}}" data-consultingId="{{item.publishUserId}}"> <!--data-jumpUrl="{{item.skipURL}}"-->
+    <view class="list-right-box">
+      <image src="{{item.pictureInfo[0].pictureAddress}}" mode="widthFix"></image>      
+    </view>
+    <view class="list-left-box">
+      <view>{{item.viewKitsTitle}}</view>
+      <view><text class="datebox">{{filter.dateFn(item.publishTime)}}</text>{{item.publishUserName}}</view>
+    </view>
+  </view>
+</view>

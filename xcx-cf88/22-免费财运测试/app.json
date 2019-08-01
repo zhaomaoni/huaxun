@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/result/result",
+    "pages/content/content",
+    "pages/banner/banner"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#f47528",
+    "navigationBarTitleText": "免费财运测试",
+    "navigationBarTextStyle":"white"
+  }
+}

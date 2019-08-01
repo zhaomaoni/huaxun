@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/rule/rule",
+    "pages/myHis/myHis",
+    "pages/friend/friend",
+    "pages/historys/historys",
+    "pages/login/login"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "抽奖大转盘",
+    "navigationBarTextStyle": "black"
+  }
+}

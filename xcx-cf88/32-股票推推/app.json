@@ -1,0 +1,24 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/index/index",
+    "pages/result/result",
+    "pages/login/login",
+    "pages/main/main",
+    "pages/card/card",
+    "pages/rule/rule",
+    "pages/hisfile/hisflie",
+    "pages/historyUser/historyUser",
+    "pages/rankings/rankings",
+    "pages/news/news",
+    "pages/zhibo/zhibo",
+    "pages/kaihu/kaihu",
+    "pages/wxPay/wxPay"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "股票推推",
+    "navigationBarTextStyle":"black"
+  }
+}

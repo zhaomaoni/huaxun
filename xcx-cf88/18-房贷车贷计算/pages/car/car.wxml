@@ -1,0 +1,32 @@
+<!--pages/car/car.wxml-->
+<view class="shangBox">
+  <view class="inp-box">
+    <text>贷款总额</text> 
+    <view class="wan">
+      <input placeholder='0' value='{{zong}}' bindinput='zong'></input>
+      <label>万</label>
+    </view>
+  </view>
+  <view class="inp-box">
+    <text>贷款年限</text>
+    <picker bindchange="bindCasPickerChange" range="{{casArray}}">
+      <view class="year">{{casArray[casIndex]}} 年</view>
+    </picker>
+  </view>
+  <view class="inp-box">
+    <text>贷款利率</text>
+    <view class="wan">
+      <input placeholder='0' value='{{li}}' bindinput='li'></input>
+      <label>%</label>
+    </view>
+  </view>
+  <view class="btn" bindtap='jump' data-current="{{currentTab}}">开始计算</view>
+</view>
+<view class="pic" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images'></image>
+</view>
+
+<!-- 更多小程序 -->
+<view class="layerBoxs" bindtap='moreBtn'>
+    <view>更多小程序</view>
+</view>

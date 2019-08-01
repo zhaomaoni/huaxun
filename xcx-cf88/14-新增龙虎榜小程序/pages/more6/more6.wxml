@@ -1,0 +1,78 @@
+<!--pages/more/more.wxml-->
+<wxs module="filter" src="../../utils/numbertofix.wxs"></wxs>
+<view class="body">
+  <view class="nav">
+    <view class="help" bindtap='helpClick'>帮助</view>
+    <view class="rig" bindtap='calendars'>
+      <input placeholder='近三月' value="{{text}}" disabled/>
+      <view class="date">
+        <image src="../../images/date.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="table">
+    <view class="content show">
+      <view class="left">
+        <view class="name">名称</view>
+        <view class="left_msg" wx:for="{{list}}" wx:key bindtap='banner'>
+          <text>{{filter.numberToFix4(item.SalesName)}}</text>
+        </view>
+      </view>
+      <view class="right">
+        <view class="name">
+          <view class="hidden">
+            <view class="hidName">
+              <view>
+                <view>龙虎榜</view>
+                <view>成交金额(万)</view>
+              </view>
+              <view>上榜次数</view>
+              <view>买入次数</view>
+              <view>卖出次数</view>
+              <view>买入额(万)</view>
+              <view>卖出额(万)</view>
+            </view>
+            <view class="hidName" wx:for="{{list}}" wx:key bindtap='banner'>
+              <!-- 成交金额 -->
+              <view>{{filter.numberToFix2(item.SumActMoney)}}</view>
+              <!-- 上榜次数 -->
+              <view>{{item.UpCount}}</view>
+              <!-- 买入次数 -->
+              <view>{{item.BCount}}</view>
+              <!-- 卖出次数 -->
+              <view>{{item.SCount}}</view>
+              <!-- 买入额 -->
+              <view class="red">{{filter.numberToFix2(item.SumActBMoney)}}</view>
+              <!-- 卖出额 -->
+              <view class="green">{{filter.numberToFix2(item.SumActSMoney)}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view>
+        <button class="loadText" type="default"  loading="{{loading}}" disabled="{{disabled}}" bindtap="setLoading">{{loadText}}</button>
+      </view>
+    </view>
+  </view>
+</view>
+<!--  日期  -->
+<view class="{{isShow ? 'layerBox2' : 'layerBox'}}">
+  <view class="layerMain">
+    <view class="month">
+      <view class="{{ha==idx? 'monBg' : ''}}" bindtap='month' wx:for="{{mon}}" wx:key data-text="{{item}}" wx:for-index="idx" data-index="{{idx}}">{{item}}</view>
+    </view>
+    <view class="monBth" bindtap="close">取消</view>
+  </view>
+</view>
+<!--  帮助  -->
+<view class="{{isShow2 ? 'helpLayer2' : 'helpLayer'}}">
+  <view class="helpMain">
+    <view class="conHelp">
+      <view class="title">买入次数：</view>
+      <view>在指定的时间段内，该营业部买入的个股次数。</view>
+      <view class="title">卖出次数：</view>
+      <view>在指定的时间段内，该营业部卖出的个股次数。</view>
+      <view class="ok" bindtap='yesClick'>确定</view>
+    </view>
+  </view>
+</view>

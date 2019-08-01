@@ -1,0 +1,5 @@
+<!--pages/list/list.wxml-->
+<view wx:for="{{groups}}" wx:key class="listBox">
+  <view class='hui'>{{item.groupName}}</view>
+  <view wx:for="{{item.users}}" wx:key wx:for-item="i" wx:for-index="ind" data-keys="{{ind}}" class="list" bindtap='jump' data-text="{{i}}">{{i}}</view>
+</view>

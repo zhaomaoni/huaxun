@@ -1,0 +1,112 @@
+/* pages/quotation/quotation.wxss */
+.conBox{
+  width: 100%;
+  height: 46px;
+  overflow: hidden;
+}
+.swiper-tab{  
+  width: 100%;
+  height: 45px;
+  line-height: 43px;
+  background:#fff;
+  position: fixed;
+  z-index: 999;
+  overflow: hidden;
+  border-bottom: 1px solid #ddd;  
+}
+.swiper-tab-list{ 
+  display: inline-block;  
+  width: 33.3%;  
+  color: #333;
+  text-align: center;
+  font-size: 17px;
+}  
+.on{ 
+  color: #000;
+  border-bottom: 2px solid #f04141;
+}
+.swiper-box{ 
+  display: block; 
+  height: auto; 
+  width: 100%;
+  overflow: hidden; 
+}
+/*  banner  */
+.banner{
+  width: 100%;
+  height: 89px;
+  position: fixed;
+  bottom: 0;
+}
+.navImg{
+  width: 100%;
+  height: 100%
+}
+
+.main{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin-bottom: 90px;
+}
+.thead{
+  height: 30px;
+  width: 100%;
+  font-size: 12px;
+  line-height: 30px;
+  background: #f1f1f1
+}
+.thead view{
+  width: 33.3%;
+  float: left;
+  text-align: center
+}
+.time{
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px;
+  width: 92%;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis
+}
+.content{
+  width: 92%;
+  height: auto;
+  padding: 5px 0;
+  margin: 0 auto;
+  overflow: hidden;
+  border-bottom: 1px solid #ccc;
+}
+.country,.buy,.sell{
+  width: 33.3%;
+  height: auto;
+  float: left;
+  text-align: center;
+  font-size: 14px;
+  line-height: 25px;
+}
+.strong{
+  font-weight: 600;
+  font-size: 16px;
+}
+/* more小程序 */
+.layerBoxs{
+  width: auto;
+  height: 26px;
+  line-height: 26px;
+  position: fixed;
+  right: 0px;
+  bottom: 100px;
+  color: #fff;
+  background: rgba(0,0,0,0.7);
+  font-size: 12px;
+  text-align: center;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px
+}
+.layerBoxs view{
+  padding: 0 10px;
+}

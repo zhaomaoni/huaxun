@@ -1,0 +1,22 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/list/list",
+    "pages/listMain/listMain",
+    "pages/more/more",
+    "pages/more2/more2",
+    "pages/more3/more3",
+    "pages/more4/more4",
+    "pages/more5/more5",
+    "pages/more6/more6",
+    "pages/help/help",
+    "pages/helpMsg/helpMsg",
+    "pages/banner/banner"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#de494b",
+    "navigationBarTitleText": "股票龙虎榜查询",
+    "navigationBarTextStyle":"white"
+  }
+}

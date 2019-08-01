@@ -1,0 +1,135 @@
+<!--logs.wxml-->
+<wxs module="filter" src="../../utils/date.wxs"></wxs>
+<view class="header"> 
+  <view class="header-pic">
+    <image src="../../images/icon_lb.png"></image>
+  </view>
+  <!-- <view class="header-txt">恭喜赢家856688 抽中iPhone XS Max一部</view> -->
+  <swiper class="msg-roll-box" vertical="true" autoplay="true" circular="true" interval="2000">
+    <block wx:for="{{ranking}}" wx:key>
+      <swiper-item>
+        <view class="swiper_item">恭喜赢家{{item.uid_mobile}} 抽中 {{item.lottery_ptitle}}</view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="btn-box">
+  <view bindtap='cjBtn'>
+    <image src="https://api.51gsl.com/program/Luckdraw/images/icon_btn1.png"></image>
+  </view>
+  <view bindtap='yqBtn'>
+    <image src="https://api.51gsl.com/program/Luckdraw/images/icon_btn2.png"></image>
+  </view>
+  <view bindtap='hdBtn'>
+    <image src="https://api.51gsl.com/program/Luckdraw/images/icon_btn3.png"></image>
+  </view>
+</view>
+<view class="banner-box">
+  <view class="banner-pic">
+    <image src="{{banner}}"></image>
+  </view>
+</view>
+<view class="container-box"> 
+  <view class="main"> 
+    <view class="canvas-container"> 
+      <view animation="{{animationData}}" class="canvas-content" > 
+        <view class="canvas-line"> 
+          <view class="canvas-litem" wx:for="{{awardsList}}" wx:key="unique" style="-webkit-transform: rotate({{item.turn}});transform: rotate({{item.turn}})"></view> 
+        </view>
+        <view class="canvas-list"> 
+          <view class="canvas-item" wx:for="{{awardsList}}" wx:for-item="i" wx:key="unique" data-id="{{i.id}}"> 
+            <view class="canvas-item-text" style="-webkit-transform: rotate({{i.lineTurn}});transform: rotate({{i.lineTurn}})">{{i.award}}</view> 
+            <view class="canvas-pic" style="-webkit-transform: rotate({{i.lineTurn}});transform: rotate({{i.lineTurn}})">
+              <image src="{{i.pic}}"></image>
+            </view>
+          </view> 
+        </view> 
+      </view>
+      <view class="canvas-white">
+        <view class="canvas-btn">
+          <image bindtap="playReward" class="btnDisabled" src="https://api.51gsl.com/program/Luckdraw/images/icon_cjjt.png"></image>
+        </view>
+      </view>
+    </view> 
+  </view> 
+</view>
+<!-- 机会数量 -->
+<view class="changeNum-box">
+  <view>剩余抽奖机会：<text>{{total_chance}}</text>次</view>
+  <view>今日新增机会：<text>{{today_chance}}</text>次</view>
+</view>
+<view class="changeBtn-box">
+  <button open-type="share">
+    <image src="https://api.51gsl.com/program/Luckdraw/images/icon_fxjh.png"></image>
+  </button>
+</view>
+<!-- 记录 -->
+<view class="history-msg">
+  <view class="tab-title-box">
+    <view wx:for="{{tabber}}" wx:key bindtap="swichNav" wx:for-index="idx" class="{{currentTab==idx ? 'on' : ''}}" data-current="{{idx}}">{{item}}</view>
+  </view>
+  <view class="tab-centent-box">
+    <view class="list-msg-box" data-currentTab="{{currentTab}}" wx:if="{{currentTab==0}}">
+      <view class="list-msg" wx:for="{{record}}" wx:key>
+        <view>{{filter.dateFilter(item.create_time)}}</view>
+        <view>{{item.uid_mobile}}</view>
+        <view class="red">{{item.lottery_ptitle}}</view>
+      </view>
+    </view>
+    <view class="list-msg-box" wx:else data-currentTab="{{currentTab}}">
+      <view class="list-msg" wx:for="{{prix}}" wx:key>
+        <view>{{filter.dateFilter(item.winner_time)}}</view>
+        <view>{{item.uid_mobile}}</view>
+        <view class="red">{{item.lottery_ptitle}}</view>
+      </view>
+    </view>
+  </view> 
+  <view class="all-history-box"><text bindtap='allBtn'>全部记录</text></view>
+</view>
+<!--  弹层  -->
+<view class="jiang-layer-box" hidden='{{isShow}}'>
+  <view class="jiang-box" wx:for="{{jiangBox}}" wx:key wx:if="{{total_chance!=0&&status==1}}">
+    <view class="jiang-head">
+      <text>抽奖结果</text>
+      <view class="close-box" bindtap='closeLayer'>
+        <image src="https://api.51gsl.com/program/Luckdraw/images/icon_close.png"></image>
+      </view>
+    </view>
+    <view class="jiang-msg">
+      <view class="jiang-pic-box">
+        <image src="{{item.tpic}}"></image>
+      </view>
+      <view class="jiang-title">
+        <view class="jiang-txt-title">获得 {{item.title}}</view>
+        <view class="jiang-txt-ccc">{{item.content}}</view>
+      </view>
+    </view>
+    <view class="btn-box-jiang">
+      <view bindtap='copyBtn' wx:if="{{item.type==2 || item.type==3 || item.type==5}}">复制微信号</view>
+      <view bindtap='closeLayer' wx:if="{{item.type==1 || item.type==4}}">返回</view>
+      <!-- <view wx:if="{{item.type==5}}"><button open-type="contact">联系客服</button></view> -->
+      <view bindtap="playReward">再次抽奖</view>
+    </view>
+  </view>
+  <view class="jiang-box" wx:if="{{total_chance==0}}">
+    <view class="jiang-head">
+      <text>抽奖机会已用完！</text>
+      <view class="close-box" bindtap='closeLayer'>
+        <image src="https://api.51gsl.com/program/Luckdraw/images/icon_close.png"></image>
+      </view>
+    </view>
+    <view class="msg-pink">
+      <view>感觉没过瘾？赶快邀请好友注册小程序获得抽奖机会吧！</view>
+      <view>邀请1位好友验证手机后可获得8次抽奖机会。</view>
+    </view>
+    <view class="btn-box-jiang">
+      <view><button open-type="share">分享</button></view>
+      <view bindtap="closeLayer">返回</view>
+    </view>
+  </view>
+</view>
+
+<!-- 更多小程序 -->
+<view class="layerBoxs">
+  <navigator target="miniProgram" open-type="navigate" app-id="wx81dacf7d77359d1d" path="/pages/index/index?from={{from}}&appname={{appname}}" extra-data="" version="release">更多小程序</navigator> <!-- release -->
+</view>

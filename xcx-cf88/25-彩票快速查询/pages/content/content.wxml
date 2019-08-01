@@ -1,0 +1,71 @@
+<!--pages/content/content.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view>
+  <view class="mianBox">
+    <view class="head">
+      <view class="title">
+        <view class="imgBox">
+          <image wx:for="{{imgList}}" wx:key wx:for-item="m" wx:for-index="idx" wx:if="{{title == idx}}" src="{{m}}"></image>
+        </view>
+        <view class="title_txt">
+          <view class="title_con">{{title}}
+            <picker bindchange='valueChange' wx:if="{{name!='高频彩票'}}" value="{{value}}" range='{{issueNo}}' data-text="{{issueNo[value]}}">
+              <text class="find">查看历史记录</text>
+            </picker>
+            <picker wx:else  mode="date" value="{{date}}" data-text="{{date}}" bindchange='valueChange'>
+              <text class="find">查看历史记录</text>
+            </picker>
+          </view>
+          <view class="kai" wx:if="{{name!='高频彩票'}}">{{text}}期 <text>{{list.openTime}}</text>{{kTime}}</view>
+          <view class="kai" wx:else>{{text}}期 <text>{{openTime}}</text></view>
+        </view>
+      </view>
+      <view class="cai" wx:if="{{name!='高频彩票'}}">
+        <view wx:for="{{list.openResult}}" wx:key wx:for-item="i">{{i}}</view>
+        <view wx:for="{{list.blue}}" wx:key wx:for-item="j" class="blue">{{j}}</view>
+      </view>
+      <view class="cai" wx:else>
+        <view wx:for="{{openResult}}" wx:key wx:for-item="i">{{i}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="main">
+    <view class="weight" wx:if="{{name!='高频彩票'}}">
+      <view>全国销量：<text>￥{{list.data.saleValue}}</text>元</view>
+      <view>奖池滚存：<text>￥{{list.data.prizePool}}</text>元</view>
+    </view>
+    <view class="listBox" wx:if="{{name!='高频彩票'}}">
+      <view class="thead">
+        <text>奖项</text>
+        <text>单注奖金</text>
+        <text>中奖注数</text>
+        <text>中奖条件</text>
+      </view>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    </view> 
+    <view class="listBox2" wx:else>
+      <view wx:if="{{kuai==''}}">
+        <view class="thead2">
+          <text>期数</text>
+          <text>开奖时间</text>
+          <text>中奖号码</text>
+        </view>
+        <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+      </view>
+      <view wx:else class="wxtbody">
+        <view class="thead3">
+          <text>期数</text>
+          <text>开奖时间</text>
+          <text>中奖号码</text>
+          <text>和值</text>
+        </view>
+        <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+      </view>
+    </view>
+    <view class="tiMsg">提示：数据来源于中国福彩网及中国体彩网，请以官方网站公布数据为准。</view>
+  </view>
+</view>
+
+<view class="pic" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images'></image>
+</view>

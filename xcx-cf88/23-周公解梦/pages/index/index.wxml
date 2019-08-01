@@ -1,0 +1,15 @@
+<!--pages/index/index.wxml-->
+<view class="searchBox">
+  <input placeholder='悄悄告诉周公你梦到的' class="searchInp" disabled bindtap='inputChange' placeholder-class="phColor"></input>
+  <view class="picBox">
+    <image src="https://api.51gsl.com/program/Constellation/images/icon_search.png" class="pic"></image>
+  </view>
+</view>
+<!--  广告  -->
+<view class="banner" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images'></image>
+</view>
+<!-- 更多小程序 -->
+<view class="layerBoxs">
+  <navigator target="miniProgram" open-type="navigate" app-id="wx81dacf7d77359d1d" path="/pages/index/index?from={{from}}" extra-data="" version="release">更多小程序</navigator> <!-- release -->
+</view>

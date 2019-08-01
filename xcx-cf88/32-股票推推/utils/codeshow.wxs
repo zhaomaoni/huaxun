@@ -1,0 +1,8 @@
+module.exports = {
+  show : function(name,code){
+    if(name){
+      return name + ' ' + code;
+    }
+    return ''
+  }
+}

@@ -1,0 +1,12 @@
+var filter = {
+  numberToFix: function (value) { //保留两位小数
+    return parseFloat(value).toFixed(4)
+  },
+  valTofix:function(value){
+    return parseFloat(value).toFixed(2)
+  }
+}
+module.exports = {
+  numberToFix: filter.numberToFix,
+  valTofix: filter.valTofix
+}

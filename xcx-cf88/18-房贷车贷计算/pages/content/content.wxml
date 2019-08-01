@@ -1,0 +1,74 @@
+<!--pages/content/content.wxml-->
+<view class="conBox">
+  <view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">等额本息</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">等额本金</view>
+  </view>
+</view>
+<view class="swipers">
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight}}px" bindchange="bindChange">
+    <!-- 我是等额本息 -->
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height: 100%;" bindscrolltolower="onReachBottom">
+        <view>
+          <view class="shangBox">
+            <view>
+              <text>月供</text> 
+              <view class="year">{{a}}元</view>
+            </view>
+            <view>
+              <text>支付利息</text>
+              <view class="year">{{xi}}万元</view>
+            </view>
+            <view>
+              <text>还款总额</text>
+              <view class="year">{{ze}}万元</view>
+            </view>
+            <view>
+              <text>贷款总额</text>
+              <view class="year">{{p}}万元</view>
+            </view>
+            <view>
+              <text>贷款月数</text>
+              <view class="year">{{n}}月</view>
+            </view>
+            <view class="btn" bindtap='jump'>查看详细月供</view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <!-- 我是等额本金 -->
+    <swiper-item>
+      <scroll-view class="scroll_roll" scroll-y="true" style="height: 100%;" bindscrolltolower="onReachBottom">
+        <view>
+          <view class="shangBox">
+            <view>
+              <text>首月还款</text> 
+              <view class="year">{{An}}元</view>
+            </view>
+            <view>
+              <text>支付利息</text>
+              <view class="year">{{xi}}万元</view>
+            </view>
+            <view>
+              <text>还款总额</text>
+              <view class="year">{{ze}}万元</view>
+            </view>
+            <view>
+              <text>贷款总额</text>
+              <view class="year">{{p}}万元</view>
+            </view>
+            <view>
+              <text>贷款月数</text>
+              <view class="year">{{n}}月</view>
+            </view>
+            <view class="btn" bindtap='jump'>查看详细月供</view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>
+<view class="pic" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images'></image>
+</view>

@@ -1,0 +1,48 @@
+/**app.wxss**/
+@import "/wxParse/wxParse.wxss";
+/* .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}  */
+page{
+  background: #f2f2f2;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  border: 0
+}
+button{
+  position: static;
+  padding: 0 10px;
+  font-size: 14px;
+  border-radius: 3px;
+  background: #de494b;
+  color: #fff; 
+}
+button::after{
+  border: 0;
+  height: auto;
+}
+image{
+  width: auto;
+  height:auto;
+  display: block;
+}
+input{
+  display:block;
+  height:auto;
+  text-overflow:clip;
+  overflow:hidden;
+  white-space:nowrap;
+  font-family:UICTFontTextStyleBody;
+  min-height:auto
+}
+scroll-view {
+  display:block;
+  width:auto;
+}

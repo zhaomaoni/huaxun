@@ -1,0 +1,253 @@
+<!--pages/more/more.wxml-->
+<wxs module="filter" src="../../utils/numbertofix.wxs"></wxs>
+<view class="body">
+  <view class="nav">
+    <view class="help" bindtap='helpClick'>帮助</view>
+    <view class="rig" bindtap='calendars'>
+      <input placeholder='近3日' value="{{text}}" disabled/>
+      <view class="date">
+        <image src="../../images/date.png"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="tab">
+    <view class="{{currentTab==0 ? 'active' : ''}}" data-current="0" bindtap="swichNav">全部</view>
+    <view class="{{currentTab==1 ? 'active' : ''}}" data-current="1" bindtap="swichNav">沪市</view>
+    <view class="{{currentTab==2 ? 'active' : ''}}" data-current="2" bindtap="swichNav">深市</view>
+  </view>
+
+  <view class="table">
+    <!--  全部  -->
+    <view class="content {{currentTab==0 ? 'active1' : ''}}">
+      <view class="left">
+        <view class="name">名称</view>
+        <view class="left_msg" wx:for="{{list}}" wx:key bindtap='banner'>
+          <text>{{item.SName}}</text>
+          <text>{{item.SCode}}</text>
+        </view>
+      </view>
+      <view class="right">
+        <view class="name">
+          <view class="hidden">
+            <view class="hidName">
+              <view>上榜日期</view>
+              <view>收盘价</view>
+              <view>涨跌幅</view>
+              <view>买方机构数</view>
+              <view>卖方机构数</view>
+              <view>
+                <view>机构买入</view>
+                <view>总额(万)</view>
+              </view>
+              <view>
+                <view>机构卖出</view>
+                <view>总额(万)</view>
+              </view>
+              <view>
+                <view>机构买入</view>
+                <view>净额(万)</view>
+              </view>
+              <view>
+                <view>市场总</view>
+                <view>总成额(万)</view>
+              </view>
+              <view>
+                <view>机构净买额占</view>
+                <view>总成交额比</view>
+              </view>
+              <view>换手率</view>
+              <view>流通市值(亿)</view>
+              <view>上榜原因</view>
+            </view>
+            <view class="hidName" wx:for="{{list}}" wx:key bindtap='banner'>
+              <view wx:if="{{item.TDate}}">{{filter.numberToFix3(item.TDate)}}</view>
+              <view wx:else>{{item.Tdate}}</view>
+              <view class="{{item.Chgradio>0 ? 'red' : 'green'}}">{{item.CPrice}}</view>
+              <view class="{{item.Chgradio>0 ? 'red' : 'green'}}">{{filter.numberToFix(item.Chgradio)}}%</view>
+              <view>{{item.BSL}}</view> 
+              <view>{{item.SSL}}</view>
+              <view>{{filter.numberToFix2(item.BMoney)}}</view>
+              <view>{{filter.numberToFix2(item.SMoney)}}</view>
+              <view>{{filter.numberToFix2(item.PBuy)}}</view>
+              <view>{{filter.numberToFix2(item.TurNover)}}</view>
+              <view class="{{item.PBRate>0 ? 'red' : 'green'}}">{{filter.numberToFix(item.PBRate)}}%</view>
+              <view>{{filter.numberToFix(item.TurnRate)}}%</view>
+              <view>{{filter.numberToFix2(item.AGSZBHXS/10000)}}</view>
+              <view class="yin">{{item.CTypeDes}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view>
+        <button class="loadText" type="default"  loading="{{loading}}" disabled="{{disabled}}" bindtap="setLoading">{{loadText}}</button>
+      </view>
+    </view>
+    <!--  泸市  -->
+    <view class="content {{currentTab==1 ? 'active1' : ''}}">
+      <view class="left">
+        <view class="name">名称</view>
+        <view class="left_msg" wx:for="{{list}}" wx:key bindtap='banner'>
+          <text>{{item.SName}}</text>
+          <text>{{item.SCode}}</text>
+        </view>
+      </view>
+      <view class="right">
+        <view class="name">
+          <view class="hidden">
+            <view class="hidName">
+              <view>上榜日期</view>
+              <view>收盘价</view>
+              <view>涨跌幅</view>
+              <view>买方机构数</view>
+              <view>卖方机构数</view>
+              <view>
+                <view>机构买入</view>
+                <view>总额(万)</view>
+              </view>
+              <view>
+                <view>机构卖出</view>
+                <view>总额(万)</view>
+              </view>
+              <view>
+                <view>机构买入</view>
+                <view>净额(万)</view>
+              </view>
+              <view>
+                <view>市场总</view>
+                <view>总成额(万)</view>
+              </view>
+              <view>
+                <view>机构净买额占</view>
+                <view>总成交额比</view>
+              </view>
+              <view>换手率</view>
+              <view>流通市值(亿)</view>
+              <view>上榜原因</view>
+            </view>
+            <view class="hidName" wx:for="{{list}}" wx:key bindtap='banner'>
+              <view>{{filter.numberToFix3(item.TDate)}}</view>
+              <view class="{{item.Chgradio>0 ? 'red' : 'green'}}">{{item.CPrice}}</view>
+              <view class="{{item.Chgradio>0 ? 'red' : 'green'}}">{{filter.numberToFix(item.Chgradio)}}%</view>
+              <view>{{item.BSL}}</view> 
+              <view>{{item.SSL}}</view>
+              <view>{{filter.numberToFix2(item.BMoney)}}</view>
+              <view>{{filter.numberToFix2(item.SMoney)}}</view>
+              <view>{{filter.numberToFix2(item.PBuy)}}</view>
+              <view>{{filter.numberToFix2(item.TurNover)}}</view>
+              <view class="{{item.PBRate>0 ? 'red' : 'green'}}">{{filter.numberToFix(item.PBRate)}}%</view>
+              <view>{{filter.numberToFix(item.TurnRate)}}%</view>
+              <view>{{filter.numberToFix2(item.AGSZBHXS/10000)}}</view>
+              <view class="yin">{{item.CTypeDes}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view>
+        <button class="loadText" type="default"  loading="{{loading}}" disabled="{{disabled}}" bindtap="setLoading">{{loadText}}</button>
+      </view>
+    </view>
+    <!--  深市  -->
+    <view class="content {{currentTab==2 ? 'active1' : ''}}">
+      <view class="left">
+        <view class="name">名称</view>
+        <view class="left_msg" wx:for="{{list}}" wx:key bindtap='banner'>
+          <text>{{item.SName}}</text>
+          <text>{{item.SCode}}</text>
+        </view>
+      </view>
+      <view class="right">
+        <view class="name">
+          <view class="hidden">
+            <view class="hidName">
+              <view>上榜日期</view>
+              <view>收盘价</view>
+              <view>涨跌幅</view>
+              <view>买方机构数</view>
+              <view>卖方机构数</view>
+              <view>
+                <view>机构买入</view>
+                <view>总额(万)</view>
+              </view>
+              <view>
+                <view>机构卖出</view>
+                <view>总额(万)</view>
+              </view>
+              <view>
+                <view>机构买入</view>
+                <view>净额(万)</view>
+              </view>
+              <view>
+                <view>市场总</view>
+                <view>总成额(万)</view>
+              </view>
+              <view>
+                <view>机构净买额占</view>
+                <view>总成交额比</view>
+              </view>
+              <view>换手率</view>
+              <view>流通市值(亿)</view>
+              <view>上榜原因</view>
+            </view>
+            <view class="hidName" wx:for="{{list}}" wx:key bindtap='banner'>
+              <view>{{filter.numberToFix3(item.TDate)}}</view>
+              <view class="{{item.Chgradio>0 ? 'red' : 'green'}}">{{item.CPrice}}</view>
+              <view class="{{item.Chgradio>0 ? 'red' : 'green'}}">{{filter.numberToFix(item.Chgradio)}}%</view>
+              <view>{{item.BSL}}</view> 
+              <view>{{item.SSL}}</view>
+              <view>{{filter.numberToFix2(item.BMoney)}}</view>
+              <view>{{filter.numberToFix2(item.SMoney)}}</view>
+              <view>{{filter.numberToFix2(item.PBuy)}}</view>
+              <view>{{filter.numberToFix2(item.TurNover)}}</view>
+              <view class="{{item.PBRate>0 ? 'red' : 'green'}}">{{filter.numberToFix(item.PBRate)}}%</view>
+              <view>{{filter.numberToFix(item.TurnRate)}}%</view>
+              <view>{{filter.numberToFix2(item.AGSZBHXS/10000)}}</view>
+              <view class="yin">{{item.CTypeDes}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view>
+        <button class="loadText" type="default"  loading="{{loading}}" disabled="{{disabled}}" bindtap="setLoading">{{loadText}}</button>
+      </view>
+    </view>
+  </view>
+</view>
+<!--  日期  -->
+<view class="{{isShow ? 'layerBox2' : 'layerBox'}}">
+  <view class="layerMain">
+    <view class="month">
+      <view class="{{ha==idx? 'monBg' : ''}}" bindtap='month' wx:for="{{mon}}" wx:key data-text="{{item}}" wx:for-index="idx" data-index="{{idx}}">{{item}}</view>
+    </view>
+    <view class="find">
+      <view class="zi">自定义</view>
+      <view class="dateInp">
+        <picker mode="date" value="{{findDate}}" bindchange="bindDateChange">
+          <input placeholder='{{findDate}}' disabled></input>
+        </picker>
+        <text>至</text>
+        <picker mode="date" value="{{findDate2}}" bindchange="bindDateChange2">
+          <input placeholder='{{findDate2}}' disabled></input>
+        </picker>
+        <view class="findBtn" bindtap='findBtn'>查询</view>
+      </view>
+    </view>
+    <view class="monBth" bindtap="close">取消</view>
+  </view>
+</view>
+<!--  帮助  -->
+<view class="{{isShow2 ? 'helpLayer2' : 'helpLayer'}}">
+  <view class="helpMain">
+    <view class="conHelp">
+      <view class="title">龙虎榜净买额：</view>
+      <view>龙虎榜买入额-龙虎榜卖出额；代表龙虎榜资金的净流入情况。</view>
+      <view class="title">买方机构次数(次)：</view>
+      <view>区间内每只股票所有买方机构出现的次数，依据逻辑去掉重复的买入次数。</view>
+      <view class="title">卖方机构次数(次)：</view>
+      <view>区间内每只股票所有卖方机构出现的次数，依据逻辑去掉重复的卖出次数。</view>
+      <view class="title">机构买入净额：</view>
+      <view>区间内买方机构总买入金额-区间内卖方机构总卖出金额，相关的金额统计依据相关的逻辑去掉重复的数据。</view>
+      <view class="ok" bindtap='yesClick'>确定</view>
+    </view>
+  </view>
+</view>

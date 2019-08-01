@@ -1,0 +1,67 @@
+<!--pages/index/index.wxml-->
+<!-- <web-view src="https://oauth.cf8.cn/MiniPro/ns/?from={{from}}&appname={{appname}}"></web-view> -->
+<view class="new-srock-box">
+  <view class="new-and">
+    <text>名称</text>
+    <text>申购码</text>
+  </view>
+  <view class="new-and">
+    <text>网上</text>
+    <text>发行数</text>
+  </view>
+  <view class="new-and">
+    <text>发行价(元)</text>
+    <text>市盈率</text>
+  </view>
+  <view class="new-and2">
+    <text>申购上限</text>
+  </view>
+  <view class="new-and2">
+    <text>状态</text>
+  </view>
+</view>
+<view class="new-txt-main"><text>注：</text>预估值会因为募集资金、发行数量、发行数量等数据变动而变动,仅供参考。</view>
+<view class="main-box">
+  <view class="main-strock-box" wx:for="{{list}}" wx:key wx:for-index="ind" bindtap='mainFn' data-code="{{item.sggp[0].code}}">
+    <view class="main-strock-date">{{item.sgdate_week}}</view>
+    <view class="main-strock-bottom" wx:for="{{item.sggp}}" wx:key wx:for-item="i">
+      <view class="li-storck">
+        <view class="blue weight">{{i.gpname}}</view>
+        <view>{{i.code}}</view>
+      </view>
+      <view class="li-storck">
+        <view class="blue">{{i.fxCount}}</view>
+        <view>万股</view>
+      </view>
+      <view class="li-storck">
+        <view class="blue">
+          <text wx:if="{{ind==0}}" class="origin">预</text>
+          <text wx:elif="{{ind==1}}" class="origin">预</text>{{i.fxprice1}}
+        </view>
+        <view class="blue">
+          <text wx:if="{{ind==0}}" class="origin">预</text>
+          <text wx:elif="{{ind==1}}" class="origin">预</text>{{i.sy1}}
+        </view>
+      </view>
+      <view class="li-storck">
+        <view class="blue">{{i.sgcount}}</view>
+        <view>万股</view>
+      </view>
+      <view class="li-storck2">
+        <view class="red" wx:if="{{i.status == '待申购'}}">{{i.status}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<!--  广告  -->
+<view class="banner" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images'></image>
+</view>
+<!-- 更多小程序 -->
+<view class="layerBoxs" bindtap='moreBtn'>
+    <view>更多小程序</view>
+</view>
+<!-- 授权弹层 -->
+<phones wx:if="{{isShow}}"></phones>

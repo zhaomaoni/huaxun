@@ -1,0 +1,46 @@
+<!--pages/historyUser/historyUser.wxml-->
+<wxs module="filter" src="../../utils/date.wxs"></wxs>
+<view class="head-main-box">
+  <view class="head-pic-box">
+    <image src="{{head}}"></image>
+  </view>
+  <view class="head-name-box">{{name}}</view>
+  <view class="head-cash-box">已获得奖励总额：{{giftTotal}}</view>
+</view>
+<view class="my-history-box">
+  <view class="my-history-title">历史推股</view>
+    <view class="my-history-main" wx:for="{{list}}" wx:key wx:for-index="idx">
+      <view class="my-mian-title" bindtap='hideBtn'  data-index="{{idx}}">第<text>{{item.days}}</text>天看涨股票
+      <text>{{filter.hisDate(item.createtime)}}</text>
+        <label data-index="{{idx}}" class="my-jt" wx:if="{{!item.flag}}"  ></label>
+        <label data-index="{{idx}}" class="my-jt my-jt2" wx:else  ></label>
+      </view>
+      <view class="my-show-box {{!item.flag ? '' : 'my-show2'}}" wx:if="{{idx==0&&(userId!=myid)&&item.sumTotal==2}}">
+        <view class="my-show-hide" wx:for="{{item.secucodeplayUserstocks}}" wx:key wx:for-item="i">
+          <view class="my-pic-box">
+            <image src="https://api.51gsl.com/program/StockPush/images/icon_sl.png" wx:if="{{i.total==3||i.total==5}}"></image>
+            <image src="https://api.51gsl.com/program/StockPush/images/icon_sb.png" wx:elif="{{i.total==4||item.secucodeplayUserstocks.length==0}}"></image>
+          </view>
+          *****<text> *****</text>
+        </view>
+      </view>
+      <view class="my-show-box {{!item.flag ? '' : 'my-show2'}}" wx:else>
+        <block wx:if="{{item.secucodeplayUserstocks.length!=0}}">
+          <view class="my-show-hide" wx:for="{{item.secucodeplayUserstocks}}" wx:key wx:for-item="i">
+            <view class="my-pic-box">
+              <image src="https://api.51gsl.com/program/StockPush/images/icon_sl.png" wx:if="{{i.total==3||i.total==5}}"></image>
+              <image src="https://api.51gsl.com/program/StockPush/images/icon_sb.png" wx:elif="{{i.total==4||item.secucodeplayUserstocks.length==0}}"></image>
+            </view>
+            {{i.secucodeName}}<text> {{i.secucode}}</text>
+          </view>
+        </block>
+        <block wx:else>
+          <view class="my-show-hide">
+            <view class="my-pic-box">
+              <image src="https://api.51gsl.com/program/StockPush/images/icon_sb.png"></image>
+            </view>未推股
+          </view>
+        </block>
+      </view>
+    </view>
+</view>

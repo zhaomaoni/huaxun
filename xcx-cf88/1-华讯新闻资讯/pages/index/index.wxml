@@ -1,0 +1,144 @@
+<!--pages/index/index.wxml-->
+<wxs module="filter" src="../../utils/date.wxs"></wxs>
+<view class="conBox">
+  <view class="swiper-tab">  
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">推荐</view>  
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">要闻</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">快讯</view>  
+    <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">机会</view>
+    <view class="swiper-tab-list {{currentTab==4 ? 'on' : ''}}" data-current="4" bindtap="swichNav">公司</view>  
+    <view class="swiper-tab-list {{currentTab==5 ? 'on' : ''}}" data-current="5" bindtap="swichNav">大盘</view>  
+    <view class="swiper-tab-list {{currentTab==6 ? 'on' : ''}}" data-current="6" bindtap="swichNav">其他</view>  
+  </view>
+  
+</view>
+<view class="tuiBg {{ten?'moves':''}}">为您推荐10条新内容</view>
+ <view class="swipers">
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight}}px;" bindchange="bindChange">  
+    <!-- 我是推荐 -->
+    <swiper-item>
+        <scroll-view scroll-y="false" scroll-top="{{scrollTop}}" style="height: 100%;" bindscrolltolower="onReachBottom">
+        <view>
+          <view class="newsTop">
+            <view wx:for="{{top}}"  wx:key="key" class="main" bindtap='jump2' data-newsid="{{item.newsId}}" data-cur="0">
+              <view class="leftBox">
+                <text id='yaowen_title' class="title">{{ item.newsTitle }}</text>
+                <text class="zhi-ding">置顶</text>
+                <text class="times">{{ filter.dateFn(item.publishTime) }}</text>
+                <text class="from">来源：{{ item.source }}</text>
+              </view>
+              <view class="rigBox">
+                <image src="{{item.newsImage[0].imageUrl}}" mode='aspectFill'></image>
+              </view>
+            </view>
+            <view wx:for="{{hot}}"  wx:key="key" class="main" bindtap='jump2' data-newsid="{{item.newsId}}" data-cur="0">
+              <view class="leftBox">
+                <text id='yaowen_title' class="title">{{ item.newsTitle }}</text>
+                <text class="re-ding">热</text>
+                <text class="times">{{ filter.dateFn(item.publishTime) }}</text>
+                <text class="from">来源：{{ item.source }}</text>
+              </view>
+              <view class="rigBox">
+                <image src="{{item.newsImage[0].imageUrl}}" mode='aspectFill'></image>
+              </view>
+            </view>
+            <view id='yaowen' wx:for="{{recommend}}" wx:key="key" class="main" bindtap='jump2' data-newsid="{{item.newsId}}" data-cur="0">
+              <view class="leftBox">
+                <text id='yaowen_title' class="title">{{ item.newsTitle }}</text>
+                <text class="times">{{ filter.dateFn(item.publishTime) }}</text>
+                <text class="from">来源：{{ item.source }}</text>
+              </view>
+              <view class="rigBox">
+                <image src="{{item.newsImage[0].imageUrl}}" mode='aspectFill'></image>
+              </view>
+            </view>
+          </view>
+          <view class="again-box"><view class="again-click" bindtap='onPullDownRefresh'>您上次看到这里 点击刷新 <image src="../../images/loading.png" class="load-pic"></image></view></view>
+          <view class="newsBot">
+            <view id='yaowen' wx:for="{{Blist}}" wx:key="key" class="main" bindtap='jump2' data-newsid="{{item.newsId}}" data-cur="0">
+              <view class="leftBox">
+                <text id='yaowen_title' class="title">{{ item.newsTitle }}</text>
+                <text class="times">{{ filter.dateFn(item.publishTime) }}</text>
+                <text class="from">来源：{{ item.source }}</text>
+              </view>
+              <view class="rigBox">
+                <image src="{{item.newsImage[0].imageUrl}}" mode='aspectFill'></image>
+              </view>
+            </view>
+          </view>
+        </view>
+        </scroll-view>
+      
+    </swiper-item>  
+    <!-- 我是要闻 -->  
+    <swiper-item>
+      <scroll-view scroll-y="false" style="height: 100%;" bindscrolltolower="onReachBottom">
+        <image src="{{ban.data.ad[1004][0].pic}}" wx:if="{{ban.data.ad}}" data-url="{{ban.data.ad[1004][0].url}}" class="navImg" bindtap='images'></image>
+        <view id='yaowen' wx:for="{{lists[1]}}" wx:key="key"  id="{{ item.articleid }}" class="main" bindtap='jump' data-url="{{ item.url }}" data-txt="{{item.column}}" data-cur="1">
+          <text id='yaowen_title' class="title">{{ item.title }}</text>
+          <text class="times">{{ item.ym }} {{ item.hs }}</text>
+          <text class="from">来源：{{ item.frommedia }}</text>
+        </view>
+      </scroll-view>
+    </swiper-item>  
+    <!-- 我是滚动 -->  
+    <swiper-item>  
+      <scroll-view class="scroll_roll" scroll-y="false" style="height: 100%;" bindscrolltolower="onReachBottom">
+        <view class="solid"></view>
+        <view wx:for="{{lists[2]}}" wx:key="key"  id="{{ item.articleid }}" class="main main_scroll"  bindtap='jump' data-url="{{ item.url }}" data-txt="{{item.column}}" data-cur="2">
+          <view class="timeBox">
+            <text class="times circle">{{ item.hs }}</text>
+            <text class="times2">{{ item.ym }}</text>
+          </view>
+          <text class="content">【{{ item.title }}】{{ item.titlesub }}</text>
+          <view class="borders"></view>
+        </view>
+      </scroll-view>  
+    </swiper-item>  
+    <!-- 我是机会 -->  
+    <swiper-item>  
+      <scroll-view scroll-y="false" style="height: 100%;" bindscrolltolower="onReachBottom">
+        <view wx:for="{{lists[3]}}" wx:key="key"  id="{{ item.articleid }}" class="main" bindtap='jump' data-url="{{ item.url }}" data-txt="{{item.column}}" data-cur="3">
+          <text class="title">{{ item.title }}</text>
+          <text class="times">{{ item.ym }} {{ item.hs }}</text>
+          <text class="from">来源：{{ item.frommedia }}</text>
+        </view>
+      </scroll-view>  
+    </swiper-item>  
+    <!-- 我是公司 -->  
+    <swiper-item>  
+      <scroll-view scroll-y="false" style="height: 100%;" bindscrolltolower="onReachBottom">
+        <view wx:for="{{lists[4]}}" wx:key="key"  id="{{ item.articleid }}" class="main" bindtap='jump' data-url="{{ item.url }}" data-txt="{{item.column}}" data-cur="4">
+          <text class="title">{{ item.title }}</text>
+          <text class="times">{{ item.ym }} {{ item.hs }}</text>
+          <text class="from">来源：{{ item.frommedia }}</text>
+        </view>
+      </scroll-view>
+    </swiper-item>  
+    <!-- 我是大盘 -->  
+    <swiper-item>  
+      <scroll-view scroll-y="false" style="height: 100%;" bindscrolltolower="onReachBottom">
+        <view wx:for="{{lists[5]}}" wx:key="key"  id="{{ item.articleid }}" class="main" bindtap='jump' data-url="{{ item.url }}" data-txt="{{item.column}}" data-cur="5">
+          <text class="title">{{ item.title }}</text>
+          <text class="times">{{ item.ym }} {{ item.hs }}</text>
+          <text class="from">来源：{{ item.frommedia }}</text>
+        </view>
+      </scroll-view>
+    </swiper-item>  
+    <!-- 我是其他 -->  
+    <swiper-item>
+      <scroll-view scroll-y="false" style="height: 100%;" bindscrolltolower="onReachBottom">
+        <view wx:for="{{lists[6]}}" wx:key="key"  id="{{ item.articleid }}" class="main" bindtap='jump' data-url="{{ item.url }}" data-txt="{{item.column}}" data-cur="6">
+          <text class="title">{{ item.title }}</text>
+          <text class="times">{{ item.ym }} {{ item.hs }}</text>
+          <text class="from">来源：{{ item.frommedia }}</text>
+        </view>
+      </scroll-view> 
+    </swiper-item>
+  </swiper> 
+ </view>
+
+<!-- 更多小程序 -->
+<view class="layerBoxs" bindtap='moreBtn' wx:if="{{ban.data.more}}">
+  <view>{{ban.data.more.title}}</view>
+</view>

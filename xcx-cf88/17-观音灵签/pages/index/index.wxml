@@ -1,0 +1,21 @@
+<!--pages/index/index.wxml-->
+<view class='page'>
+  <view class="title">{{txt1}}</view>
+  <view class="qian">
+    <view class="pic">
+      <image mode="" src="{{src}}"></image>
+    </view>
+    <modal title="摇一摇" confirm-text="确定" no-cancel hidden="false" bindconfirm="gravityModalConfirm" confirm-color="#1f4ba5"></modal>
+    <view class="yao">{{txt2}}</view>
+    <view>{{txt3}}</view>
+  </view>
+  <view class="btn {{isShow ? 'btn2' : ''}}" bindtap='btnClick'>查看签词</view>
+</view>
+<!--  广告  -->
+<view class="banner" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images'></image>
+</view>
+<!-- 更多小程序 -->
+<view class="layerBoxs" bindtap='moreBtn'>
+    <view>更多小程序</view>
+</view>

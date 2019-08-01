@@ -1,0 +1,31 @@
+{
+  "pages":[
+    "pages/quotation/quotation",
+    "pages/exchange/exchange",
+    "pages/banner/banner"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#de494b",
+    "navigationBarTitleText": "汇率牌价兑换查询",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/quotation/quotation",
+        "text": "牌价",
+        "iconPath": "image/price1.png",
+        "selectedIconPath": "image/price2.png"
+      },
+      {
+        "pagePath": "pages/exchange/exchange",
+        "text": "兑换",
+        "iconPath": "image/change1.png",
+        "selectedIconPath": "image/change2.png"
+      }
+    ],
+    "color":"#515151",
+    "selectedColor":"#de494b"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/car/car",
+    "pages/month/month",
+    "pages/content/content",
+    "pages/content2/content2",
+    "pages/banner/banner",
+    "pages/add/add"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#de494b",
+    "navigationBarTitleText": "房贷车贷按揭计算器",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "房贷",
+        "iconPath": "images/icon_home1.png",
+        "selectedIconPath": "images/icon_home2.png"
+      },
+      {
+        "pagePath": "pages/car/car",
+        "text": "车贷",
+        "iconPath": "images/icon_car1.png",
+        "selectedIconPath": "images/icon_car2.png"
+      }
+    ],
+    "color": "#515151",
+    "selectedColor": "#de494b",
+    "backgroundColor": "#F8F8FF"
+  },
+  "networkTimeout": {
+    "request": 10000
+  }
+}

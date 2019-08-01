@@ -1,0 +1,25 @@
+/* pages/help/help.wxss */
+page{
+  background: #fff
+}
+.box{
+  width: 92%;
+  margin: 10px auto
+}
+.list{
+  line-height: 35px;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+.list::after{
+  content: "";
+  width: 8px;
+  height: 8px;
+  display: inline-block;  
+  border-right: 2px solid #999;
+  border-bottom: 2px solid #999;
+  transform: rotate(-45deg);  
+  position: absolute;
+  right: 10px;
+  top: 12px
+}

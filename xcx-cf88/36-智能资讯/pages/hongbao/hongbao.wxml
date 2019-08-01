@@ -1,0 +1,2 @@
+<!--pages/hongbao/hongbao.wxml-->
+<web-view src="https://api.51gsl.com/cf8/MiniPro/tg/180403_02/"></web-view>

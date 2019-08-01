@@ -1,0 +1,91 @@
+/*授权*/
+.white-shou-layer{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 999;
+}
+.white-shou-logo{
+  width: 3.2rem;
+  height: 3.2rem;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  margin-left: -1.6rem;
+}
+.white-shou-logo image{
+  width: 100%;
+  height: 100%;
+}
+.white-shou-name{
+  height: 2.5rem;
+  line-height: 2.5rem;
+  width: 100%;
+  text-align: center;
+  margin-top: 35%;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.white-shou-btn{
+  width: 90%;
+  margin: 5rem auto 0 auto;
+}
+.white-shou-btn button{
+  width: 100%;
+  color: #fff;
+  background-color: #1aac19
+}
+button::after{
+  border: none;
+  padding: 0;
+}
+
+/*获取手机号*/
+.shou-quan-layer{
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7)
+}
+.shou-quan-main{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  height: auto;
+  margin-left: -45%;
+  margin-top: -30%;
+}
+.shou-quan-txt{
+  width: 100%;
+  height: 2rem;
+  margin-bottom: 2rem;
+}
+.shou-quan-txt image{
+  width: 100%;
+  height: 100%;
+}
+.shou-quan-btn{
+  width: 6rem;
+  height: 2.4rem;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.shou-quan-btn button{
+  padding: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+.shou-quan-btn image{
+  width: 100%;
+  height: 100%;
+  display: block
+}

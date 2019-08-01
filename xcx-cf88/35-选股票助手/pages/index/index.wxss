@@ -1,0 +1,115 @@
+/**index.wxss**/
+.body-main-box{
+  width: 95%;
+  height: auto;
+  margin: 1.25rem 2.5% 0 2.5%;
+  display: inline-block
+}
+.body-header-box{
+  font-weight: 600;
+  font-size: 1rem;
+}
+.body-content-box{
+  width: 100%;
+  height: 3.25rem;
+  text-align: center;
+}
+.body-content-box .click-main{
+  width: 32%;
+  line-height: 2.25rem;
+  height: 2.25rem;
+  float: left;
+  background: #f0f0f0;
+  border-radius: 4px;
+  margin: 0.5rem 2% 0px 0;
+  font-size: 0.75rem;
+  position: relative
+}
+.click-layer{
+  width: 100%;
+  height: 0;
+  z-index: 6;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  position: absolute;
+  max-height: 22rem;
+  top: 2.25rem;
+  left: 0;
+  text-align: left;
+  background: #fff;
+}
+.click-layer view{
+  height: 1.5rem;
+  line-height: 1.5rem;
+  text-indent: 5px;
+  font-size: 12px
+}
+.bg{
+  background: #ade1f5;
+  color: #fff;
+}
+.body-content-box view:nth-child(3n){
+  margin-right: 0
+}
+.shuo-ming-box{
+  width: 94%;
+  height: auto;
+  border: 1px solid #ebebeb;
+  margin: 2.25rem auto 4.75rem auto;
+}
+.shou-conntent-box{
+  color: #666;
+  width: 90%;
+  margin: 0 auto;
+  font-size: 0.8rem;
+  padding: 0.3rem 0 1.25rem 0;
+}
+.shou-header-box{
+  font-size: 0.9rem;
+  width: 35%;
+  height: 1.5rem;
+  text-align: center;
+  position: relative;
+  top: -0.65rem;
+  border-bottom: 1px solid #f00;
+  left: 50%;
+  margin-left: -17.5%;
+  background: #fff;
+}
+
+.checked-main-box{
+  z-index: 77;
+  width: 100%;
+  height: 3.75rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  font-size: 1rem;
+}
+.checked-btn{
+  width: 30%;
+  text-align: center;
+  height: 2.25rem;
+  line-height: 2.25rem;
+  background: #de4a4c;
+  border-radius: 4px;
+  float: right;
+  margin: 0.75rem 1rem 0.75rem 0;
+  color: #fff;
+}
+.checked-content{
+  height: 3.75rem;
+  line-height: 3.75rem;
+  margin-left: 1rem;
+}
+.checked-content text{
+  color: #f00;
+}
+.red{
+  background: #fff;
+  border: 1px solid red;
+  color: red;
+  border-radius: 4px;
+}

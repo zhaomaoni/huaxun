@@ -1,0 +1,29 @@
+<!--pages/index/index.wxml-->
+<import src="/wxSearch/wxSearch.wxml"/>
+<view class="bigBox">
+  <view class="body" bindtap='clicks'>
+    <view class="search">
+      <input placeholder='输入股票代码/拼音/名称' value='{{value}}' bindinput="wxSearchInput" bindfocus="wxSerchFocus" bindblur="wxSearchBlur"></input>
+      <view bindtap='jietao'>解套</view>
+    </view>
+      <template is="wxSearch" data="{{wxSearchData}}"/>
+  </view>
+  <view class="history">
+    <view class="his">
+      <view class="hisLeft">最近搜索记录</view>
+      <view class="hisRig"  wx:if='{{sercherStorage.length != 0}}' catchtap='clearSearchStorage'>删除</view>
+    </view>
+  </view>
+  <view class="hisCheck">
+    <view wx:for="{{list}}" wx:key bindtap='history' data-code="{{item.code}}">{{item.title}}</view>
+  </view>
+</view>
+
+<view class="pic" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images'></image>
+</view>
+
+<!-- 更多小程序 -->
+<view class="layerBoxs" bindtap='moreBtn'>
+    <view>更多小程序</view>
+</view>

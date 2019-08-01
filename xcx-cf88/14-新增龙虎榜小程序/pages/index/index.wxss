@@ -1,0 +1,244 @@
+/* pages/index/index.wxss */
+.main{
+  width: 100%;
+  background: #fff;
+  margin-bottom: 10px;
+  border-bottom:1px solid #ccc 
+}
+.main:last-child{
+  margin-bottom: 0
+}
+/*标题*/
+.title{
+  width: 92%;
+  margin: 0 auto;
+  line-height: 40px;
+  overflow: hidden;
+  border-bottom: 1px solid #ddd
+}
+/*更多*/
+.more{
+  float: right;
+  padding-right:10px;
+}
+.more::after{
+  content: ""; 
+  width: 8px;
+  height: 8px;
+  display: inline-block;  
+  border-right: 2px solid #999;
+  border-bottom: 2px solid #999;
+  transform: rotate(-45deg);  
+}
+/*泸市，深市tab*/
+.nav{
+  width: 85%;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #ddd;
+  margin: 10px auto;
+}
+.nav view{
+  float: left;
+  width: 50%;
+  text-align: center
+}
+.nav .active{
+  background: #de494b;
+  color: #fff;
+}
+/*内容*/
+.list{
+  height: auto;
+  overflow: hidden;
+}
+.content{ 
+  width:92%;
+  margin: 0 auto;
+  display:none;
+  overflow:hidden;
+}
+.show{
+  display: block
+}
+.list .active1{
+  display: block
+}
+/*左边不动*/
+.left{
+  width: 70px;
+  float: left;
+  overflow: hidden
+}
+.left2{
+  width: 140px;
+}
+.left view{
+  height: 50px;
+  text-align: center;
+  border-bottom: 1px solid #ddd
+}
+.left .name{
+  line-height: 50px
+}
+.left_msg{
+  line-height: 18px;
+}
+.left_msg text{
+  display: block;
+  font-size: 12px;
+}
+.left_msg text:first-child{
+  padding-top: 8px;
+  font-size: 14px
+}
+/*右边滑动*/
+.right{
+  margin-left: 70px;
+  width:calc(100% - 70px);
+  height: 100%;
+  overflow: hidden;
+}
+.right2{
+  margin-left: 140px;
+  width:calc(100% - 140px);
+}
+.right .name{
+  height:100%;
+  overflow: hidden;
+}
+::-webkit-scrollbar{   
+    width: 0px;
+    height: 0px;   
+    background-color: rgba(0,0,0,0);   
+}   
+.right .hidden{
+  width: 100%;
+  height: 100%;
+  overflow-x: scroll;
+  overflow-y:hidden;
+}
+.right .hidden view{
+  height: 50px;
+}
+.right .hidName{
+  width: calc(280%);
+  display: flex;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+.right .hidName2{
+  width: calc(700%);
+}
+
+.right .hidName view{
+  width: 50%;
+  height: 50px;
+  line-height: 50px;
+}
+.right .hidName view view{
+  width: 100%;
+  line-height:23px;
+  display:block;
+  height:23px;
+}
+.right .hidName .pad{
+  line-height: normal;
+  margin-top: 8px;
+  height: 42px
+}
+.hidName view text{
+  padding: 0 5px;
+}
+/*点击加载更多*/
+.clickMore{
+  line-height: 40px;
+  text-align: center
+}
+/*证券查询*/
+.types{
+  width: 92%;
+  margin: 0 auto;
+  overflow: hidden
+}
+.types view{
+  width: 30%;
+  height: 30px;
+  margin: 10px 1.3% 0 1.3%;
+  line-height: 30px;
+  border: 1px solid #ccc;
+  text-align: center;
+  float: left;
+  border-radius: 5px
+}
+
+/*表格变色处*/
+.red{
+  color: red
+}
+.green{
+  color: green
+}
+/**/
+.litter{
+  padding-left: 5px;
+}
+/*下三角*/
+.triangle{
+  width: 0;
+  height: 0;
+  border-width: 8px;
+  border-style: solid;
+  border-color: #999 transparent transparent transparent;
+  border-radius: 3px;
+  position: relative;
+  top: 15px;
+}
+.block{
+  display: none
+}
+/*上三角*/
+.triangle2{
+  width: 0;
+  height: 0;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent #999 transparent;
+  border-radius: 3px;
+  position: relative;
+  top: -12px;
+}
+/*帮助跳转*/
+.helpJump{
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background: rgba(0,0,0,0.5);
+  border-radius:50px; 
+  position: fixed;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  bottom: 50px;
+  right: 10px;
+}
+
+/* more小程序 */
+.layerBoxs{
+  width: auto;
+  height: 26px;
+  line-height: 26px;
+  position: fixed;
+  right: 0px;
+  bottom: 100px;
+  color: #fff;
+  background: rgba(0,0,0,0.7);
+  font-size: 12px;
+  text-align: center;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px
+}
+.layerBoxs view{
+  padding: 0 10px;
+}

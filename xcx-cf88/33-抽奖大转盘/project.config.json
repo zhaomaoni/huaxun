@@ -1,0 +1,64 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.3.0",
+	"appid": "wx98e53e49fd99cdd5",
+	"projectname": "33-%E6%8A%BD%E5%A5%96%E5%A4%A7%E8%BD%AC%E7%9B%98",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 1,
+			"list": [
+				{
+					"id": 0,
+					"name": "from",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": "1020",
+					"referrerInfo": {
+						"appId": "wx866d3e0854e49734"
+					}
+				},
+				{
+					"id": 1,
+					"name": "from2",
+					"pathName": "pages/index/index",
+					"query": "from=wx866d3e0854e49734",
+					"scene": "1020",
+					"referrerInfo": {
+						"appId": ""
+					}
+				}
+			]
+		}
+	}
+}

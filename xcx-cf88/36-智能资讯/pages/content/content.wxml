@@ -1,0 +1,69 @@
+<!--pages/content/content.wxml-->
+<wxs module="filter" src="../../utils/date.wxs"></wxs>
+<import src="../../wxParse/wxParse.wxml" />
+<view class="body-main-box" wx:for="{{mainList}}" wx:key wx:if="{{mainList.length!=0}}">
+  <!-- 标题头部 -->
+  <view class="main-head-box">
+    <view class="main-head-title">{{item.News_Title}}</view>
+    <view class="main-head-bottom">
+      <view class="main-eye-box">
+        <image src="../../images/icon_eye.png"></image>{{item.Read_cnt}}
+      </view>
+      <view class="head-left-box">
+        <view>{{filter.dateFn(item.update_time)}}</view>
+        <view>来源：{{item.From}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 内容 -->
+  <!-- <view class="about-main-box">相关股票：<text>工商银行</text><text>万科A</text></view> -->
+  <!-- <view class="content-main-box">{{item.News_Content}}</view> -->
+  <view class="content-main-box">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+  <view class="zan-good-box" bindtap='zanFn'>
+    <image src="../../images/icon_good2.png" wx:if="{{isClick}}"></image>
+    <image src="../../images/icon_good.png" wx:else></image>
+     {{ifpraise}}
+  </view>
+  <view class="zan-no-box" bindtap='noLikeFn'>
+    <view class="no-like-pic">不喜欢 <image src="../../images/icon_nolike.png"></image></view>
+    <view class="no-like-result">不喜欢这篇内容? 可以告诉我们~</view>
+  </view>
+</view>
+<view class="body-main-box" wx:if="{{mainList.length==0}}">
+  <view class="no-main-box">{{delet}}</view>
+</view>
+<!-- 相关推荐 -->
+<view class="tui-jian-box">
+  <view class="tui-head-box"><text></text>相关推荐</view>
+  <view class="tui-content-box" wx:for="{{hisList}}" wx:key data-newsid="{{item.newsId}}" bindtap='jumpBtn'>{{item.newsTitle}}</view>
+</view>
+<!-- 风险提示 -->
+<view class="feng-xian">
+  <view class="ti-shi">
+    <text>风险提示: </text>本产品所载信息仅供参考, 请阁下在进行投资操作时, 坚持谨慎、理性的原则, 综合考虑投资风险
+  </view>
+</view>
+<!-- 全部评论 -->
+<view class="ping-lun-box">
+  <view class="tui-head-box"><text></text>全部评论（{{comLen}}）</view>
+  <view class="ping-main-box" wx:for="{{comList}}" wx:key wx:if="{{comList.length!=0}}">
+    <view class="ping-user-msg">
+      <view class="ping-pic-box">
+        <image src="{{item.UserHead}}"></image>
+      </view>
+      <view class="ping-txt-box">
+        <view class="ping-name">{{item.UserName}}</view>
+        <view class="ping-date">{{item.create_time}}</view>
+      </view>
+    </view>
+    <view class="ping-content-box">{{item.Comment_Content}}</view>
+  </view>
+  <view class="ping-main-box"  wx:if="{{comList.length==0}}">
+    <view class="ping-no-pic">
+      <image src="../../images/icon_comment.png"></image>
+    </view>
+    <view class="ping-no-add">暂无评论</view>
+  </view>
+</view>

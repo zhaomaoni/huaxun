@@ -1,0 +1,69 @@
+var filter = {
+  dateFilter: function () {
+    var date = getDate();
+    var seperator1 = "-";
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var strDate = date.getDate();
+    if (month >= 1 && month <= 9) {
+      month = "0" + month;
+    }
+    if (strDate >= 0 && strDate <= 9) {
+      strDate = "0" + strDate;
+    }
+    var currentdate = year + seperator1 + month + seperator1 + strDate;
+    return currentdate;
+  },
+  dateFn: function (value) {
+    var today = filter.dateFilter()
+    var year = value.substring(0,4)
+    var month = value.substring(4,6)
+    var day = value.substring(6,8)
+    var h = value.substring(8,10)
+    var m = value.substring(10,12)
+    var s = value.substring(12,)
+    var dates = year + "-" + month + "-" + day
+    if (today==dates){
+      value = h + ":" + m
+    }else{
+      value = month + "-" + day + " " + h + ":" + m
+    }
+    return value
+  },
+  hisDate:function(value){
+    var today = filter.dateFilter()
+    value = "" + value
+    if(value.length<12){
+      return ""
+    }
+    var year = value.substring(0, 4)
+    var month = value.substring(4, 6)
+    var day = value.substring(6, 8)
+    var h = value.substring(8, 10)
+    var m = value.substring(10, 12)
+    var dates = year + "-" + month + "-" + day + " " + h + ":" +m
+    return dates
+  },
+  dateShow: function (value) {
+    var today = filter.dateFilter() 
+    var month = parseInt(value.substring(4, 6),10)
+    var day = parseInt(value.substring(6, 8),10)  
+    return month + "月" + day + "日"
+  },
+  searchBtn:function(pic){
+    if (!pic || pic.indexOf("https") == -1){
+      pic = "https://api.51gsl.com/program/StockPush/images/icon_header.png"
+      return pic
+    } else{
+      return pic
+    }
+    return pic
+  }
+}
+module.exports = {
+  dateFilter: filter.dateFilter,
+  dateFn: filter.dateFn,
+  dateShow: filter.dateShow,
+  hisDate: filter.hisDate,
+  searchBtn: filter.searchBtn
+}

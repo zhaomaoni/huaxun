@@ -1,0 +1,4 @@
+<!--pages/help/help.wxml-->
+<view class="box">
+  <view wx:for="{{list.tou}}" wx:key class="list" bindtap="jump" wx:for-index="j" data-i="tou" data-j="{{j}}">{{ item.title }}</view>
+</view>

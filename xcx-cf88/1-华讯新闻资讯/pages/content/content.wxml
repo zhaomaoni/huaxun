@@ -1,0 +1,28 @@
+<!--pages/content/content.wxml-->
+<wxs module="filter" src="../../utils/date.wxs"></wxs>
+<import src="../../wxParse/wxParse.wxml" />
+<view class="contentBox" wx:for="{{list}}" wx:key="key" wx:if="{{cur!=0}}">
+  <text class="contentTitle">{{ item.title }}</text>
+  <view class="contentMsg">
+    <text class="conTime">{{ item.time }} {{ item.from }}</text>
+    <view class="conCheck"><image src="../../images/icon_check.png"></image>{{ item.readNum }}</view>
+  </view>
+  <view class="conMain">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+  <image src="{{ban.data.ad[1005][0].pic}}" data-url="{{ban.data.ad[1005][0].url}}" wx:if="{{ban.data.ad}}" class="navImg" bindtap='images'></image>
+</view>
+<view wx:if="{{cur==0}}" wx:for="{{mainList}}" wx:key>
+  <text class="contentTitle">{{ item.News_Title }}</text>
+  <view class="contentMsg">
+    <text class="conTime">{{ filter.dateFn(item.update_time) }}  来源：{{item.From}}</text>
+    <view class="conCheck"><image src="../../images/icon_check.png"></image>{{ item.Read_cnt }}</view>
+  </view>
+  <view class="conMain">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+  <view class="banners-box">
+    <image src="{{ban.data.ad[1005][0].pic}}" data-url="{{ban.data.ad[1005][0].url}}" wx:if="{{ban.data.ad}}" class="navImg" bindtap='images'></image>
+  </view>
+  
+</view>

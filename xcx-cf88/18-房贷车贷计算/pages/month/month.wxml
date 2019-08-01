@@ -1,0 +1,20 @@
+<!--pages/month/month.wxml-->
+<view class="box box2">
+  <view>月份</view>
+  <view>月供总额</view>
+  <view>月供本金</view>
+  <view>月供利息</view>
+  <view>剩余</view>
+</view>
+<view class="list">
+  <view class="box" wx:for="{{showData}}" wx:key="key">
+      <view>{{index+1}}月</view>
+      <view>￥{{item.ygze}}</view>
+      <view>￥{{item.ygbj}}</view>
+      <view>￥{{item.yglx}}</view>
+      <view>￥{{item.ze}}</view>
+  </view>
+</view>
+<view class="pic" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images'></image>
+</view>

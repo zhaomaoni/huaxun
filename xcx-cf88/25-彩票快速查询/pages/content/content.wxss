@@ -1,0 +1,186 @@
+/* pages/content/content.wxss */
+@import "/wxParse/wxParse.wxss";
+page{
+  margin-bottom: 95px;
+}
+.mianBox{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin-bottom: 10px;
+  border-bottom: 3px solid #f6f6f6
+}
+.head{
+  width: 88%;
+  height: auto;
+  margin: 0 auto;
+}
+.title{
+  width: 100%;
+  height: 50px;
+  margin: 10px auto;
+  overflow: hidden
+}
+.imgBox{
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin-right: 10px;
+  overflow: hidden;
+  border-radius: 50px;
+}
+.imgBox image{
+  width: 100%;
+  height: 100%;
+}
+.title_txt{
+  font-size: 16px;
+}
+.title_con{
+  font-size: 18px;
+  padding-top: 5px;
+  font-weight: 600
+}
+.title_con picker{
+  display: inline-block
+}
+.find{
+  font-weight: normal;
+  padding-left: 10px;
+  color: #1e88d2;
+  font-size: 16px
+}
+.kai{
+  font-size: 14px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.cai{
+  width: 100%;
+  height: 35px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.cai view{
+  float: left;
+  height: 25px;
+  width: 25px;
+  line-height: 25px;
+  text-align: center;
+  color: #e3383a;
+  margin-right: 5px;
+  font-size: 14px;
+  border-radius: 50px;
+  border: 1px solid #e3383a;
+  background: #fff;
+  -webkit-text-stroke: 1px #e3383a;
+}
+.cai .blue{
+  color: #5989eb;
+  border: 1px solid #5989eb;
+  -webkit-text-stroke: 1px #5989eb;
+}
+
+.main{
+  width: 100%;
+  height: auto;
+  overflow: hidden
+}
+.weight{
+  border: 1px solid #ffd3bd;
+  border-radius: 5px;
+  height: 87px;
+  color: #ff3d3d;
+  font-weight: 600;
+  font-size: 18px;
+  width: 90%;
+  background: #ffffee;
+  margin: 0 auto 18px auto;
+}
+.weight view{
+  width: 90%;
+  margin: 0 auto;
+}
+.weight view:first-child{
+  padding: 15px 0 10px 0;
+}
+.listBox,.listBox2{
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  font-size: 14px;
+  overflow: hidden
+}
+.listBox .thead,.listBox2 .thead2,.listBox2 .thead{
+  background: #f6f6f6;
+}
+.listBox .thead text,.listBox2 .thead text,.listBox2 .thead3 text{
+  float: left;
+  width: 25%;
+  font-size: 13px;
+  line-height: 30px;
+  text-align: center
+}
+.listBox2 .thead3 text{
+  text-align: right
+}
+.listBox2 .thead3 text:last-child,.listBox2 .thead3 text:first-child{
+  text-align: center
+}
+.listBox .thead text{
+  text-align: left;
+}
+.listBox .thead text:first-child{
+  text-align: center
+}
+.listBox2 .thead2 text{
+  float: left;
+  width: 33.3%;
+  line-height: 30px;
+  text-align: center
+}
+.listBox .wxParse-th,.listBox .wxParse-td{
+  width:25%;
+}
+.listBox .wxParse-th:first-child,.listBox .wxParse-td:first-child{
+  width:20%;
+}
+.listBox .wxParse-th:last-child,.listBox .wxParse-td:last-child{
+  width:30%;
+}
+.listBox2 .wxParse-th,.listBox2 .wxParse-td{
+  width:33.3%;
+}
+.listBox2 .wxtbody .wxParse-th,.listBox2 .wxtbody .wxParse-td{
+  width: 30%;
+}
+.listBox2 .wxtbody .wxParse-td:nth-child(3){
+  width: 20%;
+}
+.listBox2 .wxtbody .wxParse-td:last-child{
+  width: 15%
+}
+.red{
+  color: #e3383a
+}
+.tiMsg{
+  width: 80%;
+  margin: 10px auto;
+  color: #999;
+  font-size: 12px;
+}
+
+/* banner */
+.pic{
+  width: 100%;
+  height: 89px;
+  position: fixed;
+  bottom: 0;
+  overflow: hidden;
+  border-top: 1px solid #CCC
+}
+.navImg{
+  width: 100%;
+  height: 100%;
+}

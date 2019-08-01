@@ -1,0 +1,48 @@
+<!--pages/video/video.wxml-->
+<view class="main-box" onReachBottom="onReachBottom" onPullDownRefresh="onPullDownRefresh">
+  <view class="main-content-box" wx:for="{{list}}" wx:key>
+    <view class="content-top">
+      <view classs="video-box" data-id="{{item.id}}" bindtap='videoPlay'>
+        <video src="{{item.videoSrc}}" enable-danmu danmu-btn custom-cache="{{false}}" controls cursor:pointer style="width: 100%;height=225px;z-index=0;" wx:if="{{ids == item.id}}" id="myVideo" bindtimeupdate="playEnd" ></video>
+        <view wx:else style="width:100%;height:225px;overflow:hidden">
+          <image class="model-img" style="width:100%;height:100%" src="{{item.imgSrc}}"></image>
+          <view class="model-btn">
+            <view class="play-icon"></view>
+          </view>
+        </view>
+      </view>
+      <view class="videw-title">{{item.title}}</view>
+    </view>
+    <view class="content-bottom">
+      <view class="main-header">
+        <image src="{{item.headPic}}"></image>
+      </view>
+      <view class="main-name">{{item.name}}</view>
+      <view class="main-time">{{item.date}}</view>
+      <view class="main-suo" bindtap='suoBtn'>索要完整视频</view>
+    </view>
+  </view>
+</view>
+
+<view class="tishi {{tiShow?'tishi2':''}}">添加客服微信客服索要完整视频</view>
+
+<!-- 添加微信号 -->
+<view class="layer-box {{isLayer?'layer-none':''}}">
+  <view class="layer-main">
+    <view class="layer-title">温馨提示
+      <view class="layer-close" bindtap='closeBtn'>
+        <image src="../../images/icon_close.png"></image>
+      </view>
+    </view>
+    <view class="layer-text">小程序内暂无法实现播放完整视频。如果您觉得视频还不错，添加以下微信后可免费领取当前的完整视频。 由此给您带来的不便我们深表歉意。为了感谢您的支持，我们郑重承诺：所有完整视频不收费！！！</view>
+    <view class="layer-wxnum">微信号 <text>{{text}}</text></view>
+    <view class="layer-msg">操作提示：点击下面按钮复制添加微信号，然后退出当前小程序，在微信添加好友输入框中长按粘贴。</view>
+    <view class="layer-copy" bindtap='copyBtn'>复制微信号</view>
+  </view>
+</view>
+
+
+<!-- 更多小程序 -->
+<view class="layerBoxs">
+  <navigator target="miniProgram" open-type="navigate" app-id="wx81dacf7d77359d1d" path="/pages/index/index?from={{from}}" extra-data="" version="release">更多小程序</navigator>
+</view>

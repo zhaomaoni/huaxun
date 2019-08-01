@@ -1,0 +1,8 @@
+var filter = {
+  numberToFix: function (value) { //保留两位小数
+    return parseInt(value)
+  }
+}
+module.exports = {
+  numberToFix: filter.numberToFix
+}

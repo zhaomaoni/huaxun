@@ -1,0 +1,12 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/today/today"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#de494b",
+    "navigationBarTitleText": "每日股票黑马牛股",
+    "navigationBarTextStyle":"white"
+  }
+}

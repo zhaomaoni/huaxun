@@ -1,0 +1,5 @@
+<!--pages/zhibo/zhibo.wxml-->
+<!-- <web-view src="https://m.tgw360.com/share/live?s={{groupid}}"></web-view> -->
+<web-view src="{{url}}"></web-view> 
+
+<!-- <web-view src="https://m.tgw360.com/share/live?s=15158&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NDEwMTU4MTUsInVzZXJfaWQiOiI5ODUwMDM3NSIsInVzZXJfbmFtZSI6Im95ZkpZNU42TXhnWm01Ri12V2VLWmN0V3hXUmciLCJqdGkiOiJiOTIxOGI4ZS1kMjg2LTRkNWQtODU3My02OWZjNjYyYWU0YmUiLCJjbGllbnRfaWQiOiIyMjFlNmE4MzE2YjEyMWVlMmRmYTkiLCJzY29wZSI6WyJhbGwiXX0.vNwjgX12N-U68Zl26giepaCG8r_1MsiaTUtvV4-WwVc&nickname=赵毛妮&headimgurl=https://wx.qlogo.cn/mmopen/vi_32/AMdCvAB66Ad9VMERSTnVL2cdX80PyIJCibdiaDKk3wBMR2mbvanLbTuUK8AgTH9fHM2qstvicA3Stg6nDQfxv58OA/132&env=miniProgram&appid=wx24eca8d743e49800"></web-view>  -->

@@ -1,0 +1,13 @@
+<!--pages/content/content.wxml-->
+<view class="body" wx:for="{{list}}" wx:key>
+  <view class="title">{{item.title}}</view>
+  <view class="conBox">
+    <view class="mainBox" wx:for="{{item.info}}" wx:key wx:for-item="i" bindtap='images'>
+      <view class="picBox">
+        <image src="{{i[0]}}"></image>
+      </view>
+      <view class="picDd1">{{i[1]}}</view>
+      <view class="picDd2">{{i[2]}}</view>
+    </view>
+  </view>
+</view>

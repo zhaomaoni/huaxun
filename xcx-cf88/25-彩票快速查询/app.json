@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/content/content",
+    "pages/banner/banner"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#e3383a",
+    "navigationBarTitleText": "彩票快速查询",
+    "navigationBarTextStyle":"white"
+  }
+}

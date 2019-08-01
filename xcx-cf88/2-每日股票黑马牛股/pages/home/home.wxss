@@ -1,0 +1,297 @@
+/* pages/home/home.wxss */
+.msg{
+  height: 27px;
+  text-align: center;
+  background: #f0f0f0;
+  font-size: 12px;
+  color: #333;
+  line-height: 27px;
+  display: none
+}
+.homeBox{
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.homeTop{
+  padding: 0 15px;
+  height: 37px;
+  line-height: 37px;
+  border-bottom: 1px solid #e5e5e5;
+  margin: 0 auto;
+  font-size: 15px;
+}
+.homeTop .free{
+  float: right;
+  font-size: 13px;
+  color: #de494b
+}
+.listTop{
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden
+}
+.guName{
+  color: #999;
+  padding: 12px 20px;
+  font-size: 13px;
+  overflow: hidden
+}
+.guName view{
+  width: 33.3%;
+  float: left;
+  text-align: center
+}
+.listMsg{
+  background: #f0f0f0;
+  margin:0 16px;
+  font-size: 18px;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  height: 60px;
+  line-height: 60px;
+  display: block
+}
+.listMsg view{
+  width: 33.3%;
+  float: left;
+  color: #333;
+  text-align: center;
+  font-size: 11px
+}
+.listMsg view:first-child .todayName{
+  font-size: 11px;
+  padding-top: 15px;
+  display: block;
+  line-height: 16px;
+}
+.listMsg view:first-child text{
+  font-size: 13px;
+  display: block;
+  line-height: 16px;
+}
+.listMsg view:last-child text{
+  font-size: 13px;
+}
+.homeBox2{
+  width: 100%;
+  height: auto;
+  margin: 0 auto 52px auto;
+}
+.titleBox{
+  margin: 0 auto;
+  height: 35px;
+  line-height: 35px;
+  padding: 0 15px;
+  font-size: 15px;
+  border-bottom:1px solid #e5e5e5;
+}
+.more{
+  float: right;
+  font-size: 13px;
+  color: #de494b;
+  position: relative;
+  padding-right: 10px;
+  display: block
+}
+.right{
+  border-right: 1px solid #de494b;
+  border-top: 1px solid #de494b;
+  height: 8px;
+  width: 8px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  position:absolute;
+  right:5px;
+  top:14px;
+}
+
+
+
+.listTitle{
+  padding: 0 15px;
+  display: flex;
+  border-bottom: 1px solid #e4e4e4;
+}
+.listTitle text{
+  flex: 1;
+  height: 30px;
+  line-height: 30px;
+  color: #999;
+  text-align: center;
+  font-size: 13px;
+}
+.listBom{
+  height: 50px;
+  line-height: 50px;
+  overflow: hidden;
+  display: flex;
+  padding: 0 15px;
+  border-bottom: 1px solid #e4e4e4;
+}
+.listBom view{
+  flex: 1;
+  height: 50px;
+  line-height: 50px;
+  color: #020202;
+  text-align: center;
+  float: left;
+  font-size: 16px;
+}
+.listBom .name{
+  padding-top: 10px;
+}
+.listBom .name text{
+  display: block;
+  line-height: 15px;
+  font-size: 12px;
+}
+.listBom .name text:first-child{
+  display: block;
+  line-height: 15px;
+  font-size: 14px;
+}
+.listBom .date text{
+  font-size: 13px;
+}
+.listBom .up{
+  color: #f00
+}
+
+.homeBtn{
+  height: 52px;
+  line-height: 52px;
+  width: 100%;
+  background: #de494b;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 0;
+  position:fixed;
+  bottom:0;
+}
+.homeBtn image{
+  width: 23px;
+  height: 23px;
+  vertical-align: middle
+}
+
+
+/***** 解锁后 *****/
+/*今日股*/
+.listMsg2 view:first-child .todayName{
+  padding-top: 0px;
+}
+.look{
+  padding-top: 15px;
+}
+.listUp{
+  color: #de494b;
+  font-size: 14px;
+  font-weight: 600
+}
+.listPri{
+  font-size: 13px;
+}
+
+/***** 解锁成功弹层 *****/
+.layer{
+  width: 118px;
+  height: 36px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 36px;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -59px;
+  border-radius: 50px;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+
+
+/***** 复制微信号 *****/
+.copy{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 999
+}
+.copy2{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: block;
+  z-index: 999
+}
+.phone{
+  width: 240px;
+  height: 190px;
+  background: #fff;
+  position: fixed;
+  left: 50%;
+  margin-left: -120px;
+  top: 45%;
+  margin-top: -95px;
+  padding-bottom: 10px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.phone image{
+  width: 70px;
+  height: 65px;
+  position: relative;
+  left: 50%;
+  margin-left: -35px;
+  top: 10px;
+  padding-bottom: 13px;
+}
+.knowBtn{
+  width: 200px;
+  height: 37px;
+  color: #fff;
+  margin: 0 auto;
+  font-size: 16px;
+  background: #de494b;
+  line-height: 37px;
+}
+.succ{
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+  padding-bottom: 10px;
+}
+.blag{
+  text-align: center;
+  font-size: 13px; 
+  padding-bottom: 15px;
+}
+
+/* more小程序 */
+.layerBoxs{
+  width: auto;
+  height: 26px;
+  line-height: 26px;
+  position: fixed;
+  right: 0px;
+  bottom: 100px;
+  color: #fff;
+  background: rgba(0,0,0,0.7);
+  font-size: 12px;
+  text-align: center;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px
+}
+.layerBoxs view{
+  padding: 0 10px;
+}

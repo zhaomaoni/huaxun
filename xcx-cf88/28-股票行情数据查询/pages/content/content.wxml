@@ -1,0 +1,2 @@
+<!--pages/content/content.wxml-->
+<web-view src="https://api.51gsl.com/mtgw360/public/datacenter/{{urls}}"></web-view>

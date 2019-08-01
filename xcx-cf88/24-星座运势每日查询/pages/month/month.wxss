@@ -1,0 +1,190 @@
+/* pages/month/month.wxss */
+page{
+  background: url("https://api.51gsl.com/program/Constellation/images/xz_bk.png") no-repeat left center;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  padding-bottom: 90px;
+}
+.head{
+  height: 70px;
+  width: 85%;
+  margin: 0 auto;
+  overflow: hidden
+}
+.headV{
+  width: 33.3%;
+  margin: 0 auto;
+  float: left
+}
+.headPic{
+  height: 70px;
+  width: 79px;
+}
+.headPic image{
+  width: 100%;
+  height: 100%;
+}
+.xing{
+  width: 105px;
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600px;
+  line-height: 70px;
+}
+.chang{
+  float: right;
+  width: 74px;
+  height: 27px;
+  color: #fff;
+  line-height: 27px;
+  text-align: center;
+  font-size: 14px;
+  background: #9e42ab;
+  border: 1px solid #e26af3;
+  border-radius: 7px;
+  margin: 20px 0;
+}
+.dian{
+  width: 60%;
+  text-align: center;
+  height: 30px;
+  font-size: 14px;
+  margin: 14px auto 18px auto;
+  border-radius: 50px;
+  padding: 0 10px;
+  color: #fff;
+  line-height: 30px;
+  background: rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis
+}
+.Time{
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+.main{
+  width: 92%;
+  height: auto;
+  margin: 0 auto 16px auto;
+  background: rgba(225, 225, 225, 0.3);
+  border-radius: 7px;
+  color: #fff;
+  font-size: 18px;
+  border: 1px solid #837688;
+  padding-bottom: 16px
+}
+.msg{
+  width: 94%;
+  margin: 20px auto 0 auto;
+}
+.msgHead{
+  width: 100%;
+  height: auto;
+  padding-bottom: 14px;
+}
+.zxx{
+  width: 25px;
+  height: 25px;
+  margin-right: 8px;
+  float: left;
+  overflow: hidden
+}
+.zxx image{
+  width: 100%;
+  height: 100%
+}
+.contxt{
+  padding-right: 10px;
+  float: left;
+  font-weight: 600;
+}
+.title{
+  font-size: 19px;
+  text-align: center;
+  padding: 20px 0;
+}
+.msgtxt{
+  font-weight: normal;
+  width: 94%;
+  margin: 0 auto;
+  font-size: 15px;
+  text-indent: 24px;
+}
+.hxx{
+  width: 14px;
+  height: 18px;
+  background: url(https://api.51gsl.com/program/Constellation/images/icon_xx2.png) 0 0 no-repeat;
+  background-size: 70px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.hxx1{
+  width: 28px;
+  height: 18px;
+  background: url(https://api.51gsl.com/program/Constellation/images/icon_xx2.png) 0 0 no-repeat;
+  background-size: 70px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.hxx2{
+  width: 42px;
+  height: 18px;
+  background: url(https://api.51gsl.com/program/Constellation/images/icon_xx2.png) 0 0 no-repeat;
+  background-size: 70px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.hxx3{
+  width: 56px;
+  height: 18px;
+  background: url(https://api.51gsl.com/program/Constellation/images/icon_xx2.png) 0 0 no-repeat;
+  background-size: 70px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.hxx4{
+  width: 70px;
+  height: 18px;
+  background: url(https://api.51gsl.com/program/Constellation/images/icon_xx2.png) 0 0 no-repeat;
+  background-size: 70px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.over{
+  overflow: hidden
+}
+/*  banner  */
+.banner{
+  width: 100%;
+  height: 89px;
+  position: fixed;
+  bottom: 0;
+  overflow: hidden
+}
+.navImg{
+  width: 100%;
+  height: 100%
+}
+/* more小程序 */
+.layerBoxs{
+  width: auto;
+  height: 26px;
+  line-height: 26px;
+  position: fixed;
+  right: 0px;
+  bottom: 100px;
+  color: #fff;
+  background: rgba(0,0,0,0.7);
+  font-size: 12px;
+  text-align: center;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px
+}
+.layerBoxs navigator{
+  padding: 0 10px;
+}

@@ -1,0 +1,38 @@
+<!--pages/hisfile/hisflie.wxml-->
+<wxs module="filter" src="../../utils/date.wxs"></wxs>
+<view class="my-history-box" hidden='{{!isList}}'>
+  <view class="my-history-title">历史推股</view>
+    <view class="my-history-main" wx:for="{{list}}" wx:key wx:for-index="idx">
+      <view class="my-mian-title" bindtap='hideBtn'  data-index="{{idx}}">第<text>{{item.days}}</text>天看涨股票
+      <text>{{filter.hisDate(item.createtime)}}</text>
+        <label data-index="{{idx}}" class="my-jt" wx:if="{{!item.flag}}"  ></label>
+        <label data-index="{{idx}}" class="my-jt my-jt2" wx:else  ></label>
+      </view>
+      <view class="my-show-box {{!item.flag ? '' : 'my-show2'}}">
+        <block wx:if="{{item.secucodeplayUserstocks.length!=0}}">
+          <view class="my-show-hide" wx:for="{{item.secucodeplayUserstocks}}" wx:key wx:for-item="i">
+            <view class="my-pic-box">
+              <image src="https://api.51gsl.com/program/StockPush/images/icon_sl.png" wx:if="{{i.total==3||i.total==5}}"></image>
+              <image src="https://api.51gsl.com/program/StockPush/images/icon_sb.png" wx:elif="{{i.total==4||item.secucodeplayUserstocks.length==0}}"></image>
+            </view>
+            {{i.secucodeName}}<text> {{i.secucode}}</text>
+          </view>
+        </block>
+        <block wx:else>
+          <view class="my-show-hide">
+            <view class="my-pic-box">
+              <image src="https://api.51gsl.com/program/StockPush/images/icon_sb.png"></image>
+            </view>未推股
+          </view>
+        </block>
+      </view>
+    </view>
+</view>
+<view hidden='{{isList}}'>
+  <view class="history-no-pic">
+    <image src="../../images/icon_hisno.png"></image>
+  </view>
+  <view class="his-no-h">你还没有推荐股票</view>
+  <view class='his-no-p'>万元现金大奖在等你</view>
+  <view class="his-bno-btn" bindtap='hisBtnFn'>前往活动主页</view>
+</view>

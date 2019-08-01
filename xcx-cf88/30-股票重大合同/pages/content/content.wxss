@@ -1,0 +1,240 @@
+/* pages/content/content.wxss */
+.head-box{
+  width: 90%;
+  height: 33px;
+  overflow: hidden;
+  margin: 12px auto 16px auto;
+  background: #f6f6f6;
+  border-radius: 5px;
+}
+.head-nav{
+  width: 98%;
+  height: 29px;
+  line-height: 29px;
+  margin: 2px auto;
+  text-align: center
+}
+.head-nav .head{
+  float: left;
+  width: 33.3%;
+  color: #666;
+  font-size: 15px;
+}
+.head-nav .active{
+  color: #333;
+  background: #fff;
+}
+.head-nav .active:first-child{
+  color: #333;
+  background: #fff;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px
+}
+.head-nav .active:last-child{
+  color: #333;
+  background: #fff;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px
+}
+
+.little-head{
+  width: 100%;
+  height: 50px;
+  color: #999;
+  line-height: 50px;
+  overflow: hidden;
+  background: #f6f6f6;
+}
+.little-head view{
+  width: 25%;
+  float: left;
+  text-align: center;
+  font-size: 12px;
+}
+.little-head view text{
+  display: block;
+  line-height: 20px;
+}
+.little-head view text:first-child{
+  padding-top: 5px;
+}
+
+.summary-box{
+  width: 100%;
+  height: auto;
+  font-size: 13px;
+  overflow: hidden;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.summary-view{
+  width: 90%;
+  color: #666;
+  line-height: 20px;
+  margin: 0 auto;
+}
+
+.main-list-box{
+  width: 100%;
+  height: auto;
+  margin-bottom: 90px;
+  overflow: hidden;
+}
+.main-list-box{
+  display: none
+}
+.main-list-box.active{
+  display: block
+}
+
+.content-list-box{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.content-list{
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.content-list view{
+  width: 25%;
+  float: left;
+  text-align: center;
+}
+.content-list view text:first-child{
+  padding-top: 5px
+}
+.content-list view text{
+  display: block;
+  line-height: 20px;
+}
+.content-list view label{
+  border: 1px solid #e93030;
+  color: #e93030;
+  padding: 3px 5px;
+  border-radius: 5px;
+}
+.content-list:last-child{
+  margin-bottom: 120px;
+  border-bottom: 0
+}
+
+.main-content-list{
+  position: relative
+}
+.main-content-list:last-child{
+  margin-bottom: 95px;
+}
+.main-content-top{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+.main-content-top view{
+  width: 25%;
+  height: auto;
+  text-align: center;
+  float: left;
+  font-size: 13px;
+}
+.main-content-top view text{
+  display: block;
+  line-height: 20px;
+  /* display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+}
+
+.mian-content-bottom{
+  width: 100%;
+  height: 19px;
+  font-size: 12px;
+  background: #fbfbfb;
+  padding-bottom: 10px;
+  overflow: hidden;
+  border-bottom: 1px solid #f6f6f6;
+}
+.mian-content-bottom.main-display{
+  height: auto;
+}
+.mian-content-bottom view{
+  width: 80%;
+  margin: 0 auto;
+  line-height: 20px;
+  padding-top: 5px
+}
+.mian-content-bottom view text{
+  padding-left: 10px;
+  color: #999;
+}
+
+.noData{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+}
+.noData-pic{
+  width: 100px;
+  height: 90px;
+  margin: 90px auto 10px auto;
+}
+.noData-pic image{
+  width: 100%;
+  height: 100%;
+}
+
+.mian-jian{
+  position: absolute;
+  bottom: 12px;
+  right: 16px;
+  width: 5vw;
+  height: 4vw;
+}
+.mian-jian image{
+  width: 100%;
+  height: 100%;
+}
+
+/*  广告  */
+.banner{
+  width: 100%;
+  height: 89px;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #f6f6f6;
+  overflow: hidden
+}
+.navImg{
+  width: 100%;
+  height: 100%
+}
+/* more小程序 */
+.layerBoxs{
+  width: auto;
+  height: 26px;
+  line-height: 26px;
+  position: fixed;
+  right: 0px;
+  bottom: 100px;
+  color: #fff;
+  background: rgba(0,0,0,0.7);
+  font-size: 12px;
+  text-align: center;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px
+}
+.layerBoxs navigator{
+  padding: 0 10px;
+}

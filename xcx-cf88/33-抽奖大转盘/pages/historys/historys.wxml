@@ -1,0 +1,51 @@
+<!--pages/historys/histprys.wxml-->
+<wxs module="filter" src="../../utils/date.wxs"></wxs>
+<view class="history-msg">
+  <view class="tab-title-box">
+    <view wx:for="{{tabber}}" wx:key bindtap="swichNav" wx:for-index="idx" class="{{currentTab==idx ? 'on' : ''}}" data-current="{{idx}}">{{item}}</view>
+  </view>
+  <view class="tab-centent-box">
+    <view class="list-msg-box" data-currentTab="{{currentTab}}" wx:if="{{currentTab==0}}">
+      <view wx:if="{{record.length!=0}}">
+        <view class="list-msg" wx:for="{{record}}" wx:key>
+          <view>{{filter.dateFilter(item.create_time)}}</view>
+          <view>{{item.uid_mobile}}</view>
+          <view class="red">{{item.lottery_ptitle}}</view>
+        </view>
+      </view>
+      <view wx:else class="noData-box">
+        <view class="noData-pic">
+          <image src="https://api.51gsl.com/program/Luckdraw/images/icon_noData.png"></image>
+        </view>
+        <view class="noData-txt">暂无数据</view>
+      </view>
+      <view wx:if="{{pageNum!=0}}">
+        <view class="load-more" bindtap='loadMore' data-dataType="0" data-page="{{addPage}}">
+          <text wx:if="{{reduce.length!=0}}">点击加载更多</text>
+        </view>
+      </view>
+      <view class="load-more" wx:else><text wx:if="{{reduce.length!=0}}">已无数据</text></view>
+    </view>
+    <view class="list-msg-box" wx:else data-currentTab="{{currentTab}}">
+      <view wx:if="{{prix.length!=0}}">
+        <view class="list-msg" wx:for="{{prix}}" wx:key>
+          <view>{{filter.dateFilter(item.winner_time)}}</view>
+          <view>{{item.uid_mobile}}</view>
+          <view class="red">{{item.lottery_ptitle}}</view>
+        </view>
+      </view>
+      <view wx:else class="noData-box">
+        <view class="noData-pic">
+          <image src="https://api.51gsl.com/program/Luckdraw/images/icon_noData.png"></image>
+        </view>
+        <view class="noData-txt">暂无数据</view>
+      </view>
+      <view wx:if="{{pageNum!=0}}">
+        <view class="load-more" bindtap='loadMore' data-dataType="0" data-page="{{addPage}}">
+          <text wx:if="{{prix.length!=0}}">点击加载更多</text>
+        </view>
+      </view>
+      <view class="load-more" wx:else><text wx:if="{{prix.length!=0}}">已无数据</text></view>
+    </view>
+  </view>
+</view>

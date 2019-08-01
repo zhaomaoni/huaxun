@@ -1,0 +1,68 @@
+/* pages/add/add.wxss */
+.conBox{
+  width: 100%;
+  height: 46px;
+  overflow: hidden;
+}
+.swiper-tab{  
+  width: 100%;
+  height: 45px;
+  line-height: 43px;
+  background:#fff;
+  position: fixed;
+  z-index: 999;
+  overflow: hidden;
+  border-bottom: 1px solid #ddd;  
+}
+.swiper-tab-list{ 
+  display: inline-block;  
+  width: 50%;  
+  color: #333;
+  text-align: center;
+  font-size: 14px;
+}  
+.on{ 
+  color: #de494b;
+  border-bottom: 2px solid #f04141;
+}
+.swiper-box{ 
+  display: block; 
+  height: auto; 
+  width: 100%;
+  overflow: hidden; 
+  margin-bottom: 95px;
+}
+/*广告*/
+.pic{
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 89px;
+}
+.pic image{
+  width: 100%;
+  height: 100%
+}
+.box{
+  width: 100%;
+  height: auto;
+  font-size: 12px;
+  overflow: hidden;
+}
+.box2{
+  background: #f1f1f1
+}
+.box view{
+  height: 35px;
+  line-height: 35px;
+  width: 20%;
+  text-align: center;
+  float: left;
+  border-bottom: 1px solid #f1f1f1
+}
+.daiName{
+  height: 35px;
+  line-height: 35px;
+  color: #de494b;
+  padding-left: 15px;
+}

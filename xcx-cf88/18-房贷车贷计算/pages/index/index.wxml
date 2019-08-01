@@ -1,0 +1,118 @@
+<!--pages/index/index.wxml-->
+<view class="conBox">
+  <view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">商业贷款</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">公积金贷款</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">组合贷款</view>
+  </view>
+</view>
+<view class="swipers">
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight}}px" bindchange="bindChange">
+    <!-- 我是商业贷款 -->
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height: 100%;" bindscrolltolower="onReachBottom">
+        <view class="shangBox">
+          <view class="inp-box">
+            <text>贷款总额</text> 
+            <view class="wan">
+              <input placeholder='0' value='{{zong}}' bindinput='zong'></input>
+              <label>万</label>
+            </view>
+          </view>
+          <view class="inp-box">
+            <text>贷款年限</text>
+            <picker bindchange="bindCasPickerChange" range="{{casArray}}">
+              <view class="year">{{casArray[casIndex]}} 年</view>
+            </picker>
+          </view>
+          <view class="inp-box">
+            <text>贷款利率</text>
+            <view class="wan">
+              <input placeholder='0' value='{{li}}' bindinput='li'></input>
+              <label>%</label>
+            </view>
+          </view>
+          <view class="btn" bindtap='jump' data-current="{{currentTab}}">开始计算</view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <!-- 我是公积金贷款 -->
+    <swiper-item>
+      <scroll-view class="scroll_roll" scroll-y="true" style="height: 100%;" bindscrolltolower="onReachBottom">
+        <view class="shangBox">
+          <view class="inp-box">
+            <text>贷款总额</text> 
+            <view class="wan">
+              <input placeholder='公积金贷款最多120' value="{{zong1}}" bindinput='zong1'></input>
+              <label>万</label>
+            </view>
+          </view>
+          <view class="inp-box">
+            <text>贷款年限</text>
+            <picker bindchange="bindCasPickerChange" range="{{casArray}}">
+              <view class="year">{{casArray[casIndex]}} 年</view>
+            </picker>
+          </view>
+          <view class="inp-box">
+            <text>贷款利率</text>
+            <view class="wan">
+              <input placeholder='0' value='{{li1}}' bindinput='li1'></input>
+              <label>%</label>
+            </view>
+          </view>
+          <view class="btn" bindtap='jump' data-current="{{currentTab}}">开始计算</view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <!-- 我是组合贷款 -->
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height: 100%;" bindscrolltolower="onReachBottom">
+      <view class="shangBox">
+          <view class="inp-box">
+            <text>商业贷款</text>
+            <view class="wan">
+              <input placeholder="0" value='{{zong}}' bindinput='zong'></input>
+              <label>万</label>
+            </view>
+          </view>
+          <view class="inp-box">
+            <text>商业利率</text>
+            <view class="wan">
+              <input placeholder="0" value='{{li}}' bindinput='li'></input>
+              <label>%</label>
+            </view>
+          </view>
+          <view class="inp-box">
+            <text>公积金贷款</text> 
+            <view class="wan">
+              <input placeholder="公积金贷款最多120" value='{{zong1}}' bindinput='zong1'></input>
+              <label>万</label>
+            </view>
+          </view>
+          <view class="inp-box">
+            <text>公积金利率</text>
+            <view class="wan">
+              <input placeholder="0" value='{{li1}}' bindinput='li1'></input>
+              <label>%</label>
+            </view>
+          </view>
+          <view class="inp-box">
+            <text>贷款年限</text>
+            <picker bindchange="bindCasPickerChange" range="{{casArray}}">
+              <view class="year">{{casArray[casIndex]}} 年</view>
+            </picker>
+          </view>
+          <view class="btn" bindtap='jump' data-current="{{currentTab}}">开始计算</view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>
+
+<view class="pic" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images'></image>
+</view>
+<!-- 更多小程序 -->
+<view class="layerBoxs" bindtap='moreBtn'>
+    <view>更多小程序</view>
+</view>

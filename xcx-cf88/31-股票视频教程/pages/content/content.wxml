@@ -1,0 +1,103 @@
+<!--pages/content/content.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class="div-body" wx:if="{{isShow}}">
+  <view class="div-header">
+    <view class="header-title">公司理念<text class="jiantou"></text></view>
+    <view class="header-main">传统财经服务的体系，导致股票市场上“散户十炒九赔，机构钵满盆满”的结果。财富赢家网的诞生则深刻地影响和改变着数以亿计股民的炒股方式和投资习惯，财富赢家网秉承“专业、互助、诚信”的原则，始终不遗余力地锻造出中国股市最与时俱进的专家、实战高手，为股友提供全面、及时、个性的立体式服务，将这里变为股民决胜千里的帷幄之所，让天下股民共享幸福的投资生活。</view>
+    <view class="pic-box">
+      <image src="http://www.cf8.com.cn/nabout/images/logo-h.png"></image>
+    </view>
+  </view>
+  <view class="div-footer">
+    <view class="header-title">发展历程<text class="jiantou"></text></view>
+    <view class="dashiji">
+      <view class="first">
+        <view class="dl">
+          <view class="dt"></view>
+          <view class="dd">
+            <view>让投资变简单一点</view>
+            <text class="dot"></text>
+            <text class="mast"></text>
+          </view>
+        </view>
+      </view>
+      <view>
+        <view class="dl">
+          <view class="dt">2008.06</view>
+          <view class="dd">
+            <view class="p">2008年8月6日财富赢家网正式上线，为投资者提供一站式投资理财平台</view>
+            <text class="dot"></text>
+          </view>
+        </view>
+        <view class="dl">
+          <view class="dt">2009.05</view>
+          <view class="dd">
+            <view class="p">2009年5月 第10万个用户诞生，9月 第100万个用户诞生</view>
+            <text class="dot"></text>
+          </view>
+        </view>
+        <view class="dl">
+          <view class="dt">2010.08</view>
+          <view class="dd">
+            <view class="p">2010年8月论坛系统升级更新</view>
+            <text class="dot"></text>
+          </view>
+        </view>
+        <view class="dl">
+          <view class="dt">2012.09</view>
+          <view class="dd">
+            <view class="p">2012年9月安卓手机版模拟炒股v1.0.0上线</view>
+            <text class="dot"></text>
+          </view>
+        </view>
+        <view class="dl">
+          <view class="dt">2013.04</view>
+          <view class="dd">
+            <view class="p">2013年4月安卓手机版股票直播室v1.0.0上线</view>
+            <text class="dot"></text>
+          </view>
+        </view>
+        <view class="dl">
+          <view class="dt">2015</view>
+          <view class="dd">
+            <view class="p">2015年ios,android 模拟炒股同步上线，高手操作免费追踪</view>
+            <text class="dot"></text>
+          </view>
+        </view>
+        <view class="dl">
+          <view class="dt">2016.11</view>
+          <view class="dd">
+            <view class="p">2016年11月股市直播室新增视频直播，看视频直播，赚钱学习两不误</view>
+            <text class="dot"></text>
+          </view>
+        </view>
+        <view class="dl">
+          <view class="dt">2018.06</view>
+          <view class="dd">
+            <view class="p">2018年6月ios,android 手机版新增“牛人圈”功能，各路高手汇集，为您提供最全面的财富盛宴。</view>
+            <text class="dot"></text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="teacher-details" wx:else>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>
+
+<view class="suoyao" bindtap='suoBtn'>加微信索要完整视频</view>
+<!-- 添加微信号 -->
+<view class="layer-box {{isLayer?'layer-none':''}}">
+  <view class="layer-main">
+    <view class="layer-title">温馨提示
+      <view class="layer-close" bindtap='closeBtn'>
+        <image src="../../images/icon_close.png"></image>
+      </view>
+    </view>
+    <view class="layer-text">小程序内暂无法实现播放完整视频。如果您觉得视频还不错添加以下微信后可免费领取当前的完整视频。 由此给您带来的不便我们深表歉意。为了感谢您的支持，我们郑重承诺：所有完整视频不收费！！！</view>
+    <view class="layer-wxnum">微信号 <text>{{text}}</text></view>
+    <view class="layer-msg">操作提示：点击下面按钮复制添加微信号，然后退出当前小程序，在微信添加好友输入框中长按粘贴。</view>
+    <view class="layer-copy" bindtap='copyBtn'>复制微信号</view>
+  </view>
+</view>

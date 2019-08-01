@@ -1,0 +1,25 @@
+<!--pages/content/content.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class="body" wx:for="{{list}}" wx:key wx:for-item="items" wx:for-index="idx" wx:if="{{index == idx}}">
+  <!-- <view class="title">第一题</view> -->
+  <template class="head" is="wxParse" data="{{wxParseData:article.nodes}}" />
+  <!--  一道题  -->
+  <view wx:if="{{!items.type}}">
+    <radio-group class="radio-group" bindchange="radioChange">
+      <view class="radio" wx:for="{{items.choice}}" wx:key wx:for-item="j">
+        <radio value="{{j}}" checked="{{item.checked}}" color="#f47528"/>
+        <text>{{j}}</text>
+      </view>
+    </radio-group>
+  </view>
+  <!--  跳转题  -->
+  <view wx:else>
+    <radio-group class="radio-group" wx:for="{{items.choice}}" wx:for-index="cindex" wx:key wx:for-item="j" data-index="{{cindex}}" data-length="{{items.choice.length}}" bindchange="fenChange" wx:if="{{cindex==showIndex}}">
+      <view class="ti">{{j.title}}</view>
+      <view class="radio"   wx:for="{{j.choice}}" wx:key wx:for-item="k" wx:for-index="in"  >
+        <radio value="{{in}}" checked="{{item.checked}}" color="#f47528" />
+        <text>{{k}}</text>
+      </view>
+    </radio-group>
+  </view>
+</view>

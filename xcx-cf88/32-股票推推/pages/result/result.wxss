@@ -1,0 +1,687 @@
+/* pages/result/result.wxss */
+page{
+  background: url("https://api.51gsl.com/program/StockPush/images/icon_bg1.png") no-repeat center center fixed;
+  background-size: 100% 100%;
+}
+/* 头部内容 */
+.header{
+  width: 97%;
+  height: 2.1875rem;
+  line-height: 2.1875rem;
+  margin: 0.7rem auto;
+  font-size: 0.8125rem;
+  overflow: hidden;
+}
+.head-left-box{
+  width: 40%;
+  height: 2.1875rem;
+  overflow: hidden;
+  float: left
+}
+.head-bg-box{
+  width: auto;
+  height: 1.5625rem;
+  border-radius: 1rem;
+  margin-top:0.3125rem;
+  margin-right: 0.25rem;
+  line-height: 1.5625rem;
+  padding-right: 0.25rem;
+  background: linear-gradient(90deg, #fe8c62 0%, #f66d55 100%);
+  float: left;
+  color: #fff;
+  font-size: 0.75rem;
+  display: flex
+}
+.head-bg-box view{
+  display: inline-block;
+}
+.head-bg-box view:last-child{
+  flex: 1;
+  margin-left: 0.15rem;
+}
+.heart-box{
+  width: 1.5625rem;
+  height: 1.5625rem;
+  background: #f88e7f;
+  overflow: hidden;
+  float: left;
+  border-radius: 100%
+}
+.heart-box image{
+  width: 85%;
+  height: 85%;
+  margin: 7.5%;
+}
+.head-add-box{
+  width: 1.5625rem;
+  height: 1.5625rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0.3125rem 0 0.3125rem 0.25rem;
+}
+.head-add-box .share_btn{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: url("https://api.51gsl.com/program/StockPush/images/icon_fhc.png") no-repeat left center;
+  background-size: 100%;
+}
+.head-right-box{
+  width: 55%;
+  float: right;
+  height: 2.1875rem;
+  overflow: hidden;
+}
+.head-right-box view{
+  float: left;
+  width: 30%;
+  height: 1.5625rem;
+  background: #50227a;
+  margin: 0 5%;
+  line-height: 1.5625rem;
+  margin-top: 0.3125rem;
+  text-align: center;
+  font-size: 0.75rem;
+  border-radius: 15px;
+  color: #fff
+}
+.head-right-box view:last-child,.head-right-box view:first-child{
+  margin-left: 0;
+  margin-right: 0;
+}
+/* 上部分内容 
+  height: 9.6875rem;*/
+.res-top-box{
+  width: 94.7%;
+  height: auto;
+  padding-bottom: 1.25rem;
+  margin: 0 auto;
+  background: #592478;
+  border-radius: 5px;
+}
+.top-pic-box{
+  width: 85%;
+  height: 7.1875rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.top-pic-box image{
+  width: 100%;
+  height: 100%
+}
+.top-txt-box{
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
+}
+.fail-box,.success-box{
+  width: 100%;
+  height: 2.6rem;
+  overflow: hidden;
+}
+.fail-box view,.success-box view{
+  font-size: 1.125rem;
+  color: #fff;
+  width: 43%;
+  height: 96%;
+  line-height: 2.6rem;
+  border-radius: 0.25rem;
+  text-align: center;
+  margin-left: 4%;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.80)
+}
+.fail-box view:first-child,.success-box view:last-child{
+  float: right;
+  margin-right: 4%;
+  background-image: linear-gradient(90deg, #F7DA71 0%, #F7941C 100%);
+  border: 0;
+}
+.success-box view label{
+  width: 100%;
+  height: 100%;
+  display: block
+}
+.success-box{
+  display: flex
+}
+.success-box view:first-child{
+  flex: 1;
+  float: right
+}
+/* 下部分内容 */
+.bottom-main-box{
+  width: 94.7%;
+  height: auto;
+  background: #592478;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 0.8125rem 0 0 0;
+  margin: 0.8125rem auto 1rem auto;
+}
+.bottom-head-box{
+  width: 40%;
+  height: 1.45rem;
+  margin: 0 auto 0.75rem auto;
+}
+.bottom-head-box image{
+  width: 100%;
+  height: 100%;
+}
+.bot-main-box{
+  width: 90%;
+  margin: 0 auto 1rem auto;
+  overflow: hidden;
+  color: #fff;
+  padding: 1rem 0 1.25rem 0;
+  border-bottom: 1px solid #72458d
+}
+.bot-left-box{
+  width: 49.8%;
+  float: left;
+  border-right: 1px solid #72458d;
+}
+.bot-left-main image,.bot-right-main image{
+  width: 0.8125rem;
+  height: 0.8125rem;
+  margin-left: 0.3125rem;
+}
+.bot-right-box{
+  width: 49.8%;
+  float: left;
+}
+.title-name{
+  font-size: 0.6875rem;
+  opacity: 0.6;
+  width: auto;
+  margin: 0 auto;
+  text-align: center
+}
+.bot-left-main{
+  width: auto;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.5rem
+}
+.bot-right-main{
+  width: auto;
+  margin: 0 auto;
+  overflow: hidden;
+  font-size: 1.5rem;
+  text-align: center
+}
+.bot-right-box .title-name{
+  width: auto
+}
+.bot-tui-gu{
+  width: 90%;
+  margin: 0 auto;
+}
+.tui-title-box{
+  width: 100%;
+  height: 1.1rem;
+  line-height: 1.1rem;
+  font-size: 0.75rem;
+  color: #fff;
+  overflow: hidden;
+  margin-bottom: 0.625rem;
+}
+.tui-title-box .his-right{
+  float: right;
+  font-size: 0.8125rem;
+  color: #F7941C
+}
+.tui-title-box .his-right view{
+  float: left
+}
+.tui-title-box .his-right .jian-tou{
+  width:0.375rem;
+  height:0.5rem;
+  line-height:0.375rem;
+  float:right;
+  margin:0.3rem 0.3125rem 0.3625rem 0.25rem;
+  overflow:hidden;
+}
+.jian-tou image{
+  width: 100%;
+  height: 100%;
+  display: block
+}
+.tui-main-result{
+  width: 100%;
+  height: 3.125rem;
+  overflow: hidden;
+  line-height: 3.125rem;
+  margin-bottom: 1rem;
+  background: url("https://api.51gsl.com/program/StockPush/images/icon_inp.png") no-repeat left top;
+  background-size: 100% 100%;
+}
+.tui-main-result view:first-child{
+  float: right;
+}
+.tui-main-result view:first-child image{
+  width: 3.6rem;
+  height: 1.6rem;
+  vertical-align: middle;
+}
+.tui-main-result view:last-child{
+  font-size: 0.875rem;
+  padding-left: 0.9rem;
+  color: #663689;
+}
+
+.dui-jiang-layer{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.3);
+}
+.dui-jiang-box{
+  width: 74.7%;
+  height: 10.4rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -37.35%;
+  margin-top: -5.2rem;
+  background: #fff;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+.dui-title{
+  padding-top: 1.56rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.125rem;
+  padding-bottom: 1rem;
+  position: relative;
+}
+.inp-clear{
+  width:1.1rem;
+  height:1.1rem;
+  position:absolute;
+  right:0.325rem;
+  top:0.325rem;
+}
+.inp-clear image{
+  width: 100%;
+  height: 100%;
+}
+.dui-main{
+  width: 92%;
+  height: 2.5rem;
+  margin: 0 auto 1rem auto;
+  font-size: 0.9375rem;
+  text-align: center;
+}
+.dui-btn{
+  width: 100%;
+  height: 2.8rem;
+  line-height: 2.8rem;
+  border-top: 1px solid #dcdcdc;
+  position: relative;
+  bottom: 0;
+}
+.dui-btn view{
+  min-width: 49%;
+  max-width: 100%;
+  float: left;
+  text-align: center;
+  border-right: 1px solid #dcdcdc;
+}
+.dui-btn view:last-child{
+  border-right: 0;
+  color: #f00;
+}
+.open-box{
+  background:  linear-gradient(90deg, #F7941C 0%, #F7DA71 100%);
+  border-radius: 0.25rem;
+  width: 84%;
+  height: 2.8125rem;
+  margin: 0 auto;
+  line-height: 2.8125rem;
+  text-align: center;
+  color: #fff;
+}
+
+.open-box-layer{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.7)
+}
+.open-again-box{
+  width: 92%;
+  height: 100%;
+  position: fixed;
+  left: 50%;
+  margin-left: -46%;
+}
+.again-pic{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.again-pic image{
+  width: 100%;
+  height: 100%;
+}
+.again-txt{
+  position: fixed;
+  bottom: 29%;
+  left: 50%;
+  color: #fff;
+  width: 70%;
+  margin-left: -35%;
+  text-align: center;
+  font-size: 0.6875rem;
+}
+.open-btn{
+  position: fixed;
+  bottom: 18%;
+  height: 2.8rem;
+  width: 92%;
+}
+.open-btn view{
+  width: 47%;
+  border: 1px solid #fff;
+  float: left;
+  line-height: 2.68rem;
+  color: #fff;
+  text-align: center;
+  border-radius: 0.25rem;
+}
+.open-btn view:last-child{
+  float: right;
+  border: 0;
+  height: 2.8rem;
+  background: linear-gradient(90deg, #F7941C 0%, #F7DA71 100%);
+  line-height: 2.8rem;
+}
+.open-btn view:last-child button{
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #F7941C 0%, #F7DA71 100%);
+  color: #fff;
+}
+.dui-jiang-money{
+  width:74.7%;
+  height:auto;
+  position:fixed;
+  top:50%;
+  background:radial-gradient(100% 40%, #8A37A5 40%, #522E7A 100%);
+  margin-top:-10.075rem;
+  left:50%;
+  margin-left:-37.35%;
+  border-radius:0.3125rem;
+}
+.pic-money-box{
+  width: 100%;
+  height: 9.6rem;
+}
+.pic-money-box image{
+  width: 100%;
+  height: 100%;
+}
+.pic_head-title{
+  font-size:1rem;
+  color:#fff;
+  text-align:center;
+}
+.pic-again-txt view{
+  font-size:0.6875rem;
+  text-align:center;
+  color:#ceb7d9;
+  line-height:1.25rem;
+}
+.pic-btn-box{
+  height: 3.125rem;
+  width: 100%;
+  background: #fff;
+  margin-top:2rem;
+  border-bottom-left-radius:0.3125rem;
+  border-bottom-right-radius:0.3125rem;
+}
+.pic-btn-box view{
+  width: 48%;
+  height: 3.125rem;
+  line-height: 3.125rem;
+  float: left;
+  text-align: center;
+  color: #999;
+  font-size: 0.875rem;
+  border-right: 1px solid #dcdcdc;
+}
+.pic-btn-box view:last-child{
+  border-right: 0;
+  color: #6e338e
+}
+.pic-btn-box view:last-child button{
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  color: #6e338e;
+  line-height: 3.125rem;
+}
+button::after{ border: none; }
+
+.life-card-box{
+  width: 94.7%;
+  height: auto;
+  background: #532574;
+  text-align: center;
+  color: #fff;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.life-pic-box{
+  width: 6.7rem;
+  height: 3.65rem;
+  margin: 1.56rem auto 0.5rem auto;
+}
+.life-pic-box image{
+  width: 100%;
+  height: 100%;
+}
+.life-title-box{
+  font-size: 1.125rem;
+  padding-bottom: 0.625rem;
+}
+.life-buy-box{
+  font-size: 0.875rem;
+  opacity: 0.8;
+  margin-bottom: 1.56rem;
+}
+.life-btn-box{
+  width: 100%;
+  height: 2.85rem;
+  margin-bottom: 1.25rem;
+}
+.life-btn-box view{
+  width: 40%;
+  height: 2.725rem;
+  border: 1px solid #fff;
+  float: left;
+  border-radius: 0.3125rem;
+  line-height: 2.725rem;
+  margin-left: 1.25rem;
+}
+.life-btn-box view.buyfuhuo{
+  float: right;
+  border: none;
+  margin-left: 0;
+  margin-right: 1.25rem;
+  background: linear-gradient(90deg, #F7941C 0%, #F7DA71 100%);
+}
+.life-box2 view{
+  width: 95%;
+  margin: 0 auto;
+  float: none
+}
+.life-btn-box view button{
+  width: 100%;
+  background: transparent;
+  color: #fff;
+}
+
+
+.brokerBox{
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  overflow: hidden
+}
+.broker-btn-box{
+  width: 100%;
+  height: 3.125rem;
+  line-height: 3.125rem;
+  margin: 0.75rem auto;
+  overflow: hidden;
+  background-image:linear-gradient(90deg, #F7DA71 0%, #F7941C 100%);
+  border-radius: 0.3125rem;
+}
+.broker-pic{
+  width: 40%;
+  height: 1.35rem;
+  float: left;
+  margin-left: 0.75rem
+}
+.broker-pic image{
+  width: 100%;
+  height: 100%;
+  vertical-align: middle
+}
+.kai-hu-btn{
+  width: 40%;
+  height: 2.125rem;
+  float: right;
+  line-height: 2.125rem;
+  text-align: center;
+  background: #fff;
+  color: #F7941C;
+  border-radius: 0.3125rem;
+  margin: 0.5rem 0.75rem 0.5rem 0;
+}
+.zhi-bo-box{
+  position: fixed;
+  bottom: 20%;
+  right: 5%;
+  width: 3.5rem;
+  height: 3.5rem;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.zhi-bo-box image{
+  width: 100%;
+  height: 100%;
+}
+
+/* 支付弹层 */
+.pay-layer-box{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3)
+}
+.pay-content-box{
+  width: 85.3%;
+  height: 63%;
+  position: fixed;
+  left: 7.35%;
+  right: 7.35%;
+  top: 18.5%;
+  bottom: 18.5%;
+  background: linear-gradient(#8A37A5, #522E7A); /* 标准的语法 */
+  border-radius: 0.25rem;
+}
+.pay-main-box{
+  width: 90%;
+  margin: 0 auto;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+.pag-logo{
+  width: 7.25rem;
+  height: 3.75rem;
+  margin: 1.8rem auto 1rem auto;
+}
+.pag-logo image{
+  width: 100%;
+  height: 100%;
+}
+.pay-title{
+  width: 100%;
+  height: auto;
+  line-height: 1.25rem;
+  text-align: center;
+  color: #fff;
+  font-size: 1.125rem;
+}
+.pay-title view:last-child{
+  font-size: 0.75rem;
+  color: #b78ac6
+}
+.pay-add-minus{
+  width: 100%;
+  height: 3.125rem;
+  margin: 0.625rem auto 0.9rem auto;
+  background: url("https://api.51gsl.com/program/StockPush/images/icon_inp.png")no-repeat center;
+  background-size: 100% 100%;
+}
+.pay-minus,.pay-add{
+  width: 22%;
+  height: 3.125rem;
+  float: left
+}
+.pay-add{
+  float: right;
+}
+.pay-minus image,.pay-add image{
+  width: 1.25rem;
+  height: 1.25rem;
+  display: block;
+  margin: 0.9375rem auto;
+}
+.pay-money-num{
+  width: 56%;
+  height: 3.125rem;
+  overflow: hidden;
+  float: left;
+}
+.pay-money-num input{
+  text-align: center;
+  height: 100%;
+  line-height: 100%;
+  color: #653188;
+}
+.pay-btn-box{
+  width: 100%;
+  height: 3.4375rem;
+  line-height: 3rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: #ff8c01 2px 3px 3px;
+  background: url("https://api.51gsl.com/program/StockPush/images/icon_btnbg.png") no-repeat center;
+  background-size: 100% 100%;
+}
+.pay-close{
+  position: absolute;
+  right: 0;
+  top: 3%;
+  width: 1rem;
+  height: 1rem;
+}
+.pay-close image{
+  width: 100%;
+  height: 100%;
+}

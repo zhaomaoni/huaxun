@@ -1,0 +1,61 @@
+<!--pages/index/index.wxml-->
+<view class="conBox">
+  <view class="swiper-tab">
+    <view bindtap="swichNav" wx:for="{{titles}}" wx:key wx:for-index="indx" class="swiper-tab-list {{currentTab==indx ? 'on' : ''}}" data-current="{{indx}}">{{item}}</view>
+  </view>
+</view>
+<view class="swipers">
+  <view wx:for="{{titles}}" wx:key wx:for-index="indx" class="swiper-box {{currentTab==indx ? 'swiperOn' : ''}}" >
+    <view class="main-tab-box">
+      <view class="main-tab-listBox">
+        <view bindtap="activeBtn" wx:for="{{days}}" wx:key wx:for-index="idxs" class="main-tab-list {{curtitle==idxs ? 'active':''}}" data-curtitle="{{idxs}}">{{item}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="main-tab-content" onReachBottom="onReachBottom">
+  <view class="main-content-list {{curMain == idxs ? 'active':''}}" wx:for="{{days}}" wx:key wx:for-index="idxs">
+    <view class="content-title">
+      <view>序号</view>
+      <view>名称</view>
+      <view>涨跌幅</view>
+      <view>主力净流入最大股</view>
+    </view>
+  </view>
+</view>
+<view class="list-box">
+  <view class="content-con" wx:for="{{list}}" wx:key wx:for-index="idx" wx:for-item="i">
+    <view class="main-con-li">
+      <view>{{idx+1}}</view>
+      <view>{{i[2]}}</view>
+      <view class="{{i[3]>0?'red':'green'}}">{{i[3]}}%</view>
+      <view>{{i[14]}}</view>
+    </view>
+    <view class="zhe-die-Main"> 
+      <view class="con-zhu-li {{idx==isid&&isShow?'con-zhu-li2':''}}" data-id="{{idx}}" wx:for="{{viewData}}" wx:key="vi">
+        <view>{{item.title}}</view>
+        <view>净额 
+          <text class="{{i[item.k1]>0?'red':'green'}}">{{i[item.k1]}}万</text>
+        </view>
+        <view>净占比 
+          <text class="{{i[item.k2]>0?'red':'green'}}">{{i[item.k2]}}%</text>
+        </view>
+        <view></view>
+      </view>
+      <view class="jiantou">
+        <image src="https://api.51gsl.com/program/Dflx/images/icon1.png" bindtap='clickBtn' data-id="{{idx}}" wx:if="{{idx==isid&&isShow}}"></image>
+        <image src="https://api.51gsl.com/program/Dflx/images/icon2.png" bindtap='clickBtn' data-id="{{idx}}" wx:else></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--  广告  -->
+<view class="banner" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images'></image>
+</view>
+
+<!-- 更多小程序 -->
+<view class="layerBoxs">
+  <navigator target="miniProgram" open-type="navigate" app-id="wx81dacf7d77359d1d" path="/pages/index/index?from={{from}}" extra-data="" version="release">更多小程序</navigator> <!-- release -->
+</view>

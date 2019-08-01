@@ -1,0 +1,33 @@
+<!--pages/message/message.wxml-->
+<view class="box">
+  <view class="title">2018年油价调整时间表如下</view>
+  <view>2018年1月油价调整时间：</view>
+  <view class="b">2018年1月12日、2018年1月26日</view>
+  <view>2018年2月油价调整时间：</view>
+  <view class="b">2018年2月9日、2018年2月28日</view>
+  <view>2018年3月油价调整时间：</view>
+  <view class="b">2018年3月14日、2018年3月28日</view>
+  <view>2018年4月油价调整时间：</view>
+  <view class="b">2018年4月12日、2018年4月26日</view>
+  <view>2018年5月油价调整时间：</view>
+  <view class="b">2018年5月11日、2018年5月25日</view>
+  <view>2018年6月油价调整时间：</view>
+  <view class="b">2018年6月8日、2018年6月25日</view>
+  <view>2018年7月油价调整时间：</view>
+  <view class="b">2018年7月9日、2018年7月23日</view>
+  <view>2018年8月油价调整时间：</view>
+  <view class="b">2018年8月6日、2018年8月20日</view>
+  <view>2018年9月油价调整时间：</view>
+  <view class="b">2018年9月3日、2018年9月17日、2018年9月30日</view>
+  <view>2018年10月油价调整时间：</view>
+  <view class="b">2018年10月19日</view>
+  <view>2018年11月油价调整时间：</view>
+  <view class="b">2018年11月2日、2018年11月16日、2018年11月30日</view>
+  <view>2018年12月油价调整时间：</view>
+  <view class="b">2018年12月14日、2018年12月28日</view>
+  <view class="zhu">注意：此“2018年油价调整时间表”是根据国务院发布的2018年放假时间表及成品油调整周期为10个工作日，若有误差，请以国家通知为准。</view>
+</view>
+<!--  广告  -->
+<view class="banner" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images'></image>
+</view>

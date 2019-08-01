@@ -1,0 +1,485 @@
+<!--pages/index/index.wxml-->
+<wxs module="filter" src="../../utils/numbertofix.wxs"></wxs>
+<view class="main">
+  <view class="title">
+    <view class="more" bindtap='mainJump3' data-url="http://m.data.eastmoney.com/api/Lhb/TradeDetailList">更多</view>
+    <text class="triangle {{isShow ? 'triangle2' : ''}}" bindtap='isHide'></text>
+    <text class="litter">每日龙虎榜详情</text>
+  </view>
+  <view class="nav {{isShow ? 'block' : ''}}">
+    <view class="{{currentTab==0 ? 'active' : ''}}" data-current="0" bindtap="swichNav">沪市</view>
+    <view class="{{currentTab==1 ? 'active' : ''}}" data-current="1" bindtap="swichNav">深市</view>
+  </view>
+  <view class="list {{isShow ? 'block' : ''}}">
+    <view class="content {{currentTab==0 ? 'active1' : ''}}">
+      <view class="left" wx:for="{{list.hstock}}" wx:key>
+        <view class="name">名称</view>
+        <view class="left_msg" wx:for="{{item}}" wx:key wx:for-item="i" bindtap='banner'>
+          <text>{{i.SName}}</text>
+          <text>{{i.SCode}}</text>
+        </view>
+      </view>
+      <view class="right">
+        <view class="name">
+          <view class="hidden" wx:for="{{list.hstock}}" wx:key>
+            <view class="hidName">
+              <view>上榜日期</view>
+              <view>收盘价</view>
+              <view>涨跌幅</view>
+              <view>
+                <view>净买额</view>
+                <view>(万)</view>
+              </view>
+              <view>
+                <view>买入额</view>
+                <view>(万)</view>
+              </view>
+              <view>
+                <view>卖出额</view>
+                <view>(万)</view>
+              </view>
+              <view>
+                <view>流通市值</view>
+                <view>(亿)</view>
+              </view>
+            </view>
+            <view class="hidName" wx:for="{{item}}" wx:key wx:for-item="i" bindtap='banner'>
+              <view>{{filter.numberToFix3(i.Tdate)}}</view>
+              <view>{{filter.numberToFix(i.ClosePrice)}}</view>
+              <view class="{{i.Chgradio>0 ? 'red' : 'green'}}">{{filter.numberToFix(i.Chgradio)}}%</view>
+              <view class="{{i.JmMoney>0 ? 'red' : 'green'}}">{{filter.numberToFix2(i.JmMoney)}}</view>
+              <view class="{{i.Bmoney>0 ? 'red' : 'green'}}">{{filter.numberToFix2(i.Bmoney)}}</view> 
+              <view class="{{i.Smoney>0 ? 'red' : 'green'}}" wx:if="{{i.Smoney}}">{{filter.numberToFix2(i.Smoney)}}</view>
+              <view wx:else>0.00</view>
+              <view>{{filter.numberToFix2(i.Ltsz/10000)}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="clickMore" bindtap='mainJump3' data-url="http://m.data.eastmoney.com/api/Lhb/TradeDetailList">点击加载更多</view>
+    </view>
+    <view class="content {{currentTab==1 ? 'active1' : ''}}">
+      <view class="left" wx:for="{{list.sstock}}" wx:key>
+        <view class="name">名称</view>
+        <view class="left_msg" wx:for="{{item}}" wx:key wx:for-item="i" bindtap='banner'>
+          <text>{{i.SName}}</text>
+          <text>{{i.SCode}}</text>
+        </view>
+      </view>
+      <view class="right">
+        <view class="name">
+          <view class="hidden" wx:for="{{list.hstock}}" wx:key>
+            <view class="hidName">
+              <view>上榜日期</view>
+              <view>收盘价</view>
+              <view>涨跌幅</view>
+              <view>
+                <view>净买额</view>
+                <view>(万)</view>
+              </view>
+              <view>
+                <view>买入额</view>
+                <view>(万)</view>
+              </view>
+              <view>
+                <view>卖出额</view>
+                <view>(万)</view>
+              </view>
+              <view>
+                <view>流通市值</view>
+                <view>(亿)</view>
+              </view>
+            </view>
+            <view class="hidName" wx:for="{{item}}" wx:key wx:for-item="i" bindtap='banner'>
+              <view>{{filter.numberToFix3(i.Tdate)}}</view>
+              <view>{{filter.numberToFix(i.ClosePrice)}}</view>
+              <view class="{{i.Chgradio>0 ? 'red' : 'green'}}">{{filter.numberToFix(i.Chgradio)}}%</view>
+              <view class="{{i.JmMoney>0 ? 'red' : 'green'}}">{{filter.numberToFix2(i.JmMoney)}}</view>
+              <view class="{{i.Bmoney>0 ? 'red' : 'green'}}">{{filter.numberToFix2(i.Bmoney)}}</view> 
+              <view class="{{i.Smoney>0 ? 'red' : 'green'}}" wx:if="{{i.Smoney}}">{{filter.numberToFix2(i.Smoney)}}</view>
+              <view wx:else>0.00</view>
+              <view>{{filter.numberToFix2(i.Ltsz/10000)}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="clickMore" bindtap='mainJump'>点击加载更多</view>
+    </view>
+  </view>
+</view>
+<!--  个股龙虎榜统计  -->
+<view class="main">
+  <view class="title">
+    <view class="more" bindtap='mainJump' data-url="http://m.data.eastmoney.com/api/Lhb/StockStatisticList">更多</view>
+    <text class="triangle {{isShow1 ? 'triangle2' : ''}}" bindtap='isHide2'></text>
+    <text class="litter">个股龙虎榜统计</text>
+  </view>
+  <view class="list {{isShow1 ? 'block' : ''}}">
+    <view class="content show">
+      <view class="left">
+        <view class="name">名称</view>
+        <view class="left_msg" wx:for="{{list.stock}}" wx:key bindtap='banner'>
+          <text>{{item.SName}}</text>
+          <text>{{item.SCode}}</text>
+        </view>
+      </view>
+      <view class="right">
+        <view class="name">
+          <view class="hidden">
+            <view class="hidName">
+              <view>上榜次数</view>
+              <view>
+                <view>龙虎榜</view>
+                <view>净买额(万)</view>
+              </view>
+              <view>
+                <view>龙虎榜</view>
+                <view>买入额(万)</view>
+              </view>
+              <view>
+                <view>龙虎榜</view>
+                <view>卖出额(万)</view>
+              </view>
+              <view>
+                <view>龙虎榜总</view>
+                <view>成交额(万)</view>
+              </view>
+            </view>
+            <view class="hidName" wx:for="{{list.stock}}" wx:key bindtap='banner'>
+              <view>{{item.SumCount}}</view>
+              <view class="{{item.JmMoney>0 ? 'red' : 'green'}}">{{filter.numberToFix2(item.JmMoney)}}</view>
+              <view class="{{item.Bmoney>0 ? 'red' : 'green'}}">{{filter.numberToFix2(item.Bmoney)}}</view>
+              <view class="{{item.Smoney>0 ? 'red' : 'green'}}">{{filter.numberToFix2(item.Smoney)}}</view>
+              <view>{{filter.numberToFix2(item.ZeMoney)}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="clickMore" bindtap='mainJump' data-url="http://m.data.eastmoney.com/api/Lhb/StockStatisticList">点击加载更多</view>
+    </view>
+  </view>
+</view>
+<!--  机构购买情况  -->
+<view class="main">
+  <view class="title">
+    <view class="more" bindtap='mainJump4' data-url="http://m.data.eastmoney.com/api/Lhb/DailyStockListStatisticsList">更多</view>
+    <text class="triangle {{isShow2 ? 'triangle2' : ''}}" bindtap='isHide3'></text>
+    <text class="litter">机构购买情况</text>
+  </view>
+  <view class="list {{isShow2 ? 'block' : ''}}">
+    <view class="content show">
+      <view class="left">
+        <view class="name">名称</view>
+        <view class="left_msg" wx:for="{{list.mechanism}}" wx:key bindtap='banner'>
+          <text>{{item.SName}}</text>
+          <text>{{item.SCode}}</text>
+        </view>
+      </view>
+      <view class="right">
+        <view class="name">
+          <view class="hidden">
+            <view class="hidName">
+              <view>买方机构数</view>
+              <view>卖方机构数</view>
+              <view>
+                <view>机构买入</view>
+                <view>总额(万)</view>
+              </view>
+              <view>
+                <view>机构卖出</view>
+                <view>总额(万)</view>
+              </view>
+              <view>
+                <view>机构买入</view>
+                <view>净额(万)</view>
+              </view>
+              <view>上榜原因</view>
+            </view>
+            <view class="hidName" wx:for="{{list.mechanism}}" wx:key bindtap='banner'>
+              <view>{{item.BSL}}</view>
+              <view>{{item.SSL}}</view>
+              <view class="{{item.BMoney>0 ? 'red' : 'green'}}">{{filter.numberToFix2(item.BMoney)}}</view>
+              <view>{{filter.numberToFix2(item.SMoney)}}</view>
+              <view class="{{item.PBuy>0 ? 'red' : 'green'}}">{{filter.numberToFix2(item.PBuy)}}</view>
+              <view class=" pad overs">{{item.CTypeDes}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="clickMore" bindtap='mainJump4' data-url="http://m.data.eastmoney.com/api/Lhb/DailyStockListStatisticsList">点击加载更多</view>
+    </view>
+  </view>
+</view>
+<!--  机构席位买卖追踪  -->
+<view class="main">
+  <view class="title">
+    <view class="more" bindtap='mainJump' data-url="http://m.data.eastmoney.com/api/Lhb/JgStatisticList">更多</view>
+    <text class="triangle {{isShow3 ? 'triangle2' : ''}}" bindtap='isHide4'></text>
+    <text class="litter">机构席位买卖追踪</text>
+  </view>
+  <view class="list {{isShow3 ? 'block' : ''}}">
+    <view class="content show">
+      <view class="left">
+        <view class="name">名称</view>
+        <view class="left_msg" wx:for="{{list.track}}" wx:key bindtap='banner'>
+          <text>{{item.SName}}</text>
+          <text>{{item.SCode}}</text>
+        </view>
+      </view>
+      <view class="right">
+        <view class="name">
+          <view class="hidden">
+            <view class="hidName">
+              <view>
+                <view>龙虎榜成交</view>
+                <view>金额(万)</view>
+              </view>
+              <view>上榜次数</view>
+              <view>
+                <view>机构</view>
+                <view>买入额(万)</view>
+              </view>
+              <view>买入次数</view>
+              <view>卖出额(万)</view>
+              <view>卖出次数</view>
+              <view>
+                <view>机构净</view>
+                <view>买入额(万)</view>
+              </view>
+            </view>
+            <view class="hidName" wx:for="{{list.track}}" wx:key bindtap='banner'>
+              <view>{{filter.numberToFix2(item.TMoney)}}</view>
+              <view>{{item.UPCount}}</view>
+              <view class="{{item.JGBMoney>0 ? 'red' : 'green'}}">{{filter.numberToFix2(item.JGBMoney)}}</view>
+              <view>{{item.JGBCount}}</view>
+              <view class="{{item.JGSMoney>0 ? 'red' : 'green'}}">{{filter.numberToFix2(item.JGSMoney)}}</view>
+              <view>{{item.JGSCount}}</view>
+              <view class="{{item.JGPBuy>0 ? 'red' : 'green'}}">{{filter.numberToFix2(item.JGPBuy)}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="clickMore" bindtap='mainJump' data-url="http://m.data.eastmoney.com/api/Lhb/JgStatisticList">点击加载更多</view>
+    </view>
+  </view>
+</view>
+<!--  每日活跃营业部  -->
+<view class="main">
+  <view class="title">
+    <view class="more" bindtap='mainJump5' data-url="http://m.data.eastmoney.com/api/Lhb/ActiveStatisticsList">更多</view>
+    <text class="triangle {{isShow4 ? 'triangle2' : ''}}" bindtap='isHide5'></text>
+    <text class="litter">每日活跃营业部</text>
+  </view>
+  <view class="list {{isShow4 ? 'block' : ''}}">
+    <view class="content show">
+      <view class="left left2">
+        <view class="name">名称</view>
+        <view class="left_msg" wx:for="{{list.active}}" wx:key bindtap='banner'>
+          <text>{{filter.numberToFix4(item.YybName)}}</text>
+        </view>
+      </view>
+      <view class="right right2">
+        <view class="name">
+          <view class="hidden">
+            <view class="hidName">
+              <view>买入个股数</view>
+              <view>卖出个股数</view>
+              <view>
+                <view>买入总</view>
+                <view>金额(万)</view>
+              </view>
+              <view>
+                <view>卖出总</view>
+                <view>金额(万)</view>
+              </view>
+              <view>
+                <view>总买卖</view>
+                <view>净额(万)</view>
+              </view>
+              <view>买入股票</view>
+            </view>
+            <view class="hidName" wx:for="{{list.active}}" wx:key bindtap='banner'>
+              <view>{{item.YybBCount}}</view>
+              <view>{{item.YybSCount}}</view>
+              <view class="{{item.Bmoney>0 ? 'red' : 'green'}}">{{filter.numberToFix2(item.Bmoney)}}</view>
+              <view class="{{item.Smoney>0 ? 'red' : 'green'}}">{{filter.numberToFix2(item.Smoney)}}</view>
+              <view class="{{item.JmMoney>0 ? 'red' : 'green'}}">{{filter.numberToFix2(item.JmMoney)}}</view>
+              <view class="pad">
+                <text wx:for="{{item.JsonNameCodes}}" wx:for-item="j" wx:key>{{j.CodeName}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="clickMore" bindtap='mainJump5' data-url="http://m.data.eastmoney.com/api/Lhb/ActiveStatisticsList">点击加载更多</view>
+    </view>
+  </view>
+</view>
+<!--  营业部回报排行  -->
+<view class="main">
+  <view class="title">
+    <view class="more" bindtap='mainJump6' data-url="http://m.data.eastmoney.com/api/Lhb/BusinessRankingList">更多</view>
+    <text class="triangle {{isShow5 ? 'triangle2' : ''}}" bindtap='isHide6'></text>
+    <text>营业部回报排行</text>
+  </view>
+  <view class="list {{isShow5 ? 'block' : ''}}">
+    <view class="content show">
+      <view class="left left2">
+        <view class="name">名称</view>
+        <view class="left_msg" wx:for="{{list.return}}" wx:key bindtap='banner'>
+          <text>{{filter.numberToFix4(item.SalesName)}}</text>
+        </view>
+      </view>
+      <view class="right right2">
+        <view class="name">
+          <view class="hidden">
+            <view class="hidName hidName2">
+              <view>
+                <view>上榜后1天</view>
+                <view>买入次数</view>
+              </view>
+              <view>
+                <view>上榜后1天</view>
+                <view>平均涨幅</view>
+              </view>
+              <view>
+                <view>上榜后1天</view>
+                <view>上涨概率</view>
+              </view>
+              <view>
+                <view>上榜后2天</view>
+                <view>买入次数</view>
+              </view>
+              <view>
+                <view>上榜后2天</view>
+                <view>平均涨幅</view>
+              </view>
+              <view>
+                <view>上榜后2天</view>
+                <view>上涨概率</view>
+              </view>
+              <view>
+                <view>上榜后3天</view>
+                <view>买入次数</view>
+              </view>
+              <view>
+                <view>上榜后3天</view>
+                <view>平均涨幅</view>
+              </view>
+              <view>
+                <view>上榜后3天</view>
+                <view>上涨概率</view>
+              </view>
+              <view>
+                <view>上榜后5天</view>
+                <view>买入次数</view>
+              </view>
+              <view>
+                <view>上榜后5天</view>
+                <view>平均涨幅</view>
+              </view>
+              <view>
+                <view>上榜后5天</view>
+                <view>上涨概率</view>
+              </view>
+              <view>
+                <view>上榜后10天</view>
+                <view>买入次数</view>
+              </view>
+              <view>
+                <view>上榜后10天</view>
+                <view>平均涨幅</view>
+              </view>
+              <view>
+                <view>上榜后10天</view>
+                <view>上涨概率</view>
+              </view>
+            </view>
+            <view class="hidName hidName2" wx:for="{{list.return}}" wx:key bindtap='banner'>
+              <view>{{item.BCount1DC}}</view>
+              <view class="{{item.AvgRate1DC>0 ? 'red' : 'green'}}">{{filter.numberToFix(item.AvgRate1DC)}}%</view>
+              <view>{{item.UpRate1DC}}%</view>
+              <view>{{item.BCount2DC}}</view>
+              <view class="{{item.AvgRate2DC>0 ? 'red' : 'green'}}">{{filter.numberToFix(item.AvgRate2DC)}}%</view>
+              <view>{{item.UpRate2DC}}%</view>
+              <view>{{item.BCount3DC}}</view>
+              <view class="{{item.AvgRate3DC>0 ? 'red' : 'green'}}">{{filter.numberToFix(item.AvgRate3DC)}}%</view>
+              <view>{{item.UpRate3DC}}%</view>
+              <view>{{item.BCount5DC}}</view>
+              <view class="{{item.AvgRate5DC>0 ? 'red' : 'green'}}">{{filter.numberToFix(item.AvgRate5DC)}}%</view>
+              <view>{{item.UpRate5DC}}%</view>
+              <view>{{item.BCount10DC}}</view>
+              <view class="{{item.AvgRate10DC>0 ? 'red' : 'green'}}">{{filter.numberToFix(item.AvgRate10DC)}}%</view>
+              <view>{{item.UpRate10DC}}%</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="clickMore" bindtap='mainJump6' data-url="http://m.data.eastmoney.com/api/Lhb/BusinessRankingList">点击加载更多</view>
+    </view>
+  </view>
+</view>
+<!--  营业部上榜统计  -->
+<view class="main">
+  <view class="title">
+    <view class="more" bindtap='mainJump7' data-url="http://m.data.eastmoney.com/api/Lhb/TraderStatisticList">更多</view>
+    <text class="triangle {{isShow6 ? 'triangle2' : ''}}" bindtap='isHide7'></text>
+    <text class="litter">营业部上榜统计</text>
+  </view>
+  <view class="list {{isShow6 ? 'block' : ''}}">
+    <view class="content show">
+      <view class="left left2">
+        <view class="name">名称</view>
+        <view class="left_msg" wx:for="{{list.count}}" wx:key bindtap='banner'>
+          <text>{{filter.numberToFix4(item.SalesName)}}</text>
+        </view>
+      </view>
+      <view class="right right2">
+        <view class="name">
+          <view class="hidden">
+            <view class="hidName">
+              <view>
+                <view>龙虎榜成交</view>
+                <view>金额(万)</view>
+              </view>
+              <view>上榜次数</view>
+              <view>买入额(万)</view>
+              <view>买入次数</view>
+              <view>卖出额(万)</view>
+              <view>卖出次数</view>
+            </view>
+            <view class="hidName" wx:for="{{list.count}}" wx:key bindtap='banner'>
+              <view>{{filter.numberToFix2(item.SumActMoney)}}</view>
+              <view>{{item.UpCount}}</view>
+              <view class="{{item.SumActBMoney>0 ? 'red' : 'green'}}">{{filter.numberToFix2(item.SumActBMoney)}}</view>
+              <view>{{item.BCount}}</view>
+              <view class="{{item.SumActSMoney>0 ? 'red' : 'green'}}">{{filter.numberToFix2(item.SumActSMoney)}}</view>
+              <view>{{item.SCount}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="clickMore" bindtap='mainJump7' data-url="http://m.data.eastmoney.com/api/Lhb/TraderStatisticList">点击加载更多</view>
+    </view>
+  </view>
+</view>
+<!--  证券营业部查询  -->
+<view class="main">
+  <view class="title">
+    <view class="more" bindtap='mainJump2'>更多</view>
+    <text class="triangle {{isShow7 ? 'triangle2' : ''}}" bindtap='isHide8'></text>
+    <text class="litter">证券营业部查询</text>
+  </view>
+  <view class="list {{isShow7 ? 'block' : ''}}">
+    <view class="types">
+      <view wx:for="{{list.business}}" wx:key bindtap='jump' wx:for-index="ind" data-code="{{ind}}" data-text="{{item}}">{{item}}</view>
+    </view>
+    <view class="clickMore" bindtap='mainJump2'>点击加载更多</view>
+  </view>
+</view>
+<view class="helpJump" bindtap='helpJump'>帮助</view>
+
+<!-- 更多小程序 -->
+<view class="layerBoxs" bindtap='moreBtn'>
+    <view>更多小程序</view>
+</view>

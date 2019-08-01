@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/search/search",
+    "pages/content/content",
+    "pages/banner/banner"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#271b21",
+    "navigationBarTitleText": "周公解梦1000例",
+    "navigationBarTextStyle":"white"
+  }
+}

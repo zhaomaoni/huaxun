@@ -1,0 +1,48 @@
+<!--pages/day/day.wxml-->
+<view class="head">
+  <view class="headV">
+    <view class="headPic">
+      <image src="{{xz_data.img}}"></image>
+    </view>
+  </view>
+  <view class="headV">
+    <view class="xing">{{xz_data.name}}</view>
+  </view>
+  <view class="headV" bindtap='changBtn'>
+    <view class="chang">切换星座</view>
+  </view>
+</view>
+<view class="dian">{{xz_data.content}}</view>
+<view class="Time">{{str}}</view>
+<view class="main">
+  <view class="msg">
+    <view class="zxx">
+      <image src="https://api.51gsl.com/program/Constellation/images/icon_zxx.png"></image>
+    </view>
+    <view>幸运颜色<text class="contxt">{{list[0]}}</text></view>
+  </view>
+  <view class="msg">
+    <view class="zxx">
+      <image src="https://api.51gsl.com/program/Constellation/images/icon_zxx.png"></image>
+    </view>
+    <view>幸运数字<text class="contxt">{{list[1]}}</text></view>
+  </view>
+  <view class="msg">
+    <view class="zxx">
+      <image src="https://api.51gsl.com/program/Constellation/images/icon_zxx.png"></image>
+    </view>
+    <view>贵人星座<text class="contxt">{{list[2]}}</text></view>
+  </view>
+</view>
+<view class="main">
+  <view class="title">今日提醒</view>
+  <view class="msgtxt" wx:for="{{list[3]}}" wx:key>{{item}}</view>
+</view>
+<!--  广告  -->
+<view class="banner" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images'></image>
+</view>
+<!-- 更多小程序 -->
+<view class="layerBoxs">
+  <navigator target="miniProgram" open-type="navigate" app-id="wx81dacf7d77359d1d" path="/pages/index/index?from={{from}}" extra-data="" version="release">更多小程序</navigator> <!-- release -->
+</view>

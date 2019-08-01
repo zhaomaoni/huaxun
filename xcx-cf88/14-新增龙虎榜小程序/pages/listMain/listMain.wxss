@@ -1,0 +1,44 @@
+/* pages/listMain/listMain.wxss */
+page{
+  background: #fff
+}
+.listBox{
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.hui{
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #ccc
+}
+.list{
+  height: 45px;
+  line-height: 45px;
+  border-bottom: 1px solid #ccc;
+  overflow: hidden;
+  font-size: 16px;
+}
+.list:last-child{
+  border-bottom: 0
+}
+.left{
+  padding-left: 10px;
+  float: left;
+}
+.left::before{
+  content: '';
+  border-left: 3px solid #de494b;
+  padding-right: 5px;
+}
+.rig{
+  float: right;
+  padding-right: 10px;
+  border-radius: 1px solid #ccc
+}
+/*加载*/
+.loadText{
+  height: 30px;
+  line-height: 30px;
+  color: #666
+}

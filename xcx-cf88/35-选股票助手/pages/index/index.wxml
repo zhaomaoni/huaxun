@@ -1,0 +1,34 @@
+<!--index.wxml-->
+<!-- <web-view src="https://oauth.cf8.cn/MiniPro/xuangu.php?token={{webURL}}&v=2&from={{from}}&appname={{appname}}"></web-view> -->
+<view class="bigBox">
+  <view class="body-main-box" wx:for="{{list2}}" wx:key wx:for-index="index1" wx:for-item="item1">
+  <!-- 类别 -->
+    <view class="body-header-box">{{index1}}</view>
+    <!-- 选项 -->
+    <view class="body-content-box">
+      <view class="click-main" wx:for="{{item1}}" wx:key wx:for-index="index2" wx:for-item="item2">
+      <!-- 选项名称 -->
+        <view bindtap='clickFn' data-index="{{index2}}" wx:if="{{item2==''}}">{{index2}}</view>
+        <view bindtap='clickFn' data-index="{{index2}}" class="{{item2!=''?'red':''}}" wx:else>{{item2}}</view>
+      <!-- 选项内容 -->
+        <view class="click-layer" wx:for="{{list[index1]}}" wx:key 
+          wx:for-item="item3" wx:for-index="index3" 
+          wx:if="{{index2==index3}}" data-i="{{index3}}" 
+          style="height:{{ind3==index3?(item3.length<10?(item3.length+1)*1.55:22):0}}rem;border:{{ind3==index3?1:0}}px solid #ccc">
+          <view class="{{item2=='' ? 'bg':''}}" bindtap='optionBtn' data-index="{{-1}}" data-index1="{{index1}}" data-index2="{{index2}}" data-id="">取消选择</view>
+          <view class="{{ind4 == index4&&item2!='' ? 'bg':''}}" bindtap='optionBtn' wx:for="{{list[index1][index2]}}" wx:key wx:for-item="item4" wx:for-index="index4" data-index="{{index4}}" data-txt="{{item4.attr_value}}" data-index1="{{index1}}" data-index2="{{index2}}" data-id="{{item4.id}}">{{item4.attr_value}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="shuo-ming-box">
+  <view class="shou-header-box">智能选股说明</view>
+  <view class="shou-conntent-box">智能选股功能是根据您确定的选股条件，对全部股票相关历史数据筛选而得出符合您选股条件的股票，不构成投资建议。请您确保已完全理解所选择的选股条件的实际含义，避免因误解而导致所选择的选股条件与您的预期效果不一致。股市有风险，入市须谨慎。</view>
+</view>
+<view class="checked-main-box">
+  <view class="checked-btn" bindtap='resultBtn'>查看结果</view>
+  <view class="checked-content">已选择<text>{{num}}</text>个策略</view>
+</view>
+<!-- 授权弹层 -->
+<phones wx:if="{{isShow}}"></phones>

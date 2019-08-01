@@ -1,0 +1,13 @@
+<!--pages/index/index.wxml-->
+<view class="box" wx:for="{{list}}" wx:key>
+  <view class="title">{{ item.title }}</view>
+  <view class="main">
+    <view class="content" bindtap='lala' wx:for="{{item.content}}" wx:for-item="items" wx:for-index="idx" wx:key data-content="{{ items }}"  data-filename="{{idx}}">{{ items }}</view>
+  </view>
+</view>
+<!-- 更多小程序 -->
+<view class="layerBoxs" bindtap='moreBtn'>
+  <view>更多小程序</view>
+</view>
+<!-- 授权弹层 -->
+<phones wx:if="{{isShow}}"></phones>

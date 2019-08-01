@@ -1,0 +1,13 @@
+<view class="phone-inp-box">
+  <view>手机号</view>
+  <input placeholder='请输入您的手机号' placeholder-class="phone-p" bindinput='getValue'></input>
+</view>
+<view class="code-inp-box">
+  <view>验证码</view>
+  <input placeholder-class="phone-p" bindinput='yanFn'></input>
+  <view>
+    <button class="pink {{is_show?'show':'hide'}}" bindtap='zhengBtn'>获取验证码</button>
+    <button class="pink {{is_show?'hide':'show'}}">重新发送{{time}}秒</button>
+  </view>
+</view>
+<view class="login-btn" bindtap='loginBtn'>登录</view>

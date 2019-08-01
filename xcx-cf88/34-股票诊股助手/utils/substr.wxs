@@ -1,0 +1,13 @@
+var filterBox = {
+  filter:function(val){
+    // var str = val.indexOf("(")
+    // val = val.substring(str) 
+
+    val = val.split("(")[0]
+    
+    return val
+  }
+}
+module.exports = {
+  filter: filterBox.filter
+}

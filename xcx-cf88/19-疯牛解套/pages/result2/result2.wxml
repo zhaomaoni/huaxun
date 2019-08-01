@@ -1,0 +1,44 @@
+<!--pages/result2/result2.wxml-->
+<view>
+  <view class="name">
+    <text>{{name}}</text>
+    <text>{{code}}</text>
+  </view>
+  <view class="price">当前价<text>{{price}}</text> 涨跌幅<text class="green">{{down}}%</text></view>
+</view>
+<view class="dlImg container" style="heigth:{{heigth}}">
+  <!-- 机构预测 -->
+  <ec-canvas id="mychart-dom-multi-bar" canvas-id="mychart-multi-bar" ec="{{ ecBar }}"></ec-canvas>
+  <view class="main">{{list2.info}}</view>
+  <!-- 行业走势 -->
+  <ec-canvas id="mychart-dom-multi-line" canvas-id="mychart-multi-line" ec="{{ ecLine }}"></ec-canvas>
+  <view class="main">{{list1.info}}</view>
+  <!-- 资金流向 -->
+    <!-- <ec-canvas id="mychart-dom-multi-barLine" canvas-id="mychart-multi-barLine" ec="{{ ecBarLine }}"></ec-canvas>
+  <view class="main">{{list3.info}}</view>   -->
+  <!-- 压力位和支撑位 -->
+  <ec-canvas id="mychart-dom-multi-k" canvas-id="mychart-multi-k" ec="{{ ecK }}"></ec-canvas>
+   <view class="main">{{list4.info}}</view> 
+
+  <view class="msg">
+    <view class="head">诊断分析</view>
+    <view class="text">
+      <view>短期趋势:</view>
+      <view>{{info.short}}</view>
+    </view>
+    <view class="text">
+      <view>中期趋势:</view>
+      <view>{{info.mid}}</view>
+    </view>
+    <view class="text">
+      <view>长期趋势:</view>
+      <view>{{info.long}}</view>
+    </view>
+    <view class="head">诊断结果</view>
+    <view class="conMain">{{contents}}</view>
+  </view>
+  <view class="can">诊断结果仅供参考，不构成任何投资意见</view>
+</view>
+<view class="pic" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images'></image>
+</view>

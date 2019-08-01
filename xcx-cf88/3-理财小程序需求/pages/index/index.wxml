@@ -1,0 +1,45 @@
+<!--pages/index/index.wxml-->
+<view class="conBox">
+  <view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">理财产品</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">理财规划</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">理财知识</view>
+  </view>
+</view>
+<view class="swipers">
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight}}px" bindchange="bindChange">
+    <!-- 我是要闻 -->
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height: 100%;" bindscrolltolower="onReachBottom">
+        <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images' wx:if="{{showAd}}"></image>
+        <view wx:for="{{project}}" wx:key="key" class="main" bindtap='jump' data-content="{{item.content}}" data-title="{{item.title}}" data-frommedia="{{item.frommedia}}" data-txt="{{item.column}}">
+          <text id='yaowen_title' class="title">{{ item.title }}</text>
+          <text class="from">来源：{{ item.frommedia }}</text>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <!-- 我是滚动 -->
+    <swiper-item>
+      <scroll-view class="scroll_roll" scroll-y="true" style="height: 100%;" bindscrolltolower="onReachBottom">
+        <view wx:for="{{planning}}" wx:key="key" class="main"  bindtap='jump' data-content="{{item.content}}" data-title="{{item.title}}" data-frommedia="{{item.frommedia}}"  data-txt="{{item.column}}">
+          <text id='yaowen_title' class="title">{{ item.title }}</text>
+          <text class="from">来源：{{ item.frommedia }}</text>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <!-- 我是机会 -->
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height: 100%;" bindscrolltolower="onReachBottom">
+        <view wx:for="{{knowledge}}" wx:key="key" class="main" bindtap='jump' data-content="{{item.content}}" data-title="{{item.title}}" data-frommedia="{{item.frommedia}}"  data-txt="{{item.column}}">
+          <text class="title">{{ item.title }}</text>
+          <text class="from">来源：{{ item.frommedia }}</text>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>
+
+<!-- 更多小程序 -->
+<view class="layerBoxs" bindtap='moreBtn'>
+    <view>更多小程序</view>
+</view>

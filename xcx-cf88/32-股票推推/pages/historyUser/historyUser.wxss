@@ -1,0 +1,109 @@
+/* pages/historyUser/historyUser.wxss */
+page{
+  background: #522E7A;
+  font-family: PingFangSC-Regular;
+}
+.head-main-box{
+  width: 88%;
+  height: 8.25rem;
+  margin: 0 auto;
+  color: #fff;
+  overflow: hidden;
+  text-align: center;
+  background: url("https://api.51gsl.com/program/StockPush/images/icon_userBg.png")no-repeat center center;
+  background-size: 100% 100%;
+}
+.head-name-box{
+  font-size: 1rem;
+  line-height: 25px;
+}
+.head-cash-box{
+  font-size: 0.75rem;
+  color: #b484c4;
+}
+.head-pic-box{
+  width: 3.0125rem;
+  height: 3.0125rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background-clip:border-box;
+  background-origin:border-box;
+  background-image:linear-gradient(0deg,#FFC32F,#FFEFB4);
+  border:2px transparent solid;
+  margin: 1.25rem auto 0.4rem auto;
+}
+.head-pic-box image{
+  width: 100%;
+  height: 100%;
+}
+.my-history-box{
+  width: 89.3%;
+  height: auto;
+  margin: 0 auto;
+  background:  rgba(83,37,116,0.80);
+  border-radius: 5px;
+  padding: 15px 0;
+}
+.my-history-title{
+  height: 1.4375rem;
+  width: 90%;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #fff;
+}
+.my-history-main{
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+}
+.my-mian-title{
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 0.75rem;
+  color: #fff;
+  border-bottom: 1px solid #663583
+}
+.my-mian-title .my-jt{
+  width:0.5rem;
+  height:0.5rem;
+  float:right;
+  margin-top:0.6rem;
+  margin-right:0.4rem;
+  border-right:1px solid #999;
+  border-bottom:1px solid #999;
+  transform:rotate(45deg);
+}
+.my-mian-title .my-jt2{
+  transform: rotate(-135deg);
+  margin-top:0.85rem;
+}
+.my-show-box{
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  display: none
+}
+.my-show2{
+  display: block
+}
+.my-show-hide{
+  height: 1.56rem;
+  line-height: 1.56rem;
+  width: 100%;
+  color: #fff;
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+}
+.my-show-hide text{
+  color: rgba(255,255,255,0.5)
+}
+.my-pic-box{
+  float: right;
+  width: 3rem;
+  height: 1.56rem;
+}
+.my-pic-box image{
+  width: 100%;
+  height: 100%;
+}

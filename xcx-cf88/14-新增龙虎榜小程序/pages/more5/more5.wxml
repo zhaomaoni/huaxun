@@ -1,0 +1,145 @@
+<!--pages/more/more.wxml-->
+<wxs module="filter" src="../../utils/numbertofix.wxs"></wxs>
+<view class="body">
+  <view class="nav">
+    <view class="help" bindtap='helpClick'>帮助</view>
+    <view class="rig" bindtap='calendars'>
+      <input placeholder='近三月' value="{{text}}" disabled/>
+      <view class="date">
+        <image src="../../images/date.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="table">
+    <view class="content show">
+      <view class="left">
+        <view class="name">名称</view>
+        <view class="left_msg" wx:for="{{list}}" wx:key bindtap='banner'>
+          <text>{{filter.numberToFix4(item.SalesName)}}</text>
+        </view>
+      </view>
+      <view class="right">
+        <view class="name">
+          <view class="hidden">
+            <view class="hidName">
+              <view>
+                <view>上榜后1天</view>
+                <view>买入次数</view>
+              </view>
+              <view>
+                <view>上榜后1天</view>
+                <view>平均涨幅</view>
+              </view>
+              <view>
+                <view>上榜后1天</view>
+                <view>上涨概率</view>
+              </view>
+              <view>
+                <view>上榜后2天</view>
+                <view>买入次数</view>
+              </view>
+              <view>
+                <view>上榜后2天</view>
+                <view>平均涨幅</view>
+              </view>
+              <view>
+                <view>上榜后2天</view>
+                <view>上涨概率</view>
+              </view>
+              <view>
+                <view>上榜后3天</view>
+                <view>买入次数</view>
+              </view>
+              <view>
+                <view>上榜后3天</view>
+                <view>平均涨幅</view>
+              </view>
+              <view>
+                <view>上榜后3天</view>
+                <view>上涨概率</view>
+              </view>
+              <view>
+                <view>上榜后5天</view>
+                <view>买入次数</view>
+              </view>
+              <view>
+                <view>上榜后5天</view>
+                <view>平均涨幅</view>
+              </view>
+              <view>
+                <view>上榜后5天</view>
+                <view>上涨概率</view>
+              </view>
+              <view>
+                <view>上榜后10天</view>
+                <view>买入次数</view>
+              </view>
+              <view>
+                <view>上榜后10天</view>
+                <view>平均涨幅</view>
+              </view>
+              <view>
+                <view>上榜后10天</view>
+                <view>上涨概率</view>
+              </view>
+            </view>
+            <view class="hidName" wx:for="{{list}}" wx:key bindtap='banner'>
+              <!-- 1天买入次数 -->
+              <view>{{item.BCount1DC}}</view>
+              <!-- 1天平涨幅 -->
+              <view class="{{item.AvgRate1DC>0 ? 'red' : 'green'}}">{{filter.numberToFix(item.AvgRate1DC)}}%</view>
+              <!-- 1天上涨率 -->
+              <view>{{filter.numberToFix(item.UpRate1DC)}}%</view>
+              <!-- 2天买入次数 -->
+              <view>{{item.BCount2DC}}</view>
+              <!-- 2天平涨幅 -->
+              <view class="{{item.AvgRate2DC>0 ? 'red' : 'green'}}">{{filter.numberToFix(item.AvgRate2DC)}}%</view>
+              <!-- 2天上涨率 -->
+              <view>{{filter.numberToFix(item.UpRate2DC)}}%</view>
+              <!-- 3天买入次数 -->
+              <view>{{item.BCount3DC}}</view>
+              <!-- 3天平涨幅 -->
+              <view class="{{item.AvgRate3DC>0 ? 'red' : 'green'}}">{{filter.numberToFix(item.AvgRate3DC)}}%</view>
+              <!-- 3天上涨率 -->
+              <view>{{filter.numberToFix(item.UpRate3DC)}}%</view>
+              <!-- 5天买入次数 -->
+              <view>{{item.BCount5DC}}</view>
+              <!-- 5天平涨幅 -->
+              <view class="{{item.AvgRate5DC>0 ? 'red' : 'green'}}">{{filter.numberToFix(item.AvgRate5DC)}}%</view>
+              <!-- 5天上涨率 -->
+              <view>{{filter.numberToFix(item.UpRate5DC)}}%</view>
+              <!-- 10天买入次数 -->
+              <view>{{item.BCount10DC}}</view>
+              <!-- 10天平涨幅 -->
+              <view class="{{item.AvgRate10DC>0 ? 'red' : 'green'}}">{{filter.numberToFix(item.AvgRate10DC)}}%</view>
+              <!-- 10天上涨率 -->
+              <view>{{filter.numberToFix(item.UpRate10DC)}}%</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view>
+        <button class="loadText" type="default"  loading="{{loading}}" disabled="{{disabled}}" bindtap="setLoading">{{loadText}}</button>
+      </view>
+    </view>
+  </view>
+</view>
+<!--  日期  -->
+<view class="{{isShow ? 'layerBox2' : 'layerBox'}}">
+  <view class="layerMain">
+    <view class="month">
+      <view class="{{ha==idx? 'monBg' : ''}}" bindtap='month' wx:for="{{mon}}" wx:key data-text="{{item}}" wx:for-index="idx" data-index="{{idx}}">{{item}}</view>
+    </view>
+    <view class="monBth" bindtap="close">取消</view>
+  </view>
+</view>
+<!--  帮助  -->
+<view class="{{isShow2 ? 'helpLayer2' : 'helpLayer'}}">
+  <view class="helpMain">
+    <view class="conHelp">
+      <view class="title">上榜后1天：</view>
+      <view>在指定的时间段内，统计出该营业部买入的个股次数，以及买入的个股在上榜后1天的平均涨幅和上涨概率。</view>
+      <view class="ok" bindtap='yesClick'>确定</view>
+    </view>
+  </view>
+</view>

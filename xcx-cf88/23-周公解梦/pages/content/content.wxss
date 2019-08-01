@@ -1,0 +1,51 @@
+/* pages/content/content.wxss */
+page{
+  background: url("https://api.51gsl.com/program/Constellation/images/zg_bk.png") no-repeat left center;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+.conBox{
+  width: 90%;
+  margin: 10px auto;
+  font-size: 14px;
+  background: rgba(255,255,255,0.4);
+  color: #fff;
+  padding: 15px 0;
+}
+.conBox view{
+  line-height: 22px;
+  padding: 0 15px;
+  text-indent: 24px;
+  margin-bottom: 10px;
+}
+.conBox .title{
+  width: 100%;
+  text-align: center;
+  font-size: 22px;
+  padding: 0;
+  line-height: 30px;
+  text-indent: 0;
+  margin-bottom: 0;
+}
+.btnBox{
+  width: 90%;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  font-size: 15px;
+  color: #fff;
+  background: #21a2f3;
+  margin: 15px auto 90px auto;
+}
+/*  banner  */
+.banner{
+  width: 100%;
+  height: 89px;
+  position: fixed;
+  bottom: 0;
+  overflow: hidden
+}
+.navImg{
+  width: 100%;
+  height: 100%
+}

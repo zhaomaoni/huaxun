@@ -1,0 +1,24 @@
+<!--pages/friend/friend.wxml-->
+<wxs module="filter" src="../../utils/date.wxs"></wxs>
+<view class="history-msg">
+  <view class="thead-box">
+    <view>好友昵称</view>
+    <view>注册时间</view>
+    <view>抽奖机会奖励</view>
+  </view>
+  <view class="list-msg-box">
+    <view wx:if="{{list.length!=0}}">
+      <view class="list-msg" wx:for="{{list}}" wx:key>
+        <view>{{item.invited_uid_mobile}}</view>
+        <view>{{filter.dateFilter(item.create_time)}}</view>
+        <view class="red">8</view>
+      </view>
+    </view>
+    <view wx:else class="noData-box">
+      <view class="noData-pic">
+        <image src="https://api.51gsl.com/program/Luckdraw/images/icon_noData.png"></image>
+      </view>
+      <view class="noData-txt">暂无数据</view>
+    </view>
+  </view>
+</view>

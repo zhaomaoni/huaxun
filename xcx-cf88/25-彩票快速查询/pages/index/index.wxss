@@ -1,0 +1,151 @@
+/* pages/index/index.wxss */
+@import "/wxParse/wxParse.wxss";
+page{
+  background: #f6f6f6
+}
+.conBox{
+  width: 100%;
+  height: 46px;
+  overflow: hidden;
+}
+.swiper-tab{  
+  width: 100%;
+  height: 45px;
+  line-height: 43px;
+  background:#fff;
+  position: fixed;
+  z-index: 999;
+  overflow: hidden;
+}
+.swiper-tab-list{ 
+  display: inline-block;  
+  width: 50%;  
+  color: #333;
+  text-align: center;
+  font-size: 16px;
+}  
+.on{ 
+  color: #e3383a;
+  border-bottom: 2px solid #e3383a;
+}
+.swiper-box{ 
+  display: block; 
+  height: auto; 
+  width: 100%;
+  overflow: hidden; 
+}
+.scroll_roll{
+  width: 100%;
+  height: 10000px;
+}
+
+/*内容*/
+.content{
+  width: 100%;
+  height: auto;
+  margin-bottom: 95px;
+  overflow: hidden
+}
+.main{
+  width: 92%;
+  margin: 15px auto 0 auto;
+  height: 120px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden
+}
+.head{
+  width: 88%;
+  margin: 15px auto 8px auto;
+  height: 60px;
+}
+.imgBox{
+  width: 50px;
+  height: 50px;
+  float: left;
+  box-shadow: 0px 0px 3px #333;
+  border-radius: 50px;
+  overflow: hidden;
+  margin: 5px 8px 5px 1px;
+}
+.imgBox image{
+  width: 100%;
+  height: 100%;
+}
+.title{
+  font-size: 16px;
+  font-weight: 600;
+  padding-top: 10px;
+  color: #333
+}
+.title_con{
+  color: #999;
+  font-size: 12px;
+  line-height: 25px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+.cai{
+  width: 88%;
+  height: 35px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.cai view{
+  float: left;
+  height: 25px;
+  width: 25px;
+  line-height: 25px;
+  text-align: center;
+  color: #e3383a;
+  margin-right: 5px;
+  font-size: 14px;
+  border-radius: 50px;
+  border: 1px solid #e3383a;
+  background: #fff;
+  -webkit-text-stroke: 1px #e3383a;
+}
+.cai .blue{
+  color: #5989eb;
+  border: 1px solid #5989eb;
+  -webkit-text-stroke: 1px #5989eb;
+}
+.tiMsg{
+  width: 80%;
+  margin: 10px auto;
+  color: #999;
+  font-size: 12px;
+}
+
+/* banner */
+.pic{
+  width: 100%;
+  height: 89px;
+  position: fixed;
+  bottom: 0;
+  overflow: hidden;
+  border-top: 1px solid #CCC
+}
+.navImg{
+  width: 100%;
+  height: 100%;
+}
+/* more小程序 */
+.layerBoxs{
+  width: auto;
+  height: 26px;
+  line-height: 26px;
+  position: fixed;
+  right: 0px;
+  bottom: 100px;
+  color: #fff;
+  background: rgba(0,0,0,0.7);
+  font-size: 12px;
+  text-align: center;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px
+}
+.layerBoxs navigator{
+  padding: 0 10px;
+}

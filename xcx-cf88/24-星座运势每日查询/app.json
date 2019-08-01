@@ -1,0 +1,45 @@
+{
+  "pages":[
+    "pages/day/day",
+    "pages/week/week",
+    "pages/month/month",
+    "pages/changexz/changexz",
+    "pages/banner/banner"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#100b23",
+    "navigationBarTitleText": "星座运势每日查询",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/day/day",
+        "text": "今日运势",
+        "iconPath": "/images/icon_star1.png",
+        "selectedIconPath": "/images/icon_star2.png"
+      },
+      {
+        "pagePath": "pages/week/week",
+        "text": "本周运势",
+        "iconPath": "/images/icon_star3.png",
+        "selectedIconPath": "/images/icon_star4.png"
+      },
+      {
+        "pagePath": "pages/month/month",
+        "text": "本月运势",
+        "iconPath": "/images/icon_star5.png",
+        "selectedIconPath": "/images/icon_star6.png"
+      }
+    ],
+    "backgroundColor":"#220f4b",
+    "color":"#fff",
+    "selectedColor":"#8f6ea6"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

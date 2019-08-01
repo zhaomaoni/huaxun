@@ -1,0 +1,37 @@
+/* pages/list/list.wxss */
+page{
+  background: #fff
+}
+.listBox{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  overflow: hidden
+}
+.hui{
+  height: 25px;
+  line-height: 25px;
+  background: #ddd;
+}
+.list{
+  height: 45px;
+  line-height: 45px;
+  border-bottom: 1px solid #666;
+  position: relative;
+  overflow: hidden
+}
+.list::after{
+  content: "";
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  top: 17px;
+  border-right: 1px solid #999;
+  border-bottom: 1px solid #999;
+  transform: rotate(-45deg)
+}
+.list:last-child{
+  border-bottom: 0
+}

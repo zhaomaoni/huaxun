@@ -1,0 +1,174 @@
+<!--pages/result/result.wxml-->
+<wxs module="filter" src="../../utils/date.wxs"></wxs>
+<view class="header">
+  <view class="head-left-box">
+    <view class="head-bg-box">
+      <view class="heart-box"><image src="../../images/icon_heart.png"></image></view>
+      <view>复活卡 {{userDetails.reviveCard || 0}}</view>
+    </view>
+    <view class="head-add-box">
+      <button bindtap='lifeBtn' class='share_btn'></button>
+    </view>
+  </view>
+  <view class="head-right-box">
+    <view bindtap='guanBtn'>赛事报道</view>
+    <view bindtap='paiBtn'>排行</view>
+    <view bindtap='ruleBtn'>规则</view>
+  </view>
+</view>
+<view class="res-top-box">
+  <view class="top-pic-box">
+    <image src="https://api.51gsl.com/program/StockPush/images/icon_wait.png" wx:if="{{usergamedetail.sumTotal == 2 }}"></image>
+    <image src="https://api.51gsl.com/program/StockPush/images/icon_fail.png" wx:if="{{usergamedetail.sumTotal == 4|| usergamedetail.secucodeplayUserstocks.length==0}}"></image>
+    <image src="https://api.51gsl.com/program/StockPush/images/icon_tzcg.png" wx:if="{{(usergamedetail.sumTotal == 3 || usergamedetail.sumTotal == 5) && (usergamedetail.days < 10 || (usergamedetail.days==10 && usergamedetail.ifGift==1)) }}"></image>
+    <image src="https://api.51gsl.com/program/StockPush/images/icon_box.png" wx:if="{{(usergamedetail.sumTotal == 3 || usergamedetail.sumTotal == 5) && usergamedetail.days==10 && usergamedetail.ifGift==0 }}"></image>
+  </view>
+  <view class="top-txt-box" wx:if="{{usergamedetail.sumTotal == 2 }}">
+  {{filter.dateShow(''+usergamedetail.settlementTime)}} 15:15 公布猜涨结果哦！
+  
+  </view>
+  <view class="top-txt-box" wx:if="{{usergamedetail.sumTotal == 2 && test}}" bindtap='openJob'>结算</view>
+  <view class="fail-box" wx:if="{{usergamedetail.sumTotal == 4 || usergamedetail.secucodeplayUserstocks.length==0}}">
+    <!-- <view bindtap='retry'>重新挑战</view>
+    <view bindtap='fuhuo'>复活</view> -->
+    <view bindtap='newBtn' data-fu="1">重新挑战</view>
+    <view bindtap='fuBtn' data-fu="2">复活</view>
+  </view>
+  <view class="success-box" wx:if="{{usergamedetail.sumTotal == 3 || usergamedetail.sumTotal == 5 }}">
+    <view bindtap='duiBtn' wx:if="{{(usergamedetail.sumTotal == 3 || usergamedetail.sumTotal ==5 ) && usergamedetail.ifGift == 0 && (usergamedetail.days==3 || usergamedetail.days==5 || usergamedetail.days==7 || usergamedetail.days==9)}}">兑奖</view>
+    <view wx:if="{{(usergamedetail.sumTotal == 3 || usergamedetail.sumTotal ==5 )&& usergamedetail.days<10 && usergamedetail.ifGift == 0 }}">
+      <label bindtap='continueBtn' data-days="{{usergamedetail.days}}">继续挑战</label>
+    </view>
+    <view bindtap='retry' wx:if="{{usergamedetail.sumTotal ==5 && usergamedetail.ifGift == 1 }}">重新开始</view>
+    <view class="open-box" bindtap="openBox" wx:if="{{(usergamedetail.sumTotal == 3 || usergamedetail.sumTotal == 5 ) && usergamedetail.days==10 && usergamedetail.ifGift==0 }}">打开宝箱,领万元大奖</view>
+  </view>
+</view>
+<view class="bottom-main-box">
+  <view class="bottom-head-box">
+    <image src="https://api.51gsl.com/program/StockPush/images/icon_yhjl.png"></image>
+  </view>
+  
+  <view class="bot-main-box">
+    <view class="bot-left-box">
+      <view class="title-name">现金</view>
+      <view class="bot-left-main">
+        <text>{{userDetails.cashTotal || 0}}</text>
+        <image src="https://api.51gsl.com/program/StockPush/images/icon_xj.png"></image>
+      </view>
+    </view>
+    <view class="bot-right-box">
+      <view class="title-name">优惠券</view>
+      <view class="bot-right-main">
+        <text>{{userDetails.couponTotal || 0}}</text>
+        <image src="https://api.51gsl.com/program/StockPush/images/icon_yhq.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="bot-tui-gu">
+    <view class="tui-title-box">
+      <view bindtap='hisBtn' class="his-right">
+        <view class="his-txt">历史推股</view>
+        <view class="jian-tou">
+          <image src="https://api.51gsl.com/program/StockPush/images/icon_rightjt.png"></image>
+        </view>
+      </view>
+      <view class="his-left">我的推股</view>
+    </view>
+    <view>
+      <block wx:if="{{usergamedetail.secucodeplayUserstocks.length!=0}}">
+        <view class="tui-main-result" wx:for="{{usergamedetail.secucodeplayUserstocks}}" wx:key wx:for-item="item" wx:for-index="index">
+          <view>
+            <image src="https://api.51gsl.com/program/StockPush/images/icon_sl.png" wx:if="{{item.total==3||item.total==5}}"></image>
+            <image src="https://api.51gsl.com/program/StockPush/images/icon_sb.png" wx:elif="{{item.total==4||usergamedetail.secucodeplayUserstocks.length==0}}"></image>
+          </view>
+          <view>{{item.secucodeName}} {{item.secucode}}</view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="tui-main-result">
+          <view>
+            <image src="https://api.51gsl.com/program/StockPush/images/icon_sb.png"></image>
+          </view>
+          <view>未推股</view>
+        </view>
+      </block>
+    </view>
+    
+<!-- 开户 -->
+    <!-- <view class="brokerBox">
+      <view class="broker-btn-box" wx:if="{{f && broker.img_kaihu}}">
+        <view class="broker-pic">
+          <image src="{{broker.img_kaihu}}"></image>
+        </view>
+        <view class="kai-hu-btn" bindtap='kaihuBtn' data-urls="{{broker.kaihu_url}}">立即开户</view>
+      </view>
+    </view> -->
+  </view>
+</view>
+
+<view class="zhi-bo-box" bindtap='zhiboBtn'>
+  <image src="https://api.51gsl.com/program/StockPush/images/icon_zb.png"></image>
+</view>
+
+<view class="dui-jiang-layer" hidden='{{isDui}}'>
+  <view class="dui-jiang-box">
+    <view class="dui-title">温馨提示
+      <view class="inp-clear">
+        <image src="https://api.51gsl.com/program/StockPush/images/icon_del.png" bindtap='clearBtn' data-index="{{tuiIdx}}" ></image>
+      </view>
+    </view>
+    <view class="dui-main">{{duiTxt}}</view>
+    <view class="dui-btn">
+      <view bindtap='jiangBtn'>确认兑奖</view>
+      <view bindtap='retry' wx:if="{{usergamedetail.days!=10}}">继续挑战</view>
+      <view bindtap='cancelBtn' wx:else>取消</view>      
+    </view>
+  </view>
+</view>
+<view class="dui-jiang-layer" hidden='{{isNew}}'>
+  <view class="dui-jiang-box">
+    <view class="dui-title">温馨提示
+      <view class="inp-clear">
+        <image src="https://api.51gsl.com/program/StockPush/images/icon_del.png" bindtap='clearBtn' data-index="{{tuiIdx}}" ></image>
+      </view>
+    </view>
+    <view class="dui-main">{{duiTxt}}</view>
+    <view class="dui-btn">
+      <view bindtap='noBtn'>取消</view>
+      <view bindtap='retry' wx:if="{{fu==1}}">确定</view>
+      <view bindtap='fuhuo' wx:else>确定</view>   
+    </view>
+  </view>
+</view>
+<view class="open-box-layer" hidden='{{isOpen}}'>
+  <view class="open-again-box" wx:if="{{usergamedetail.days==10}}">
+    <view class="again-pic">
+      <image src="https://api.51gsl.com/program/StockPush/images/icon_openBox.png"></image>
+    </view>
+    <view class="again-txt">
+      <view>5个工作日内 ，工作人员将会联系你注册的</view>
+      <view>手机号码，敬请留意</view>
+      <view>官方客服电话：400-158-7118</view>
+    </view>
+    <view class="open-btn">
+      <view bindtap='againBtn'>再来一轮</view>
+      <view><button open-type="share">炫耀一波</button></view>
+    </view>
+  </view>
+  <view class="dui-jiang-money" wx:else>
+    <view wx:for="{{jPic}}" wx:key wx:for-index="i" wx:if="{{usergamedetail.days == i}}">
+      <view class="pic-money-box">
+        <image src="{{item.img}}"></image>
+      </view>
+      <view class="pic_head-title" wx:if="{{item.num==30}}" data-num="{{item.num}}">恭喜你获得了{{item.num}}元礼包！</view>      
+      <view class="pic_head-title" wx:else data-num="{{item.num}}">恭喜你获得了{{item.num}}元现金！</view>
+      <view class="pic-again-txt">
+        <view wx:for="{{item.content}}" wx:key wx:for-item="txt">{{txt}}</view>
+      </view>
+      <view class="pic-btn-box">
+        <view bindtap="sureBtn">确定</view>
+        <view><button open-type="share">炫耀一波</button></view>
+      </view>
+    </view>
+  </view>
+</view>

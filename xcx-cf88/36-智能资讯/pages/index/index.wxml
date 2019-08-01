@@ -1,0 +1,92 @@
+<!--pages/index/index.wxml-->
+<wxs module="filter" src="../../utils/date.wxs"></wxs>
+<view class="tuiBg" wx:if='{{ten}}'>为您推荐10条新内容</view>
+<view class="body-list-box">
+  <!-- 置顶 -->
+  <view class="section-list-box" bindtap='jumpBtn' wx:for="{{topList}}" wx:key data-newsid="{{item.newsId}}">
+    <view class="left-list-box">
+      <view class="left-title-box">{{item.newsTitle}}</view>
+      <view class="left-bottom-box">
+        <view class="close-main-box">
+          <view class="hot-main-box">置顶</view>
+          <view class="from-main-box">{{item.source}}</view>
+          <view class='date-main-box'>{{filter.dateFn(item.publishTime)}}</view>
+        </view>
+        <!-- <view class="close-list-box">
+          <image src="../../images/icon_close.png"></image>
+        </view> -->
+      </view>
+    </view>
+    <view class="right-list-box">
+      <image src="{{item.newsImage[0].imageUrl}}" mode='aspectFill'></image>
+    </view>
+  </view>
+  <!-- 热门 -->
+  <view class="section-list-box" bindtap='jumpBtn' wx:for="{{hotList}}" wx:key data-newsid="{{item.newsId}}">
+    <view class="left-list-box">
+      <view class="left-title-box">{{item.newsTitle}}</view>
+      <view class="left-bottom-box">
+        <view class="close-main-box">
+          <view class="hot-main-box2">热</view>
+          <view class="from-main-box">{{item.source}}</view>
+          <view class='date-main-box'>{{filter.dateFn(item.publishTime)}}</view>
+        </view>
+        <!-- <view class="close-list-box">
+          <image src="../../images/icon_close.png"></image>
+        </view> -->
+      </view>
+    </view>
+    <view class="right-list-box">
+      <image src="{{item.newsImage[0].imageUrl}}" mode='aspectFill'></image>
+    </view>
+  </view>
+  <!-- 新闻 -->
+  <view class="section-list-box" bindtap='jumpBtn' wx:for="{{list}}" wx:key data-newsid="{{item.newsId}}">
+    <view class="left-list-box">
+      <view class="left-title-box">{{item.newsTitle}}</view>
+      <view class="left-bottom-box">
+        <view class="close-main-box">
+          <view class="from-main-box">{{item.source}}</view>
+          <view class='date-main-box'>{{filter.dateFn(item.publishTime)}}</view>
+        </view>
+        <!-- <view class="close-list-box">
+          <image src="../../images/icon_close.png"></image>
+        </view> -->
+      </view>
+    </view>
+    <view class="right-list-box">
+      <image src="{{item.newsImage[0].imageUrl}}" mode='aspectFill'></image>
+    </view>
+  </view>
+  <view class="shang-ci" bindtap='clickFn'>上次看到这里 点击刷新</view>
+  <!-- 下部分新闻 -->
+  <view class="section-list-box" bindtap='jumpBtn' wx:for="{{Blist}}" wx:key data-newsid="{{item.newsId}}">
+    <view class="left-list-box">
+      <view class="left-title-box">{{item.newsTitle}}</view>
+      <view class="left-bottom-box">
+        <view class="close-main-box">
+          <view class="from-main-box">{{item.source}}</view>
+          <view class='date-main-box'>{{filter.dateFn(item.publishTime)}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="right-list-box">
+      <image src="{{item.newsImage[0].imageUrl}}" mode='aspectFill'></image>
+    </view>
+  </view>
+</view>
+
+<!-- 红包弹层 -->
+<view class="red-box-layer" hidden="{{isHb}}">
+  <view class="blue-box-pic">
+    <view class="blue-close" bindtap='closeBtn'>
+      <image src="../../images/icon_close2.png"></image>
+    </view>
+    <view class="hb-pic" bindtap="redBtn">
+      <image src="../../images/icon_hb.png"></image>
+    </view>
+  </view>
+</view>
+
+<!-- 授权弹层 -->
+<phones id="phones" wx:if="{{isShow}}" bind:gitUserid="gitUserid"></phones>

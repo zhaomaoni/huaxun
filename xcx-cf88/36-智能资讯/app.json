@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/content/content",
+    "pages/hongbao/hongbao"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#101013",
+    "navigationBarTitleText": "股票炒股传闻消息",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true
+  }
+}

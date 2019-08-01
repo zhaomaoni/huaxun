@@ -1,0 +1,7 @@
+<!--pages/helpMsg/helpMsg.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+  <view class="contentBox">
+  <view class="conMain">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+</view>

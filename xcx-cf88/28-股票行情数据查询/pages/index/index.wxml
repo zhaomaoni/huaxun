@@ -1,0 +1,28 @@
+<!--pages/index/index.wxml-->
+<view class="content">
+  <view class="Main" wx:for="{{list}}" wx:for-index="idx" wx:key>
+    <view class="title">{{idx}}</view>
+    <view class="MainDl" wx:for="{{item}}" wx:for-item="i" wx:key data-url="{{i.url}}" bindtap='jumpBtn'>
+      <view class="MainDt">
+        <image src="{{i.img}}"></image>
+      </view>
+      <view class="MainDd">{{i.title}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="Msg">
+  <text>风险提示：</text> 所有数据为学习研究使用，不构成任何投资建议！历史表现仅为数据参考，不代表未来表现，更不做未来收益的保证。最高涨幅是指证券调入后最大涨幅，所有证券投资都有风险，您应在投资策略前做出理性判断，并自行承担投资风险。
+</view>
+
+<!--  广告  -->
+<view class="banner" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images'></image>
+</view>
+<!-- 更多小程序 -->
+<view class="layerBoxs">
+  <navigator target="miniProgram" open-type="navigate" app-id="wx81dacf7d77359d1d" path="/pages/index/index?from={{from}}" extra-data="" version="release">更多小程序</navigator>
+</view>
+
+<!-- 授权弹层 -->
+<phones wx:if="{{isShow}}"></phones>

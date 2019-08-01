@@ -1,0 +1,8 @@
+<!--pages/content/content.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="content">
+  <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>
+<view>
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images' wx:if="{{showAd}}"></image>
+</view>

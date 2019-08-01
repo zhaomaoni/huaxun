@@ -1,0 +1,77 @@
+<!--pages/rankings/rankings.wxml-->
+<view class="header">
+  <image src="https://api.51gsl.com/program/StockPush/images/icon_money.png"></image>
+  <label>万元奖池剩余：<text>{{surplusAmount}}元</text></label>
+  <image src="https://api.51gsl.com/program/StockPush/images/icon_money.png"></image>
+</view>
+<view class="rank-title-box">
+  <view bindtap="swichNav" wx:for="{{title}}" wx:key wx:for-index="idx" class="{{currentTab==idx ? 'on' : ''}}" data-current="{{idx}}">{{item}}</view>
+</view>
+
+<view wx:if="{{userid}}" class="rank-box">
+  <view class="content-box" hidden='{{item.userId != userid}}'>
+    <view class="main-list-box" wx:for="{{jiang}}" wx:key wx:for-index="idx" bindtap='clickBtn' data-name="{{item.name}}"  data-headPortrait="{{item.headPortrait}}"  data-giftTotal="{{item.giftTotal}}"  data-userId="{{item.userId}}" wx:if="{{item.userId == userid}}" data-currentTab="{{currentTab}}">
+      <view class="main-num">{{idx+1}}</view>
+      <view class="main-pic-box">
+        <image src="{{item.headPortrait}}"></image>
+      </view>
+      <view class="main-txt-box main-txt-box2">
+        <view class="main-name main-name2"><text wx:if="{{idx==0}}">万元大奖</text>{{item.name}}</view>
+        <view class="main-sum">奖励总额：<text>{{item.giftTotal}}</text></view>
+        <view class="main-you">现金：<text>{{item.cashTotal}}</text>元  优惠券：<text>{{item.couponTotal}}</text>元</view>
+      </view>
+    </view>
+  </view>
+  <view class="content-box" wx:if="{{currentTab==0}}" hidden='{{!list.userlist}}'>
+    <view class="main-list-box" wx:for="{{list.userlist}}" wx:key wx:for-index="idx" bindtap='clickBtn' data-name="{{item.user.name}}"  data-headPortrait="{{item.user.headPortrait}}"  data-giftTotal="{{item.user.giftTotal}}"  data-userId="{{item.userId}}"  wx:if="{{item.userId == userid}}" data-currentTab="{{currentTab}}">
+      <view class="main-num">{{idx+1}}</view>
+      <view class="main-pic-box">
+        <image src="{{item.user.headPortrait}}"></image>
+      </view>
+      <view class="main-txt-box">
+        <view class="main-name"><text>第{{item.days}}关</text>{{item.user.name}}</view>
+        <view class="main-you"><text>{{item.text}}</text></view>
+      </view>
+    </view>
+  </view>
+  <view class="content-box" wx:else hidden='{{item.userId != userid}}'>
+    <view class="main-list-box" wx:for="{{jiang}}" wx:key wx:for-index="idx" bindtap='clickBtn' data-name="{{item.name}}"  data-headPortrait="{{item.headPortrait}}"  data-giftTotal="{{item.giftTotal}}"  data-userId="{{item.userId}}" wx:if="{{item.userId == userid}}" data-currentTab="{{currentTab}}">
+      <view class="main-num">{{idx+1}}</view>
+      <view class="main-pic-box">
+        <image src="{{item.headPortrait}}"></image>
+      </view>
+      <view class="main-txt-box main-txt-box2">
+        <view class="main-name main-name2"><text wx:if="{{idx==0}}">万元大奖</text>{{item.name}}</view>
+        <view class="main-sum">奖励总额：<text>{{item.giftTotal}}</text></view>
+        <view class="main-you">现金：<text>{{item.cashTotal}}</text>元  优惠券：<text>{{item.couponTotal}}</text>元</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="content-box" wx:if="{{currentTab==0}}" hidden='{{!list.limit50list}}'>
+    <view class="main-list-box" wx:for="{{list.limit50list}}" wx:key wx:for-index="idx" bindtap='clickBtn' data-name="{{item.user.name}}"  data-headPortrait="{{item.user.headPortrait}}"  data-giftTotal="{{item.user.giftTotal}}"  data-userId="{{item.userId}}"  data-currentTab="{{currentTab}}">
+      <view class="main-num">{{idx+1}}</view>
+      <view class="main-pic-box">
+        <image src="{{item.user.headPortrait}}"></image>
+      </view>
+      <view class="main-txt-box">
+        <view class="main-name"><text>第{{item.days}}关</text>{{item.user.name}}</view>
+        <view class="main-you"><text>{{item.text}}</text></view>
+      </view>
+    </view>
+  </view>
+  <view class="content-box" wx:else>
+    <view class="main-list-box" wx:for="{{jiang}}" wx:key wx:for-index="idx" bindtap='clickBtn'   data-name="{{item.name}}"  data-headPortrait="{{item.headPortrait}}"  data-giftTotal="{{item.giftTotal}}"  data-userId="{{item.userId}}" data-currentTab="{{currentTab}}">
+      <view class="main-num">{{idx+1}}</view>
+      <view class="main-pic-box">
+        <image src="{{item.headPortrait}}"></image>
+      </view>
+      <view class="main-txt-box main-txt-box2">
+        <view class="main-name main-name2"><text wx:if="{{idx==0}}">万元大奖</text>{{item.name}}</view>
+        <view class="main-sum">奖励总额：<text>{{item.giftTotal}}</text></view>
+        <view class="main-you">现金：<text>{{item.cashTotal}}</text>元  优惠券：<text>{{item.couponTotal}}</text>元</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:else class="content-box content2-box">您的信息不全，请重新授权登录</view>

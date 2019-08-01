@@ -1,0 +1,57 @@
+<!--pages/index/index.wxml-->
+<!--  消息提示  -->
+<view class="promptBox">
+  <view class="laba">
+    <image src="../../images/icon_laba.png"></image>
+  </view>
+  <view class="click" bindtap='nextShow'>
+    <text>预计下次调整时间{{nextDate}}0时</text>
+  </view>
+</view>
+<!--  title  -->
+<view class="title">
+  <view>{{title}}</view>
+  <view>{{date2}}</view>
+</view>
+<!-- 选择地区 -->
+<view class="areaBox" bindtap='areaClick'>
+  <view class="areaBody">
+    <view class="area">{{area_name}}</view>
+    <view class="areaPic">
+      <image src="../../images/icon_back.png"></image>
+    </view>
+  </view>
+</view>
+<!--  主体部分  -->
+<view class="MainBox {{isMain ? 'MainBox2':''}}">
+  <view class="conBody" wx:for="{{list}}" wx:key wx:for-index="idx" data-index="{{idx}}" bindtap='listClick' data-text="{{item.oliType}}">
+    <view class="content">
+      <view class="left">
+        <text class="num">{{item.oliType}}</text>
+      </view>
+      <view class="right"><text>{{idx}}</text>元/升</view>
+    </view>
+  </view>
+</view>
+<!--  油价走势  -->
+<view class="charts {{isCharts ? 'charts2':''}}">
+  <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+</view>
+<!--  市区选择  -->
+<view class="areaCheck {{isArea?'areaCheck2':''}}">
+  <view wx:for="{{area}}" wx:key wx:for-index="aidx">
+    <view class="ccc"><text>{{aidx}}</text></view>
+    <view>
+      <text bindtap='liClick' wx:for="{{item}}" wx:key wx:for-item="i" wx:for-index="liidx"    data-index='{{liidx}}' data-text='{{i}}'>{{i}}</text>
+    </view>
+  </view>
+</view>
+
+<!--  广告  -->
+<view class="banner" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images'></image>
+</view>
+<!-- 更多小程序 -->
+<view class="layerBoxs" bindtap='moreBtn'>
+    <view>更多小程序</view>
+</view>

@@ -1,0 +1,161 @@
+<!--pages/more/more.wxml-->
+<wxs module="filter" src="../../utils/numbertofix.wxs"></wxs>
+<view class="body">
+  <view class="nav">
+    <view class="help" bindtap='helpClick'>帮助</view>
+    <view class="rig" bindtap='calendars'>
+      <input placeholder='近三月' value="{{text}}" disabled/>
+      <view class="date">
+        <image src="../../images/date.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="table">
+    <view class="content show">
+      <view class="left">
+        <view class="name">名称</view>
+        <view class="left_msg" wx:for="{{list}}" wx:key bindtap='banner'>
+          <text>{{item.SName}}</text>
+          <text>{{item.SCode}}</text>
+        </view>
+      </view>
+      <view class="right">
+        <view class="name">
+          <view class="hidden">
+            <view class="hidName">
+              <view>近日上榜日</view>
+              <view>收盘价</view>
+              <view>涨跌幅</view>
+              <view>
+                <view>龙虎榜</view>
+                <view>净买额(万)</view>
+              </view>
+              <view>
+                <view>龙虎榜</view>
+                <view>买入额(万)</view>
+              </view>
+              <view>
+                <view>龙虎榜</view>
+                <view>卖出额(万)</view>
+              </view>
+              <view>
+                <view>龙虎榜总</view>
+                <view>成交额(万)</view>
+              </view>
+              <view>买方机构次数</view>
+              <view>卖方机构次数</view>
+              <view>
+                <view>机构买入</view>
+                <view>净额(万)</view>
+              </view>
+              <view>
+                <view>机构买入</view>
+                <view>总额(万)</view>
+              </view>
+              <view>
+                <view>机构卖出</view>
+                <view>总额(万)</view>
+              </view>
+              <view>
+                <view>近1个月</view>
+                <view>涨跌幅</view>
+              </view>
+              <view>
+                <view>近3个月</view>
+                <view>涨跌幅</view>
+              </view>
+              <view>
+                <view>近6个月</view>
+                <view>涨跌幅</view>
+              </view>
+              <view>
+                <view>近1年</view>
+                <view>涨跌幅</view>
+              </view>
+            </view>
+            <view class="hidName" wx:for="{{list}}" wx:key bindtap='banner'>
+            <!-- 日期 -->
+              <view wx:if="{{item.Tdate}}">{{filter.numberToFix3(item.Tdate)}}</view>
+              <view wx:elif="{{item.TDate}}">{{filter.numberToFix3(item.TDate)}}</view>
+              <view wx:else>--</view>
+              <!-- 收盘价 -->
+              <view wx:if="{{item.CPrice}}">{{item.CPrice}}</view>
+              <view wx:else>{{item.ClosePrice}}</view>
+              <!-- 涨跌幅 -->
+              <view class="{{item.Chgradio>0 ? 'red' : 'green'}}">{{filter.numberToFix(item.Chgradio)}}</view>
+              <!-- 净买额 -->
+              <view class="{{item.JmMoney>0 ? 'red' : 'green'}}" wx:if="{{item.JmMoney}}">{{filter.numberToFix2(item.JmMoney)}}</view>
+              <view class="{{item.JGPBuy>0 ? 'red' : 'green'}}" wx:else>{{filter.numberToFix2(item.JGPBuy)}}</view>
+              <!-- 买入额 -->
+              <view class="{{item.Bmoney>0 ? 'red' : 'green'}}" wx:if="{{item.Bmoney}}">{{filter.numberToFix2(item.Bmoney)}}</view>
+              <view class="{{item.JGBMoney>0 ? 'red' : 'green'}}" wx:else>{{filter.numberToFix2(item.JGBMoney)}}</view>
+              <!-- 卖出额 -->
+              <view class="{{item.Smoney>0 ? 'red' : 'green'}}" wx:if="{{item.Smoney}}">{{filter.numberToFix2(item.Smoney)}}</view>
+              <view class="{{item.JGSMoney>0 ? 'red' : 'green'}}" wx:else>{{filter.numberToFix2(item.JGSMoney)}}</view>
+              <!-- 总成交额 -->
+              <view wx:if="{{item.ZeMoney}}">{{filter.numberToFix2(item.ZeMoney)}}</view>
+              <view wx:else>--</view>
+              <!-- 买方次数 -->
+              <view wx:if="{{item.JGBSumCount}}">{{item.JGBSumCount}}</view>
+              <view wx:elif="{{item.JGBCount}}">{{item.JGBCount}}</view>
+              <view wx:else>{{item.BSL}}</view>
+              <!-- 卖方次数 -->
+              <view wx:if="{{item.JGSSumCount}}">{{item.JGSSumCount}}</view>
+              <view wx:elif="{{item.JGSCount}}">{{item.JGSCount}}</view>
+              <view wx:else>{{item.SSL}}</view>
+              <!-- 买入净额 -->
+              <view class="{{item.JGJMMoney>0 ? 'red' : 'green'}}" wx:if="{{item.JGJMMoney != ''&&item.JGJMMoney}}">{{filter.numberToFix2(item.JGJMMoney)}}</view>
+              <view wx:else>--</view>
+              <!-- 买入总额 -->
+              <view class="{{item.JGBMoney>0 ? 'red' : 'green'}}" wx:if="{{item.JGBMoney != ''}}">{{filter.numberToFix2(item.JGBMoney)}}</view>
+              <view wx:else>--</view>
+              <!-- 卖出总额 -->
+              <view class="{{item.JGSMoney>0 ? 'red' : 'green'}}" wx:if="{{item.JGSMoney != ''}}">{{filter.numberToFix2(item.JGSMoney)}}</view>
+              <view wx:else>--</view>
+              <!-- 1月 -->
+              <view class="{{item.Rchange1m>0 ? 'red' : 'green'}}" wx:if="{{item.Rchange1m}}">{{filter.numberToFix(item.Rchange1m)}}%</view>
+              <view class="{{item.RChange1M>0 ? 'red' : 'green'}}" wx:else>{{filter.numberToFix(item.RChange1M)}}%</view>
+              <!-- 3月 -->
+              <view class="{{item.Rchange3m>0 ? 'red' : 'green'}}" wx:if="{{item.Rchange3m}}">{{filter.numberToFix(item.Rchange3m)}}%</view>
+              <view class="{{item.RChange3M>0 ? 'red' : 'green'}}" wx:else>{{filter.numberToFix(item.RChange3M)}}%</view>
+              <!-- 6月 -->
+              <view class="{{item.Rchange6m>0 ? 'red' : 'green'}}" wx:if="{{item.Rchange6m}}">{{filter.numberToFix(item.Rchange6m)}}%</view>
+              <view class="{{item.RChange6M>0 ? 'red' : 'green'}}" wx:else>{{filter.numberToFix(item.RChange6M)}}%</view>
+              <!-- 1年 -->
+              <view class="{{item.Rchange1y>0 ? 'red' : 'green'}}" wx:if="{{item.Rchange1y}}">{{filter.numberToFix(item.Rchange1y)}}%</view>
+              <view class="{{item.RChange1Y>0 ? 'red' : 'green'}}" wx:else>{{filter.numberToFix(item.RChange1Y)}}%</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view>
+        <button class="loadText" type="default"  loading="{{loading}}" disabled="{{disabled}}" bindtap="setLoading">{{loadText}}</button>
+      </view>
+    </view>
+  </view>
+</view>
+<!--  日期  -->
+<view class="{{isShow ? 'layerBox2' : 'layerBox'}}">
+  <view class="layerMain">
+    <view class="month">
+      <view class="{{ha==idx? 'monBg' : ''}}" bindtap='month' wx:for="{{mon}}" wx:key data-text="{{item}}" wx:for-index="idx" data-index="{{idx}}">{{item}}</view>
+    </view>
+    <view class="monBth" bindtap="close">取消</view>
+  </view>
+</view>
+<!--  帮助  -->
+<view class="{{isShow2 ? 'helpLayer2' : 'helpLayer'}}">
+  <view class="helpMain">
+    <view class="conHelp">
+      <view class="title">龙虎榜净买额：</view>
+      <view>龙虎榜买入额-龙虎榜卖出额；代表龙虎榜资金的净流入情况。</view>
+      <view class="title">买方机构次数(次)：</view>
+      <view>区间内每只股票所有买方机构出现的次数，依据逻辑去掉重复的买入次数。</view>
+      <view class="title">卖方机构次数(次)：</view>
+      <view>区间内每只股票所有卖方机构出现的次数，依据逻辑去掉重复的卖出次数。</view>
+      <view class="title">机构买入净额：</view>
+      <view>区间内买方机构总买入金额-区间内卖方机构总卖出金额，相关的金额统计依据相关的逻辑去掉重复的数据。</view>
+      <view class="ok" bindtap='yesClick'>确定</view>
+    </view>
+  </view>
+</view>

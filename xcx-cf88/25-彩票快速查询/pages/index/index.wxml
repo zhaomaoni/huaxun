@@ -1,0 +1,64 @@
+<!--pages/index/index.wxml-->
+<view class="conBox">
+  <view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">福利彩票</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">体育彩票</view>
+  </view>
+</view>
+<view class="swipers">
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight}}px" bindchange="bindChange">
+    <!-- 我是福利彩票 -->
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height: 100%;" bindscrolltolower="onReachBottom">
+        <view class="content">
+          <view class="main" wx:for="{{list}}" wx:key bindtap='jump' wx:for-index="idx" data-index="{{idx}}" data-name="福利彩票" data-jname="fl" data-gameIndex="{{item.gameIndex}}" wx-if="{{item.title != '15选5' && item.title != '东方6+1'}}">
+            <view class="head">
+              <view class="imgBox">
+                 <image wx:for="{{imgList}}" wx:key wx:for-item="m" wx:for-index="idx" wx:if="{{item.title == idx}}" src="{{m}}"></image>
+              </view>
+              <view class="title_txt">
+                <view class="title">{{item.title}}</view>
+                <view class="title_con"><text>{{item.stage}}</text>期 <text>{{item.openTime}}</text>{{item.kTime}}</view>
+              </view>
+            </view>
+            <view class="cai">
+              <view wx:for="{{item.openResult}}" wx:key wx:for-item="i">{{i}}</view>
+              <view wx:for="{{item.blue}}" wx:key wx:for-item="j" class="blue">{{j}}</view>
+            </view>
+          </view>
+          <view class="tiMsg">提示：数据来源于中国福彩网及中国体彩网，请以官方网站公布数据为准。</view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <!-- 我是体育彩票 -->
+    <swiper-item>
+      <scroll-view class="scroll_roll" scroll-y="true" style="height: 100%;" bindscrolltolower="onReachBottom">
+        <view class="content">
+          <view class="main" bindtap='jump' wx:for="{{list}}" wx:key wx:for-index="idx" data-index="{{idx}}" data-name="体育彩票" data-jname="ty" data-gameIndex="{{item.gameIndex}}">
+            <view class="head">
+              <view class="imgBox">
+                 <image wx:for="{{imgList}}" wx:key wx:for-item="m" wx:for-index="idx" wx:if="{{item.title == idx}}" src="{{m}}"></image>
+              </view>
+              <view class="title_txt">
+                <view class="title">{{item.title}}</view>
+                <view class="title_con"><text>{{item.stage}}</text>期 <text>{{item.openTime}}</text>{{item.kTime}}</view>
+              </view>
+            </view>
+            <view class="cai">
+              <view wx:for="{{item.openResult}}" wx:key wx:for-item="i">{{i}}</view>
+              <view wx:for="{{item.blue}}" wx:key wx:for-item="j" class="blue">{{j}}</view>
+            </view>
+          </view>
+          <view class="tiMsg">提示：数据来源于中国福彩网及中国体彩网，请以官方网站公布数据为准。</view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>
+<view class="pic" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images'></image>
+</view>
+<!-- 更多小程序 -->
+<view class="layerBoxs">
+  <navigator target="miniProgram" open-type="navigate" app-id="wx81dacf7d77359d1d" path="/pages/index/index?from={{from}}" extra-data="" version="release">更多小程序</navigator> <!-- release -->
+</view>

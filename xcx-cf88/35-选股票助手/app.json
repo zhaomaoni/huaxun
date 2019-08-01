@@ -1,0 +1,12 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/webView/webView"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#de4a4c",
+    "navigationBarTitleText": "选股票助手",
+    "navigationBarTextStyle":"#fff"
+  }
+}

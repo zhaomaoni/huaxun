@@ -1,0 +1,136 @@
+<!--pages/myHis/myHis.wxml-->
+<wxs module="filter" src="../../utils/date.wxs"></wxs>
+<view class="history-msg">
+  <view class="tab-title-box">
+    <view wx:for="{{tabber}}" wx:key bindtap="swichNav" wx:for-index="idx" class="{{currentTab==idx ? 'on' : ''}}" data-current="{{idx}}">{{item}}</view>
+  </view>
+  <view class="tab-centent-box">
+    <view class="thead-box">
+      <view>中奖时间</view>
+      <view>我的奖品</view>
+      <view>领取/发放状态</view>
+    </view>
+    <view class="list-msg-box" data-currentTab="{{currentTab}}" wx:if="{{currentTab==0}}">
+      <view wx:if="{{reduce.length!=0}}">
+        <view class="list-msg" wx:for="{{reduce}}" wx:key>
+          <view>{{filter.dateFilter(item.create_time)}}</view>
+          <view class="red">{{item.lottery_ptitle}}</view>
+          <view wx:if="{{item.type==1 || item.type==4}}">已发放</view>
+          <view wx:else>
+            <!-- <text bindtap='openLayer' data-id="{{item.id}}" wx:if="{{item.type==5}}">联系客服领取</text> -->
+            <text bindtap='openLayer' data-id="{{item.id}}">加微信领取</text>
+          </view>
+        </view>
+      </view>
+      <view wx:else class="noData-box">
+        <view class="noData-pic">
+          <image src="https://api.51gsl.com/program/Luckdraw/images/icon_noData.png"></image>
+        </view>
+        <view class="noData-txt">暂无数据</view>
+      </view>
+      <view wx:if="{{reduceIsPage!=0}}">
+        <view class="load-more" bindtap='loadMore' data-dataType="0" data-page="{{reducePage}}">
+          <text wx:if="{{reduce.length!=0}}">点击加载更多</text>
+        </view>
+      </view>
+      <view class="load-more" wx:else><text wx:if="{{reduce.length!=0}}">已无数据</text></view>
+    </view>
+    <view class="list-msg-box" wx:elif="{{currentTab==1}}">
+      <view wx:if="{{reduce1.length!=0}}">
+        <view class="list-msg" wx:for="{{reduce1}}" wx:key>
+          <view>{{filter.dateFilter(item.create_time)}}</view>
+          <view class="red">{{item.lottery_ptitle}}</view>
+          <view wx:if="{{item.type==1 || item.type==4}}">已发放</view>
+          <view wx:else>
+            <text bindtap='openLayer' data-id="{{item.id}}">加微信领取</text>
+          </view>
+        </view>
+      </view>
+      <view wx:else class="noData-box">
+        <view class="noData-pic">
+          <image src="https://api.51gsl.com/program/Luckdraw/images/icon_noData.png"></image>
+        </view>
+        <view class="noData-txt">暂无数据</view>
+      </view>
+      <view wx:if="{{reduceIsPage!=0}}">
+        <view class="load-more" bindtap='loadMore' data-dataType="1" data-page="{{reducePage}}">
+          <text wx:if="{{reduce1.length!=0}}">点击加载更多</text>
+        </view>
+      </view>
+      <view class="load-more" wx:else><text wx:if="{{reduce1.length!=0}}">已无数据</text></view>
+    </view>
+    <view class="list-msg-box" wx:else data-currentTab="{{currentTab}}">
+      <view wx:if="{{reduce2.length!=0}}">
+        <view class="list-msg" wx:for="{{reduce2}}" wx:key>
+          <view>{{filter.dateFilter(item.create_time)}}</view>
+          <view class="red">{{item.lottery_ptitle}}</view>
+          <view wx:if="{{item.type==1 || item.type==4}}">已发放</view>
+          <view wx:else>
+            <text bindtap='openLayer' data-id="{{item.id}}">加微信领取</text>
+          </view>
+        </view>
+      </view>
+      <view wx:else class="noData-box">
+        <view class="noData-pic">
+          <image src="https://api.51gsl.com/program/Luckdraw/images/icon_noData.png"></image>
+        </view>
+        <view class="noData-txt">暂无数据</view>
+      </view>
+      <view wx:if="{{reduceIsPage!=0}}">
+        <view class="load-more" bindtap='loadMore' data-dataType="2" data-page="{{reducePage}}">
+          <text wx:if="{{reduce2.length!=0}}">点击加载更多</text>
+        </view>
+      </view>
+      <view class="load-more" wx:else><text wx:if="{{reduce2.length!=0}}">已无数据</text></view>
+    </view>
+  </view>
+</view>
+<!--  弹层  -->
+<view class="jiang-layer-box" hidden='{{isShow}}'>
+  <view class="jiang-box" wx:key>
+    <view class="jiang-head">
+      <text>抽奖结果</text>
+      <view class="close-box" bindtap='closeLayer'>
+        <image src="https://api.51gsl.com/program/Luckdraw/images/icon_close.png"></image>
+      </view>
+    </view>
+    <view class="jiang-msg">
+      <view class="jiang-pic-box" wx:if="{{currentTab==0}}">
+        <image wx:for="{{reduce}}" wx:key wx:if="{{item.id==ids}}" src="{{item.pic}}"></image>
+      </view>
+      <view class="jiang-pic-box" wx:if="{{currentTab==1}}">
+        <image wx:for="{{reduce1}}" wx:key wx:if="{{item.id==ids}}" src="{{item.pic}}"></image>
+      </view>
+      <view class="jiang-pic-box" wx:if="{{currentTab==2}}">
+        <image wx:for="{{reduce2}}" wx:key wx:if="{{item.id==ids}}" src="{{item.pic}}"></image>
+      </view>
+      <view class="jiang-title" wx:if="{{currentTab==0}}">
+        <view class="jiang-txt-title" wx:for="{{reduce}}" wx:key wx:if="{{item.id==ids}}">获得 {{item.lottery_ptitle}}</view>
+        <view class="jiang-txt-ccc" wx:for="{{reduce}}" wx:key wx:if="{{item.id==ids}}">{{item.content}}</view>
+      </view>
+      <view class="jiang-title" wx:if="{{currentTab==1}}">
+        <view class="jiang-txt-title" wx:for="{{reduce1}}" wx:key wx:if="{{item.id==ids}}">获得 {{item.lottery_ptitle}}</view>
+        <view class="jiang-txt-ccc" wx:for="{{reduce1}}" wx:key wx:if="{{item.id==ids}}">{{item.content}}</view>
+      </view>
+      <view class="jiang-title" wx:if="{{currentTab==2}}">
+        <view class="jiang-txt-title" wx:for="{{reduce2}}" wx:key wx:if="{{item.id==ids}}">获得 {{item.lottery_ptitle}}</view>
+        <view class="jiang-txt-ccc" wx:for="{{reduce2}}" wx:key wx:if="{{item.id==ids}}">{{item.content}}</view>
+      </view>
+    </view>
+    <view class="btn-box-jiang" wx:if="{{currentTab==0}}">
+      <view bindtap='copyBtn' wx:for="{{reduce}}" wx:key wx:if="{{item.id==ids && (item.type==2 || item.type==3 || item.type==5)}}" data-wechat="{{item.wechat}}">复制微信号</view>
+      <!-- <view wx:for="{{reduce}}" wx:key wx:if="{{item.id==ids && item.type==5}}"><button open-type="contact">联系客服</button></view> -->
+      <view bindtap='closeLayer'>返回</view>
+    </view>
+    <view class="btn-box-jiang" wx:if="{{currentTab==1}}">
+      <view bindtap='copyBtn' wx:for="{{reduce1}}" wx:key wx:if="{{item.id==ids && (item.type==2 || item.type==3 || item.type==5)}}" data-wechat="{{item.wechat}}">复制微信号</view>
+      <!-- <view wx:for="{{reduce1}}" wx:key wx:if="{{item.id==ids && item.type==5}}"><button open-type="contact">联系客服</button></view> -->
+      <view bindtap='closeLayer'>返回</view>
+    </view>
+    <view class="btn-box-jiang" wx:if="{{currentTab==2}}">
+      <view bindtap='copyBtn' wx:for="{{reduce2}}" wx:key wx:if="{{item.id==ids && (item.type==2 || item.type==3 || item.type==5)}}" data-wechat="{{item.wechat}}">复制微信号</view>
+      <!-- <view wx:for="{{reduce2}}" wx:key wx:if="{{item.id==ids && item.type==5}}"><button open-type="contact">联系客服</button></view> -->
+      <view bindtap='closeLayer'>返回</view>
+    </view>
+  </view>
+</view>

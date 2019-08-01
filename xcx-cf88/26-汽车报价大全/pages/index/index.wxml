@@ -1,0 +1,31 @@
+<!--pages/index/index.wxml-->
+<view class="body" wx:for="{{list}}" wx:key wx:for-index="idx" wx:if="{{idx == 'tui'}}">
+  <view class="title">热门汽车</view>
+  <view class="picCon">
+    <view class="picDl" bindtap='jumpBtn' wx:for="{{list.tui}}" wx:key data-name="{{item[0]}}">
+      <view class="picBox">
+        <image class="imgSrc" src="{{item[1]}}"></image>
+      </view>
+      <view class="picDd">{{item[2]}}</view>
+    </view>
+  </view>
+</view>
+<view class="body" wx:for="{{list.data}}" wx:key wx:for-index="idx">
+  <view class="title">{{idx}}</view>
+  <view class="picCon">
+    <view class="picDl" bindtap='jumpBtn' wx:for="{{item}}" wx:key data-name="{{item[0]}}">
+      <view class="picBox">
+        <image class="imgSrc" src="{{item[1]}}"></image>
+      </view>
+      <view class="picDd">{{item[2]}}</view>
+    </view>
+  </view>
+</view>
+<!--  广告  -->
+<view class="banner" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images'></image>
+</view>
+<!-- 更多小程序 -->
+<view class="layerBoxs">
+  <navigator target="miniProgram" open-type="navigate" app-id="wx81dacf7d77359d1d" path="/pages/index/index?from={{from}}" extra-data="" version="release">更多小程序</navigator> <!-- release -->
+</view>

@@ -1,0 +1,213 @@
+/* pages/content/content.wxss */
+page{
+  background: #f6f6f6;
+}
+.div-body{
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.div-header{
+  width: 80%;
+  height: auto;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  margin: 13px auto;
+  padding: 5%;
+  position: relative;
+}
+.header-title{
+  font-size: 1.4rem;
+  color: #d1b771;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.header-main{
+  font-size: 16px;
+  line-height: 22px;
+}
+.jiantou{
+  background: url(http://www.cf8.com.cn/nabout/images/ico.gif) no-repeat;
+  display: inline-block;
+  height: 14px;
+  margin: 0 0 0 10px;
+  width: 14px;
+}
+.pic-box{
+  position:absolute; 
+  bottom:0;
+  right:0;
+  opacity: 0.15;
+  width: 186px;
+  height: 179px;
+}
+.pic-box image{
+  width: 100%;
+  height: 100%;
+}
+.div-footer{
+  width: 80%;
+  height: auto;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  margin: 0 auto 100px auto;
+  padding: 5%;
+}
+.dashiji{
+  width: 100%;
+  margin: 0 auto;
+}
+.first{
+  color: #ff5056;
+  font-size: 14px;
+  font-weight: 600
+}
+.dashiji .dd{
+  border-left: 1px solid #d8d8d8;
+  margin: 0 0 0 80px;
+  padding: 0 0 0 30px;
+  position: relative;
+  font-size: 14px;
+  overflow: visible
+}
+.dashiji .dt{
+  color: #9d9d9d;
+  line-height: 24px;
+  padding: 8px 0;
+  position: absolute;
+  text-align: center;
+  width: 70px;
+  font-size: 14px;
+}
+.dashiji .dd .dot {
+  background: url(http://www.cf8.com.cn/nabout/images/ico0.gif) no-repeat;
+  background-image: url(http://www.cf8.com.cn/nabout/images/ico0.gif);
+  display: block;
+  height: 9px;
+  left: -5.5px;
+  position: absolute;
+  top: 16px;
+  width: 9px;
+}
+.dashiji .first .dd{
+  overflow: hidden
+}
+.dashiji .first .dd .dot {
+  background-image: url(http://www.cf8.com.cn/nabout/images/ico1.gif);
+  top: 32px;
+}
+.dashiji .dd .p {
+  border-bottom: 1px dashed #d8d8d8;
+  line-height: 24px;
+  padding: 8px 0;
+}
+.suoyao{
+  background: #f06920;
+  color: #fff;
+  font-size: 18px;
+  width: 100%;
+  display: block;
+  text-align: center;
+  height: 55px;
+  line-height: 55px;
+  text-decoration: none;
+  position: fixed;
+  bottom: 0;
+}
+.teacher-details .itm_bk{
+  width: 100%;
+  height: auto;
+  margin: 0;
+  margin-top: -5px;
+  padding: 0;
+  overflow: hidden;
+}
+.itm_bk image{
+  width: 100%;
+  height: 100%;
+}
+.teacher-details .wxParse-div:last-child{
+  margin-bottom: 51px;
+}
+
+
+/** 添加微信号遮罩层 **/
+.layer-box{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: none
+}
+.layer-none{
+  display: block
+}
+.layer-main{
+  width: 260px;
+  height: 400px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -130px;
+  margin-top: -200px;
+  background: #fff;
+  border-radius: 12px;
+}
+.layer-close{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  overflow: hidden
+}
+.layer-close image{
+  width: 100%;
+  height: 100%;
+}
+.layer-title{
+  width: 100%;
+  text-align: center;
+  padding: 16px 0 10px 0;
+  margin: 0 auto;
+}
+.layer-text{
+  width: 87%;
+  line-height: 22px;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #333;
+}
+.layer-wxnum{
+  width: 87%;
+  text-align: center;
+  margin: 12px auto;
+  height: 45px;
+  border: 1px solid #f06920;
+  color: #f06920;
+  font-size: 15px;
+  line-height: 45px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+.layer-msg{
+  width: 87%;
+  margin: 0 auto;
+  color: #999;
+  font-size: 12px;
+  line-height: 22px;
+}
+.layer-copy{
+  height: 47px;
+  width: 87%;
+  background: #f06920;
+  color: #fff;
+  line-height: 47px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 100px;
+  margin: 16px auto;
+}

@@ -1,0 +1,15 @@
+<!--pages/result/result.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class="body">
+  <view class="title">您的测试结果</view>
+  <view class="content" wx:for="{{list}}" wx:key wx:for-index="idx" wx:if="{{idx == index}}">
+    <!-- {{item.result[key]}} -->
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+</view>
+<view class="msg" wx:for="{{list}}" wx:key wx:for-index="idx" wx:if="{{idx == index}}">{{item.zhu}}</view>
+<!-- <template is="wxParse" data="{{wxParseData:article.nodes}}" /> -->
+<!--  广告  -->
+<view class="banner" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.gif" class="navImg" bindtap='images'></image>
+</view>

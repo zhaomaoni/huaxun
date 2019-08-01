@@ -1,0 +1,58 @@
+<!--index.wxml-->
+
+<!-- <web-view src="https://oauth.cf8.cn/MiniPro/zhengu.php?token={{webURL}}&v=2&from={{from}}&appname={{appname}}"></web-view> -->
+<wxs module="filter" src="../../utils/substr.wxs"></wxs>
+<import src="/wxSearch/wxSearch.wxml"/>
+<view class="body-main-box">
+  <view class="main-head-banner">
+    <image src="../../images/icon_logo.png"></image>
+  </view>
+  <view class="main-inp-box">
+    <image src="../../images/icon_search.png"></image>
+    <input placeholder='请输入股票代码/拼音/名称' value='{{value}}' bindinput="wxSearchInput" bindfocus="wxSerchFocus" bindblur="wxSearchBlur"></input>
+  </view>
+  <template is="wxSearch" data="{{wxSearchData}}"/>
+  <view class="free-zhen-gu" bindtap='zhenFn' data-code="{{code}}">
+    <image src="../../images/icon_free.png"></image>
+  </view>
+  <view class="jing-xuan-gu">
+    <image src="../../images/icon_jxng.png"></image>
+  </view>
+  <!-- 搜索出的列表 -->
+  <view class="check-main-box">
+    <view class="check-list-box" wx:for="{{xqlist}}" wx:key bindtap='lookFn' data-url="{{item.url}}">
+      <view class="check-top-box">
+        <view class="check-gu-piao">
+          <view>{{filter.filter(item.stock_name)}}</view>
+          <view>{{item.stock}}</view>
+        </view>
+        <view class="cleck-center-guan">
+          <view class="guan-wang" wx:if="{{item.stock_status=='观望'}}">{{item.stock_status}}</view>
+          <view class="guan-wang lvse" wx:if="{{item.stock_status=='风险'}}">{{item.stock_status}}</view>
+          <view class="guan-wang redse" wx:if="{{item.stock_status=='机会'}}">{{item.stock_status}}</view>
+          <view>{{item.stock_desc}}</view>
+        </view>
+        <view class="cha-kan">查看详情》</view>
+      </view>
+      <view class="check-bottom-box">
+        <view><text>长期趋势：</text>{{item.stock_desc_l}}</view>
+        <view><text>中期趋势：</text>{{item.stock_desc_m}}</view>
+        <view><text>短期趋势：</text>{{item.stock_desc_s}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="msg-shuo-box">
+    <view class="shuo-ming-pic">
+      <image src="../../images/icon_zgsm.png"></image>
+    </view>
+    <view class="shuo-ming-txt">智能诊股功能的数据基于市场公开信息得出，仅供参考。我们力求准确可靠，但对信息的准确性、完整性和及时性不做任何保证。所有分析均基于历史数据，且各指标均有一定的局限性，无法代表未来趋势，不构成具体投资建议。您据此投资，风险自担。信息以上海证券交易所、深圳证券交易所及其指定的官方平台为准。</view>
+  </view>
+</view>
+
+<view class="layer-loading-box" hidden="{{hide}}">
+  <view class="layer-pic-box">
+    <image src="../../images/icon_loading.gif"></image>
+  </view>
+</view>
+<!-- 授权弹层 -->
+<phones wx:if="{{isquan}}"></phones>

@@ -1,0 +1,82 @@
+<!--pages/content/content.wxml-->
+<wxs module="filter" src="../../utils/date.wxs"></wxs>
+<view class="head-box">
+  <view class="head-nav">
+    <view wx:for="{{years}}" wx:key  wx:for-index="idxs" class="head {{curtitle==idxs ? 'active':''}}" data-curtitle="{{idxs}}" bindtap="activeBtn" data-year="{{item.year}}">{{item.name}}</view>
+  </view>
+</view>
+<view class="summary-box">
+  <view class="summary-view" wx:if="{{curtitle==0}}">
+    今年初至今获得合同总金额 <text wx:if="{{htze!='-'&& htze!=0}}">{{htze}} 亿元</text><text wx:else>-</text>，上年度营业收入为 <text wx:if="{{snd!='-'&& snd!=0}}">{{snd}} 亿元</text><text wx:else>-</text>，占比为 <text wx:if="{{zbw!='-'&& zbw!=0}}">{{zbw}}%</text><text wx:else>-</text>，最新一季度的营业收入 <text wx:if="{{yysr!='-'&& yysr!=0}}">{{yysr}} 亿元</text><text wx:else>-</text> 。
+  </view>
+  <view class="summary-view" wx:elif="{{curtitle==1}}">
+    去年获得合同总金额 <text wx:if="{{htze!='-'&& htze!=0}}">{{htze}} 亿元</text><text wx:else>-</text>，上年度营业收入为 <text wx:if="{{snd!='-'&& snd!=0}}">{{snd}} 亿元</text><text wx:else>-</text>，占比为 <text wx:if="{{zbw!='-'&& zbw!=0}}">{{zbw}}%</text><text wx:else>-</text>。
+  </view>
+  <view class="summary-view" wx:else>
+    前年获得合同总金额 <text wx:if="{{htze!='-'&& htze!=0}}">{{htze}} 亿元</text><text wx:else>-</text>，上年度营业收入为 <text wx:if="{{snd!='-'&& snd!=0}}">{{snd}} 亿元</text><text wx:else>-</text>，占比为 <text wx:if="{{zbw!='-'&& zbw!=0}}">{{zbw}}%</text><text wx:else>-</text>。
+  </view>
+</view>
+<view class="little-head">
+  <view>序号</view>
+  <view>合同名称</view>
+  <view>
+    <text>合同金额</text>
+    <text>上年营业收入</text>
+  </view>
+  <view>
+    <text>签署日期</text>
+    <text>公告日期</text>
+  </view>
+</view>
+<view class="main-list-box {{curtitle == idxs ? 'active':''}}" wx:for="{{years}}" wx:key wx:for-index="idxs" wx:if="{{list.length!=0}}">
+  <view class="main-content-list" wx:for="{{list}}" wx:key wx:for-index="li" wx:for-item="i">
+    <view class="main-content-top">
+      <view>{{li+1}}</view>
+      <view><text>{{i.contractname}}</text></view>
+      <view>
+        <text wx:if="{{i.amounts==null || i.amounts==0}}">-</text>
+        <text wx:elif="{{i.amounts>1000000000}}">{{filter.numFilter1(i.amounts)}}亿</text>
+        <text wx:else>{{filter.numFilter1(i.amounts)}}万</text>
+        <text wx:if="{{i.sndyysr==null}}">-</text>
+        <text wx:elif="{{i.sndyysr>1000000000}}">{{filter.numFilter1(i.sndyysr)}}亿</text>
+        <text wx:else>{{filter.numFilter1(i.sndyysr)}}万</text>
+      </view>
+      <view>
+        <text wx:if="{{i.signdate!=null}}">{{filter.dateFilter(i.signdate)}}</text>
+        <text wx:else>-</text>
+        <text wx:if="{{i.dim_rdate!=null}}">{{filter.dateFilter(i.dim_rdate)}}</text>
+        <text wx:else>-</text>
+      </view>
+    </view>
+    <view class="mian-content-bottom {{li==isid&&isShow ? 'main-display' : '' }}">
+      <view>合同内容：<text wx:if="{{i.contents!=null}}">{{i.contents}}</text><text wx:else>-</text></view>
+      <view>签署主体：<text wx:if="{{i.signatory!=null}}">{{i.signatory}}</text><text wx:else>-</text></view>
+      <view>合同类型：<text wx:if="{{i.contracttypename!=null}}">{{i.contracttypename}}</text><text wx:else>-</text></view>
+      <view>与上市公司关系：<text wx:if="{{i.counterpartyrelname!=null}}">{{i.counterpartyrelname}}</text><text wx:else>-</text></view>
+      <view>其他签署方：<text wx:if="{{i.counterparty!=null}}">{{i.counterparty}}</text><text wx:else>-</text></view>
+      <view>占上年度营业收入比例（%）：<text wx:if="{{i.zsndyysrbl!=null&&i.zsndyysrbl!=0}}">{{filter.numFilter2(i.zsndyysrbl)}}</text><text wx:else>-</text></view>
+      <view>对上市公司的影响：<text wx:if="{{i.signeffect!=null}}">{{i.signeffect}}</text><text wx:else>-</text></view>
+      <view>公告后20日涨跌幅（%）：<text wx:if="{{i.rchange20dc!=null&&i.rchange20dc!=0}}">{{filter.numFilter2(i.rchange20dc)}}</text><text wx:else>-</text></view>
+    </view>
+    <view class="mian-jian">
+       <image src="https://api.51gsl.com/program/Dflx/images/icon1.png" bindtap='clickBtn' data-id="{{li}}" wx:if="{{li==isid&&isShow}}"></image>
+        <image src="https://api.51gsl.com/program/Dflx/images/icon2.png" bindtap='clickBtn' data-id="{{li}}" wx:else></image>
+    </view>
+  </view>
+</view>
+<view class="noData" wx:if="{{list.length==0}}">
+  <view class="noData-pic">
+    <image src="https://api.51gsl.com/program/StrongCode/images/icon_nodata.png"></image>
+  </view>
+  <view class="noData-text">暂无数据</view>
+</view>
+
+<!--  广告  -->
+<view class="banner" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images'></image>
+</view>
+
+<!-- 更多小程序 -->
+<view class="layerBoxs">
+  <navigator target="miniProgram" open-type="navigate" app-id="wx81dacf7d77359d1d" path="" extra-data="" version="release">更多小程序</navigator> <!-- release -->
+</view>

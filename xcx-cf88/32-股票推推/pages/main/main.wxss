@@ -1,0 +1,68 @@
+/* pages/main/main.wxss */
+@import "/wxParse/wxParse.wxss";
+.section-box{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.main-header-box{
+  width: 92%;
+  margin: 0 auto;
+  height: auto;
+  border-bottom: 1px solid #eaecef;
+  padding: 0.4rem 0;
+}
+.main-title{
+  font-weight: 600;
+  font-size: 1rem;
+}
+.mian-time{
+  color: #666;
+  font-size: 0.75rem;
+  line-height: 1.5625rem;
+}
+.main-user-box{
+  width: 92%;
+  margin: 0 auto;
+  height: auto;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid #eaecef
+}
+.head-src{
+  width: 2.75rem;
+  height: 2.75rem;
+  overflow:hidden;
+  float:left;
+  border-radius:100%;
+  margin-right:0.3125rem;
+}
+.head-src image{
+  width: 100%;
+  height: 100%;
+}
+.head-guan{
+  font-size: 0.75rem;
+}
+.head-guan text{
+  padding-right: 0.625rem;
+  color: #666
+}
+.main-content{
+  width: 92%;
+  height: auto;
+  padding: 0.4rem 0;
+  margin: 0 auto;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #eaecef;
+}
+.feng-box{
+  width:92%;
+  font-size:0.75rem;
+  line-height:1.15rem;
+  margin:0 auto;
+  padding: 0.4rem 0;
+}
+.feng-box text{
+  color: #f00;
+  font-weight: 600;
+}

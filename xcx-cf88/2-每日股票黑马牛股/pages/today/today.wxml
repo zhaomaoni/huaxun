@@ -1,0 +1,45 @@
+<!--pages/today/today.wxml-->
+<view class="addBox">
+  <view class="wen">温馨提示</view>
+  <view class="add">添加微信<text>{{ numbers }}</text>可索取密码</view>
+  <button class="copyBtn" bindtap="wxNumber">复制微信号</button>
+  <view class="inpSub">
+    <input class="pwd" placeholder='请输入解锁密码' bindinput="change" value="{{text}}"></input>
+    <button class="{{isShow2 ? 'sub' : 'submit'}}" bindtap='{{isShow2 ? "submit" : ""}}'>提交</button>
+  </view>
+</view>
+<view class="good">添加微信（<text>{{numbers}}</text>）后的4大优势</view>
+<view class="great">
+  <view class="greatLeft">
+    <image src="../../images/icon-one.png"></image>
+    <view class="gu">每日金股</view>
+    <view class="pull">加微信领取暴涨牛股</view>
+  </view>
+  <view class="greatRight">
+    <image src="../../images/icon-two.png"></image>
+    <view class="gu">每日金股</view>
+    <view class="pull">加微信领取暴涨牛股</view>
+  </view>
+</view>
+<view class="great">
+  <view class="greatLeft">
+    <image src="../../images/icon-three.png"></image>
+    <view class="gu">每日金股</view>
+    <view class="pull">加微信领取暴涨牛股</view>
+  </view>
+  <view class="greatRight">
+    <image src="../../images/icon-four.png"></image>
+    <view class="gu">每日金股</view>
+    <view class="pull">加微信领取暴涨牛股</view>
+  </view>
+</view>
+
+<!-- 复制微信号 -->
+<view class="{{ isShow ? 'copy2' : 'copy'}}">
+  <view class="phone">
+    <image src="../../images/ok.png"></image>
+    <view class="succ">微信号<text>yy42441735</text>复制成功</view>
+    <view class="blag">请返回微信首页添加索要密码</view>
+    <button class="knowBtn" bindtap='jump'>我知道了</button>
+  </view>
+</view>

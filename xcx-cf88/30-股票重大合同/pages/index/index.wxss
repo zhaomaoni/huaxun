@@ -1,0 +1,132 @@
+/* pages/index/index.wxss */
+.date-box{
+  width: 100%;
+  height: 65px;
+  color: #666;
+  margin: 0 auto;
+  line-height: 65px;
+  overflow: hidden;
+}
+.date-box text{
+  float: left;
+  margin: 0 10px;
+}
+.date-box picker{
+  width: 80px;
+  height: 33px;
+  overflow: hidden;
+  margin: 15px 0;
+  border: 1px solid #d3d3d3;  
+  float: left;
+  border-radius: 3px
+}
+.date-box picker input{
+  line-height: 33px;
+  height: 33px;
+  font-size: 12px;
+  text-align: center
+}
+.head{
+  width: 100%;
+  height: 50px;
+  color: #999;
+  line-height: 50px;
+  overflow: hidden;
+  background: #f6f6f6;
+  border-bottom: 1px solid #e5e5e5;
+}
+.head view{
+  width: 25%;
+  float: left;
+  text-align: center;
+  font-size: 12px;
+}
+.head view text{
+  display: block;
+  line-height: 25px;
+}
+.content-list-box{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.content-list{
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  overflow:hidden;
+  border-bottom: 1px solid #e5e5e5;
+}
+.content-list view{
+  width: 25%;
+  float: left;
+  text-align: center;
+}
+.content-list view text:first-child{
+  padding-top: 5px
+}
+.content-list view text{
+  display: block;
+  line-height: 20px;
+}
+.content-list view label{
+  border: 1px solid #e93030;
+  color: #e93030;
+  padding: 3px 5px;
+  border-radius: 5px;
+}
+.content-list:last-child{
+  margin-bottom: 120px;
+  border-bottom: 0
+}
+
+.noData{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+}
+.noData-pic{
+  width: 100px;
+  height: 90px;
+  margin: 90px auto 10px auto;
+}
+.noData-pic image{
+  width: 100%;
+  height: 100%;
+}
+
+/*  广告  */
+.banner{
+  width: 100%;
+  height: 89px;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #f6f6f6;
+  overflow: hidden
+}
+.navImg{
+  width: 100%;
+  height: 100%
+}
+/* more小程序 */
+.layerBoxs{
+  width: auto;
+  height: 26px;
+  line-height: 26px;
+  position: fixed;
+  right: 0px;
+  bottom: 100px;
+  color: #fff;
+  background: rgba(0,0,0,0.7);
+  font-size: 12px;
+  text-align: center;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px
+}
+.layerBoxs navigator{
+  padding: 0 10px;
+}

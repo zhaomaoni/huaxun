@@ -1,0 +1,37 @@
+<view class="body">
+  <view class="content" wx:for="{{list}}" wx:key wx:for-index="idx">
+    <view class="title" wx:if="{{idx=='aboutGp'}}">股票相关类</view>
+    <view class="title" wx:elif="{{idx=='aboutTz'}}">投资知识类</view>
+    <view class="title" wx:else>生活服务类</view>
+    <view class="dlBox">
+      <view class="Main" wx:if="{{idx=='aboutGp'}}" wx:for="{{list.aboutGp}}" hidden="{{i.isShowBox==0&&from.length!=0}}" wx:key wx:for-item="i">
+        <navigator target="miniProgram" open-type="navigate" app-id="{{i.appId}}" path="{{i.path}}?from={{from}}" extra-data="" version="{{version}}">
+          <view class="dlImg">
+            <image src="{{i.img}}"></image>
+          </view>
+          <view class="ddTxt">{{i.title}}</view>
+        </navigator>
+      </view>
+      <view class="Main" wx:if="{{idx=='aboutTz'}}" wx:for="{{list.aboutTz}}" hidden="{{j.isShowBox==0&&from.length!=0}}" wx:key wx:for-item="j">
+        <navigator target="miniProgram" open-type="navigate" app-id="{{j.appId}}" path="{{j.path}}?from={{from}}" extra-data="" version="{{version}}">
+          <view class="dlImg">
+            <image src="{{j.img}}"></image>
+          </view>
+          <view class="ddTxt">{{j.title}}</view>
+        </navigator>
+      </view>
+      <view class="Main" wx:if="{{idx=='aboutSh'}}" wx:for="{{list.aboutSh}}" wx:key hidden="{{k.isShowBox==0&&from.length!=0}}" wx:for-item="k">
+        <navigator target="miniProgram" open-type="navigate" app-id="{{k.appId}}" path="{{k.path}}?from={{from}}" extra-data="" version="{{version}}">
+          <view class="dlImg">
+            <image src="{{k.img}}"></image>
+          </view>
+          <view class="ddTxt">{{k.title}}</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>
+<!--  广告  -->
+<view class="banner" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images'></image>
+</view>

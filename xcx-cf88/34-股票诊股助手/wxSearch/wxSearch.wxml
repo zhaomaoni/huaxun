@@ -1,0 +1,17 @@
+<template name="wxSearch">
+  <view class="wxSearch" bindtap="wxSearchTap" style="display:{{wxSearchData.view.isShow ? 'block':'none'}};top:{{wxSearchData.view.barHeight}}rem;">
+    <view  class="wxSearchInner" style="top:{{wxSearchData.view.barHeight}}rem;">
+        <view class="wxSearchMindKey">
+            <view class="wxSearchMindKeyList">
+                    <view wx:for="{{wxSearchData.mindKeys}}" wx:key="" class="wxSearchMindKeyItem" wx:for-item="s" bindtap="wxSearchFn" data-code="{{s._C}}" data-title="{{s._N}}" data-name ="{{s._S}}">
+                      <view class='searchitem'>
+                        <text>{{s._C}}</text>
+                        <text>{{s._N}}</text>
+                        <text>{{s._S}}</text>
+                      </view>
+                    </view>
+            </view>
+        </view>
+    </view>
+  </view>
+</template>

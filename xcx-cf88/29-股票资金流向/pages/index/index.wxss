@@ -1,0 +1,207 @@
+/* pages/index/index.wxss */
+.conBox{
+  width: 100%;
+  height: 55px;
+  overflow: hidden;
+}
+.swiper-tab{  
+  width: 100%;
+  height: 45px;
+  line-height: 43px;
+  background:#fff;
+  position: fixed;
+  z-index: 999;
+  overflow: hidden;
+  border-bottom: 10px solid #f6f6f6;  
+}
+.swiper-tab-list{ 
+  display: inline-block;  
+  width: 27.3%;
+  margin: 0 3%;
+  color: #333;
+  text-align: center;
+  font-size: 17px;
+}  
+.on{ 
+  color: #000;
+  border-bottom: 2px solid #f04141;
+}
+.swiper-box{ 
+  display: none; 
+  height: auto; 
+  width: 100%;
+  overflow: hidden; 
+}
+.swiperOn{
+  display: block
+}
+.main-tab-box{
+  width: 90%;
+  height: 33px;
+  background: #f6f6f6;
+  margin: 12px auto;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.main-tab-listBox{
+  width: 98%;
+  margin: 2px auto;
+  height: 29px;
+  line-height: 29px;
+  color: #666;
+}
+.main-tab-list{
+  float: left;
+  width: 33.3%;
+  text-align: center;
+  font-size: 15px;
+}
+.main-tab-listBox .main-tab-list.active{
+  color: #333;
+  background: #fff;
+}
+.main-tab-listBox .main-tab-list.active:first-child{
+  color: #333;
+  background: #fff;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px
+}
+.main-tab-listBox .main-tab-list.active:last-child{
+  color: #333;
+  background: #fff;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px
+}
+.main-tab-content{
+  width: 100%;
+}
+.main-content-list{
+  width: 100%;
+  display: none;
+}
+.main-content-list.active{
+  display: block
+}
+.content-title{
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  margin: 0 auto;
+  border-bottom: 1px solid #f6f6f6;
+  text-align: center;
+}
+.content-title view{
+  float: left;
+  width: 25%;
+  font-size: 13px;
+  color: #666;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.list-box{
+  margin-bottom: 90px;
+}
+.main-con-li{
+  width: 100%;
+  height: 43px;
+  line-height: 43px;
+}
+.main-con-li view{
+  float: left;
+  width: 25%;
+  text-align: center;
+  color: #333;
+  font-size: 15px;
+}
+.zhe-die-Main{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative
+}
+.con-zhu-li{
+  height: 32px;
+  width: 100%;
+  line-height: 32px;
+  background: #fbfbfb;
+  font-size: 12px;
+  color: #666;
+  display: none;
+  overflow: hidden;
+}
+.con-zhu-li:first-child{
+  display: block
+}
+.con-zhu-li2{
+  display: block
+}
+.con-zhu-li view{
+  width: 31.3%;
+  float: left;
+  text-align: center;
+  overflow: hidden
+}
+.con-zhu-li view:last-child{
+  width: 2%
+}
+.main-con-li .red{
+  color: #fd2222
+}
+.main-con-li .green{
+  color: #069609
+}
+.con-zhu-li view text.red{
+  color: #fd2222
+}
+.con-zhu-li view text.green{
+  color: #069609
+}
+.con-zhu-li view image{
+  width: 6vw;
+  height: 5vw;
+  vertical-align: middle;
+}
+.jiantou{
+  position: absolute;
+  width: 6vw;
+  height: 5vw;
+  right: 2%;
+  bottom: 8px;
+}
+.jiantou image{
+  width: 100%;
+  height: 100%;
+}
+
+/*  广告  */
+.banner{
+  width: 100%;
+  height: 89px;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #f6f6f6;
+  overflow: hidden
+}
+.navImg{
+  width: 100%;
+  height: 100%
+}
+/* more小程序 */
+.layerBoxs{
+  width: auto;
+  height: 26px;
+  line-height: 26px;
+  position: fixed;
+  right: 0px;
+  bottom: 100px;
+  color: #fff;
+  background: rgba(0,0,0,0.7);
+  font-size: 12px;
+  text-align: center;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px
+}
+.layerBoxs navigator{
+  padding: 0 10px;
+}

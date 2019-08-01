@@ -1,0 +1,115 @@
+<!--pages/home/home.wxml-->
+<view class="msg">每交易日09:30前公布金股，加微信获取密码即可解锁查看</view>
+<!-- 今日金股 -->
+<view class="homeBox">
+  <view class="homeTop">
+    <text>今日金股</text>
+    <text class="free" bindtap='copyShow' wx:if="{{showAd&&paid == 0}}">免费索要金股</text>
+  </view>
+  <view class="listTop">
+    <view class="guName">
+      <view>股票名称</view>
+      <view>调入价</view>
+      <view>最高涨幅</view>
+    </view>
+    <view class="listMsg" bindtap='copePhone' wx:if="{{showAd&&paid == 0}}">
+      <view>
+        <text class="todayName">{{ today.stock_code }}</text>
+        <text>解锁查看</text>
+      </view>
+      <view>
+        <text>{{ today.price }}</text>
+      </view>
+      <view>
+        <text>--%</text>
+      </view>
+    </view>
+    <view class="listMsg listMsg2" wx:else>
+      <view>
+        <text class="look">{{ today.stock_name }}</text>
+        <text class="todayName">{{ today.stock_code }}</text>
+      </view>
+      <view>
+        <text class="listPri">{{ today.price }}</text>
+      </view>
+      <view>
+        <text class="listUp">--%</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 往期回顾 -->
+<view class="homeBox2"  bindtap='copePhone' wx:if="{{showAd}}" wx:if="{{paid == 0}}">
+  <view class="titleBox">
+    <text>往期回顾</text>
+    <text class="more">更多<text class="right"></text></text>
+  </view>
+  <view class="listTitle">
+    <text>股票名称</text>
+    <text>调入价</text>
+    <text>最高涨幅</text>
+    <text>推荐日期</text>
+  </view>
+  <view class="listBom" wx:for="{{ history }}" wx:key>
+    <view class="name">
+      <text>{{ item.stock_name }}</text>
+      <text>{{ item.stock_code }}</text>
+    </view>
+    <view class="price">
+      <text>{{ item.price }}</text>
+    </view>
+    <view class="up">
+      <text>{{ item.rise }}%</text>
+    </view>
+    <view class="date">
+      <text>{{ item.date }}</text>
+    </view>
+  </view>  
+</view>
+<view class="homeBox2" wx:else>
+  <view class="titleBox">
+    <text>往期回顾</text>
+    <text class="more"  bindtap='copePhone' wx:if="{{showAd&&paid == 0}}">更多<text class="right"></text></text>
+  </view>
+  <view class="listTitle">
+    <text>股票名称</text>
+    <text>调入价</text>
+    <text>最高涨幅</text>
+    <text>推荐日期</text>
+  </view>
+  <view class="listBom" wx:for="{{ history }}" wx:key>
+    <view class="name">
+      <text>{{ item.stock_name }}</text>
+      <text>{{ item.stock_code }}</text>
+    </view>
+    <view class="price">
+      <text>{{ item.price }}</text>
+    </view>
+    <view class="up">
+      <text>{{ item.rise }}%</text>
+    </view>
+    <view class="date">
+      <text>{{ item.date }}</text>
+    </view>
+  </view>  
+</view>
+<!-- 立即解锁金股 -->
+<button class="homeBtn" bindtap='copePhone' data-num="{{numbers}}" wx:if="{{showAd && paid == 0}}"><image src="../../images/lock.png"></image>立即解锁金股</button>
+<!-- 解锁成功弹层 -->
+<!-- <view class="layer" wx:if="{{paid == 1}}">
+  <text>解锁成功</text>
+</view> -->
+
+<!-- 复制微信号 -->
+<view class="{{ isShow ? 'copy2' : 'copy'}}">
+  <view class="phone">
+    <image src="../../images/ok.png"></image>
+    <view class="succ">微信号<text>{{numbers}}</text>复制成功</view>
+    <view class="blag">请返回微信首页添加索要密码</view>
+    <button class="knowBtn" bindtap='jump'>我知道了</button>
+  </view>
+</view>
+<!-- 更多小程序 -->
+<view class="layerBoxs" bindtap='moreBtn'>
+  <view>更多小程序</view>
+</view>

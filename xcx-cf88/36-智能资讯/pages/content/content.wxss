@@ -1,0 +1,244 @@
+/* pages/content/content.wxss */
+@import "/wxParse/wxParse.wxss";
+page{
+  background: #f0f0f0;
+}
+.body-main-box{
+  width: 100%;
+  height: auto;
+  background: #fff;
+}
+.body-main-box{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.main-head-box{
+  width: 92%;
+  height: auto;
+  border-bottom: 1px solid #dcdcdc;
+  padding: 0.9375rem 0;
+  margin: 0 auto;
+}
+.main-head-title{
+  width: 100%;
+  line-height: 1.3rem;
+  height: auto;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.main-head-bottom{
+  width: 100%;
+  height: 1.25rem;
+  margin-top: 0.3125rem;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  color: #999;
+  overflow: hidden
+}
+.main-eye-box{
+  float: right;
+  width: 3.55rem;
+  height: 1.25rem;
+}
+.main-eye-box image{
+  width: 0.9375rem;
+  height: 0.9375rem;
+  vertical-align: middle;
+  padding-right: 0.3125rem;
+}
+.head-left-box view{
+  display: inline-block;
+  margin-right: 0.625rem;
+}
+
+.about-main-box{
+  width: 92%;
+  height: auto;
+  margin: 0.9375rem auto 0 auto;
+  font-weight: 600;
+  font-size: 0.8rem
+}
+.about-main-box text{
+  font-weight: normal;
+  color: #576B95;
+  padding-right: 0.3125rem
+}
+.content-main-box{
+  width: 92%;
+  height: auto;
+  line-height: 1.25rem;
+  margin: 0.9375rem auto 1.5625rem auto;
+  font-size: 0.8rem
+}
+.zan-good-box{
+  width: 4.3rem;
+  height: 1.6rem;
+  border: 1px solid #F04141;
+  border-radius: 0.9375rem;
+  color: #F04141;
+  line-height: 1.6rem;
+  text-align: center;
+  font-size: 0.8125rem;
+  margin: 0 auto;
+}
+.zan-good-box image{
+  width: 0.9375rem;
+  height: 0.9375rem;
+  display: inline-block;
+}
+.zan-no-box{
+  width: 92%;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  font-size: 0.75rem;
+  overflow: hidden;
+  background: #f7f7f7;
+  margin: 1.875rem auto 1.1875rem auto;
+}
+.no-like-pic{
+  float: right;
+  line-height: 1.2rem;
+}
+.no-like-pic image{
+  width: 0.9375rem;
+  height: 0.9375rem;
+  vertical-align: middle;
+}
+.no-like-result{
+  color: #999
+}
+/* 推荐 */
+.tui-jian-box{
+  width: 100%;
+  height: auto;
+  margin: 0.625rem 0;
+  padding: 0.625rem 0 0.9375rem 0;
+  background: #fff;
+}
+.tui-head-box{
+  width: 92%;
+  height: 1.25rem;
+  margin: 0 auto;
+  line-height: 1.25rem;
+  font-size: 0.75rem;
+}
+.tui-head-box text{
+  border-left: 2px solid #F04141;
+  width: 2px;
+  height: 0.6rem;
+  display: inline-block;
+  padding-right: 0.1875rem;
+}
+.tui-content-box{
+  width: 92%;
+  margin: 0 auto;
+  padding: 0.9375rem 0;
+  border-bottom: 1px solid #dcdcdc;
+  color: #333;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.tui-content-box:last-child{
+  border-bottom: 0
+}
+/* 风险提示 */
+.feng-xian{
+  width: 100%;
+  height: auto;
+  background: #fff;
+  font-size: 0.75rem;
+  color: #333;
+}
+.ti-shi{
+  width: 92%;
+  height: auto;
+  padding: 1rem 0 0.9375rem 0;
+  margin: 0 auto;
+  color: #151515;
+}
+.ti-shi text{
+  font-weight: 600;
+  color: #333;
+}
+/* 评论 */
+.ping-lun-box{
+  width: 100%;
+  background: #fff;
+  height: auto;
+  margin-top: 0.625rem;
+  padding: 0.625rem 0 0.9375rem 0;
+}
+.ping-main-box{
+  width: 92%;
+  height: auto;
+  margin: 0.9375rem auto 0 auto;
+}
+.ping-user-msg{
+  width: 100%;
+  height: 2.28rem;
+  overflow: hidden;
+}
+.ping-pic-box{
+  width: 1.68rem;
+  height: 1.68rem;
+  overflow: hidden;
+  border-radius: 100%;
+  float: left;
+  margin: 0.3rem 0.625rem 0.3rem 0;
+}
+.ping-pic-box image{
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+.ping-txt-box{
+  display: inline-block;
+}
+.ping-name{
+  font-size: 0.875rem;
+  color: #333;
+}
+.ping-date{
+  font-size: 0.75rem;
+  color: #999;
+}
+.ping-content-box{
+  width: calc(100%-2.305rem);
+  font-size: 0.8125rem;
+  color: #333;
+  margin-left: 2.305rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid #dcdcdc;
+}
+.ping-main-box:last-child .ping-content-box{
+  border-bottom: 0;
+}
+
+.ping-no-pic{
+  width: 9rem;
+  height: 9rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.ping-no-pic image{
+  width: 100%;
+  height: 100%;
+}
+.ping-no-add{
+  width: 100%;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #ffe3d3
+}
+
+.no-main-box{
+  width: 100%;
+  height: 5rem;
+  line-height: 5rem;
+  margin: 0 auto;
+  text-align: center;
+  color: #333;
+  font-size: 1rem;
+}

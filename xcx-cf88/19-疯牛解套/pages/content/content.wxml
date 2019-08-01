@@ -1,0 +1,37 @@
+<!--pages/content/content.wxml-->
+<view>
+  <view class="name">
+    <text>{{name}}</text>
+    <text>{{code}}</text>
+  </view>
+  <view wx:if="{{!data.info}}">
+    <text style='width: 100%;height: 30px;line-height: 30px;font-size: 14px;padding: 10px 15px 0 15px;padding-right: 15px;' ></text>
+  </view>
+</view>
+<view wx:if="{{data.info}}">
+  <view class="price">当前价<text>{{price}}</text> 涨跌幅<text class="green">{{down}}%</text></view>
+  <view class="content">{{cnt}}</view>
+  <view class="msg">诊断结果仅供参考，不构成任何投资意见。</view>
+</view>
+<view wx:else class="yin"></view>
+<view class="main" wx:if="{{data.info}}">
+  <view class="strong">请输入购买成本价，获得精准结果</view>
+  <view>
+    <view class="title">被套时间</view>
+    <view class="check">
+      <text wx:for="{{qi}}" wx:key class="{{(idx==1 && isClick1==0 ? 'on':'') ||isClick1==idx ? 'on':''}}" bindtap='clickBtn1' wx:for-index="idx" data-index="{{idx}}">{{item}}</text>
+    </view>
+    <view class="title">选择仓位</view>
+    <view class="check">
+      <text wx:for="{{cang}}" wx:key class="{{(idx==1 && isClick2==0 ? 'on':'')||isClick2==idx ? 'on':''}}" bindtap='clickBtn2' wx:for-index="idx" data-index="{{idx}}">{{item}}</text>
+    </view>
+    <view class="title">输入成本价</view>
+    <view class="inp">
+      <input placeholder='输入成本价'   bindinput="wxSearchInput" ></input>
+      <view class="btnClick" bindtap='btnClick'>GO</view>
+    </view>
+  </view>
+</view>
+<view class="pic" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images'></image>
+</view>

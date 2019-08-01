@@ -1,0 +1,25 @@
+<!--pages/index/index.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<!-- <template is="wxParse" data="{{wxParseData:article.nodes}}" /> -->
+<view class="main">
+  <view class="body" wx:for="{{list}}" wx:key bindtap='content' wx:for-index="idx" data-index="{{idx}}" data-num="{{item.num}}">
+    <view class="body_box">
+      <view class="left">
+        <image class="pic" src="{{item.images}}"></image>
+      </view>
+      <view class="rig">
+        <view class="title">{{item.title}}</view>
+        <view>共{{item.num}}题</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--  广告  -->
+<view class="banner" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.gif" class="navImg" bindtap='images'></image>
+</view>
+<!-- 更多小程序 -->
+<view class="layerBoxs" bindtap='moreBtn'>
+    <view>更多小程序</view>
+</view>

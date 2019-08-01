@@ -1,0 +1,68 @@
+<!--pages/index/index.wxml-->
+<wxs module="filter" src="../../utils/date.wxs"></wxs>
+<view class="date-box">
+  <text>公告起止时间 </text>
+  <picker mode="date" value="{{date1}}" bindchange="bindDateChange1">
+    <input value="{{date1}}" disabled='disabled'></input>
+  </picker>
+  <text>至</text>
+  <picker mode="date" value="{{date2}}" bindchange="bindDateChange2">
+    <input value="{{date2}}" disabled='disabled'>{{date2}}</input>
+  </picker>
+</view>
+<view class="head">
+  <view>
+    <text>股票代码</text>
+    <text>股票简称</text>
+  </view>
+  <view>
+    <text>合同金额</text>
+    <text>上年营业收入</text>
+  </view>
+  <view>
+    <text>签署日期</text>
+    <text>公告日期</text>
+  </view>
+  <view>详情</view>
+</view>
+<view class="content-list-box" onReachBottom="onReachBottom" wx:if="{{list.length!=0}}">
+  <view class="content-list" wx:for="{{list}}" wx:key wx:for-item="i">
+    <view>
+      <text>{{i.securitycode}}</text>
+      <text>{{i.securityshortname}}</text>
+    </view>
+    <view>
+      <text wx:if="{{i.amounts==null}}">-</text>
+      <text wx:elif="{{i.amounts>1000000000}}">{{filter.numFilter1(i.amounts)}}亿</text>
+      <text wx:else>{{filter.numFilter1(i.amounts)}}万</text>
+      <text wx:if="{{i.sndyysr==null}}">-</text>
+      <text wx:elif="{{i.sndyysr>1000000000}}">{{filter.numFilter1(i.sndyysr)}}亿</text>
+      <text wx:else>{{filter.numFilter1(i.sndyysr)}}万</text>
+    </view>
+    <view>
+      <text wx:if="{{i.signdate !=null}}">{{filter.dateFilter(i.signdate)}}</text>
+      <text wx:else>-</text>
+      <text>{{filter.dateFilter(i.dim_rdate)}}</text>
+    </view>
+    <view>
+      <label bindtap='clickBtn' data-obj="{{i.securitycode}}" data-name="{{i.securityshortname}}">查看详情</label>
+    </view>
+  </view>
+</view>
+
+<view class="noData" wx:if="{{list.length==0}}">
+  <view class="noData-pic">
+    <image src="https://api.51gsl.com/program/StrongCode/images/icon_nodata.png"></image>
+  </view>
+  <view class="noData-text">暂无数据</view>
+</view>
+
+<!--  广告  -->
+<view class="banner" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images'></image>
+</view>
+
+<!-- 更多小程序 -->
+<view class="layerBoxs">
+  <navigator target="miniProgram" open-type="navigate" app-id="wx81dacf7d77359d1d" path="/pages/index/index?from={{from}}" extra-data="" version="release">更多小程序</navigator> <!-- release -->
+</view>

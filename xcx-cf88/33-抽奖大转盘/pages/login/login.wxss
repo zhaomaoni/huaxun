@@ -1,0 +1,78 @@
+/* pages/login/login.wxss */
+page{
+  background: url("https://api.51gsl.com/program/Luckdraw/images/icon_bg.png") no-repeat center center fixed;
+  background-size: 100% 100%;
+}
+.phone-inp-box,.code-inp-box{
+  width: 80%;
+  height: 3.125rem;
+  line-height: 3.125rem;
+  color: #653188;
+  font-size: 0.875rem;
+  margin: 2.125rem auto 1.5rem auto;
+  background: url("https://api.51gsl.com/program/StockPush/images/icon_inp.png") no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+}
+.phone-inp-box view{
+  margin: 0 0.75rem;
+}
+.phone-inp-box input{
+  flex: 1;
+  height: 3.125rem;
+  line-height: 3.125rem;
+  margin-right: 0.75rem;
+}
+.phone-p{
+  color: #653188;
+}
+.code-inp-box{
+  margin: 0 auto 2rem auto;
+  text-align: center;
+  overflow: hidden
+}
+.code-inp-box input{
+  text-align: left;
+  height: 3.125rem;
+  flex: 1;
+}
+.code-inp-box view{
+  margin: 0 0.75rem;
+}
+.code-inp-box view:last-child{
+  margin: 0.6875rem 0.5rem 0 0.75rem;
+}
+.code-inp-box .pink{
+  background: #ff3a51;
+  height: 1.75rem;
+  line-height: 1.75rem;
+  font-size: 0.75rem;
+  color: #fff;
+  padding: 0 0.625rem;
+  border-radius: 3rem;
+}
+.login-btn{
+  width: 88%;
+  font-size: 1rem;
+  height: 2.8125rem;
+  line-height: 2.8125rem;
+  text-align: center;
+  color: #5d0808;
+  border-radius: 0.3125rem;
+  background: #feee00;
+  margin: 0 auto;
+}
+.hide{
+  display: none;
+}
+.show{
+  display: block
+}
+.msg-text{
+  width: 100%;
+  padding-top: 1.5rem;
+  color: #fff;
+  font-size: 0.75rem;
+  text-align: center;
+  margin: 0 auto;
+}

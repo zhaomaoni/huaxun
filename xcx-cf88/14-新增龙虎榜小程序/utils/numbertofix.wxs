@@ -1,0 +1,30 @@
+var filter = {
+  numberToFix: function (value) { //保留两位小数
+    return parseFloat(value).toFixed(2)
+  },
+  numberToFix2:function(a){ //进万
+    var b = parseFloat(a/10000).toFixed(2);
+    var result = b.substring(0, b.toString().length - 1);
+    return b;
+  },
+  numberToFix3:function(str){ //日期截取
+    var arr = str.substring(5,10);
+    return arr
+  },
+  numberToFix4: function (str) {//去字
+    var arr;
+    if (str.indexOf("股份有限公司") || str.indexOf("有限责任公司") || str.indexOf("有限公司")){
+      str = str.replace("股份有限公司", "")
+      str = str.replace("有限责任公司", "")
+      str = str.replace("有限公司", "")
+    }
+    arr = str.replace("证券营业部","营业部")
+    return arr
+  }
+}
+module.exports = {
+  numberToFix: filter.numberToFix,
+  numberToFix2: filter.numberToFix2,
+  numberToFix3: filter.numberToFix3,
+  numberToFix4: filter.numberToFix4
+}

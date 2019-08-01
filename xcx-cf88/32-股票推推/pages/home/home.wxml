@@ -1,0 +1,56 @@
+<!--pages/home/home.wxml-->
+<wxs module="filter" src="../../utils/date.wxs"></wxs>
+<view class="home-header-box">
+  <view class="header">
+    <view class="header-logo-box">
+      <view>
+        <image src="https://api.51gsl.com/program/StockPush/images/icon_tgw.png"></image>
+      </view>
+      <view data-urls="{{broker.kaihu_url}}">
+        <image src="{{broker.img_small}}"></image>
+      </view>
+    </view>
+    <view class="header-txt-box">
+      <view bindtap='guanBtn'>赛事报道</view>
+      <view bindtap='paiBtn' wx:if="{{tguserid!=''}}">排行</view>
+      <view wx:else>
+        <button class="pai-hang" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">排行</button>
+      </view>
+      <view bindtap='ruleBtn'>规则</view>
+    </view>
+  </view>
+  <swiper class="msg-roll-box" vertical="true" autoplay="true" circular="true" interval="2000">
+    <block wx:for="{{ranking}}" wx:key>
+      <swiper-item>
+        <view class="swiper_item">{{item.content}}</view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="header-btn-box">
+    <view class="click-btn">
+      <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+        <image src="https://api.51gsl.com/program/StockPush/images/icon_btn.gif"></image>
+      </button>
+    </view>
+    <view class="click-txt">已有{{peopleNum}}人参加比赛</view>
+  </view>
+</view>
+<view class="home-main-box">
+  <view class="home-main-pic"><image src="https://api.51gsl.com/program/StockPush/images/icon_ssbd.png"></image></view>
+  <view class="home-main-txt" wx:for="{{news}}" wx:key data-pId="{{item.viewId}}" data-cId="{{item.publishUserId}}" bindtap='jumpBtn'>
+    <view>{{item.viewKitsTitle}}</view>
+    <view>{{item.publishUserName}} <text>{{filter.dateFn(item.publishTime)}}</text></view>
+  </view>
+  <view class="home-more">
+    <view class="more-btn" bindtap='guanBtn'>查看更多 <image src="https://api.51gsl.com/program/StockPush/images/icon_more1.png"></image></view>
+  </view>
+  <view class="mian-ze">免责声明：淘股王所有资讯内容由大连华讯投资股份有限公司提供，涉及所有内容，均与国泰君安证券股份有限公司华润城营业部无关，不作客户投资参考。</view>
+</view>
+<view class="phone-layer-box" hidden="{{isPhone}}">
+  <view class="phone-tel-box">
+    <view class="phone-txt">为保证正常使用，请先手机号授权</view>
+    <view class="phone-btn">
+      <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">我知道了</button>
+    </view>
+  </view>
+</view>

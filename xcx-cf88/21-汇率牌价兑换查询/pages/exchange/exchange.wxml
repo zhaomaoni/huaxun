@@ -1,0 +1,24 @@
+<!--pages/exchange/exchange.wxml-->
+<wxs module="filter" src="../../utils/numbertofix.wxs"></wxs>
+<view class="title">基准货币</view>
+<view class="basis">
+  <view data-name="{{currentExchange.key}}（{{currentExchange.name}}）">{{currentExchange.key}}（{{currentExchange.name}}）</view>
+  <input value="{{yuan}}" bindinput='inputChange' placeholder='0'></input>
+</view>
+<view class="title">换算货币</view>
+<view class="change">
+  <view class="country" wx:for="{{exchange}}" data-name="{{item.key}}（{{item.name}}）" wx:key wx:for-index="idx" bindtap='change' data-index="{{idx}}">
+    <view class="name">{{item.key}}（{{item.name}}）</view>
+    <view class="money">{{filter.numberToFix(yuan/item.rate*currentExchange.rate)}}</view>
+  </view>
+</view>
+
+<!--  广告  -->
+<view class="banner" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images'></image>
+</view>
+
+<!-- 更多小程序 -->
+<view class="layerBoxs" bindtap='moreBtn'>
+  <view>更多小程序</view>
+</view>

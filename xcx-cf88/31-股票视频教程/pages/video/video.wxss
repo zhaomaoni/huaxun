@@ -1,0 +1,247 @@
+/* pages/video/video.wxss */
+page{
+  background: #f6f6f6;
+}
+.main-box{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.main-content-box{
+  height: 280px;
+  width: 100%;
+  margin-bottom: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+/* .main-content-box:last-child{
+  margin-bottom: 90px
+} */
+.content-top{
+  height: 225px;
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+  position: relative;
+}
+.video-box{
+  width: 100%;
+  height: 225px;
+}
+.videw-title{
+  position: absolute;
+  top: 0px;
+  font-size: 18px;
+  width: 100%;
+  padding-left: 5px;
+  color: #fff;
+  height: 40px;
+  line-height: 40px;
+  z-index: 9;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background: url("https://api.51gsl.com/program/StockVideo/images/bk_gd.png") repeat-x;
+  background-size: 100% 100%;
+}
+/* background: linear-gradient(rgba(0,0,0,1),rgba(255,255,255,0.2)); */
+.content-bottom{
+  height: 55px;
+  width: 90%;
+  margin: 0 auto;
+}
+.main-header{
+  width: 26px;
+  height: 26px;
+  margin: 13px 10px 13px 0;
+  border-radius: 100px;
+  float: left;
+  overflow: hidden;
+}
+.main-header image{
+  width: 100%;
+  height: 100%;
+}
+.main-name{
+  line-height: 55px;
+  font-size: 13px;
+  color: #333;
+  float: left;
+}
+.main-time{
+  line-height: 55px;
+  font-size: 12px;
+  color: #666;
+  margin-left: 15px;
+  float: left;
+}
+.main-suo{
+  float: right;
+  height: 27px;
+  margin: 14px 0;
+  background: #f06920;
+  font-size: 13px;
+  line-height: 27px;
+  padding: 0 10px;
+  color: #fff;
+  border-radius: 15px;
+}
+
+
+.model-btn{
+	position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  right:0;
+  margin:auto;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  background-color: rgba(0,0,0,.3);
+  border: 2px solid #fff;
+}
+.play-icon{
+  margin:17px 21px;
+  border-top:11px solid transparent;
+  border-left:18px solid #fff;
+  border-bottom:11px solid transparent;
+}
+
+
+.tishi{
+  width: 220px;
+  height: 30px;
+  background:rgba(0,0,0,0.8);
+  position: fixed;
+  text-align: center;
+  line-height: 30px;
+  left: 50%;
+  top: 50%;
+  font-size: 14px;
+  color: #fff;
+  z-index: 111;
+  margin-top: -15px;
+  margin-left: -30%;
+  border-radius: 5px;
+  display: none
+}
+.tishi2{
+  display: block
+}
+
+
+/** 添加微信号遮罩层 **/
+.layer-box{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: none
+}
+.layer-none{
+  display: block
+}
+.layer-main{
+  width: 260px;
+  height: 400px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -130px;
+  margin-top: -200px;
+  background: #fff;
+  border-radius: 12px;
+}
+.layer-close{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  overflow: hidden
+}
+.layer-close image{
+  width: 100%;
+  height: 100%;
+}
+.layer-title{
+  width: 100%;
+  text-align: center;
+  padding: 16px 0 10px 0;
+  margin: 0 auto;
+}
+.layer-text{
+  width: 87%;
+  line-height: 22px;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #333;
+}
+.layer-wxnum{
+  width: 87%;
+  text-align: center;
+  margin: 12px auto;
+  height: 45px;
+  border: 1px solid #f06920;
+  color: #f06920;
+  font-size: 15px;
+  line-height: 45px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+.layer-msg{
+  width: 87%;
+  margin: 0 auto;
+  color: #999;
+  font-size: 12px;
+  line-height: 22px;
+}
+.layer-copy{
+  height: 47px;
+  width: 87%;
+  background: #f06920;
+  color: #fff;
+  line-height: 47px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 100px;
+  margin: 16px auto;
+}
+
+
+/*  广告  */
+.banner{
+  width: 100%;
+  height: 89px;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #f6f6f6;
+  overflow: hidden
+}
+.navImg{
+  width: 100%;
+  height: 100%
+}
+/* more小程序 */
+.layerBoxs{
+  width: auto;
+  height: 26px;
+  line-height: 26px;
+  position: fixed;
+  right: 0px;
+  bottom: 100px;
+  color: #fff;
+  background: rgba(0,0,0,0.7);
+  font-size: 12px;
+  text-align: center;
+  z-index: 66;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px
+}
+.layerBoxs navigator{
+  padding: 0 10px;
+}

@@ -1,0 +1,11 @@
+/* pages/content/content.wxss */
+.content{
+  width: 92%;
+  margin: 0 auto 90px auto;
+}
+.navImg{
+  width: 100%;
+  height: 89.6px;
+  position: fixed;
+  bottom: 0;
+}

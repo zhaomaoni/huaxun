@@ -1,0 +1,79 @@
+/* pages/index/index.wxss */
+page{
+  margin-bottom: 90px;
+}
+.body{
+  width: 100%;
+  height: auto
+}
+.title{
+  height: 22px;
+  line-height: 22px;
+  padding-left: 5%;
+  font-size: 12px;
+  color: #333;
+  background: #f6f6f6;
+}
+.picCon{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  text-align: center;
+  font-size: 14px;
+  margin: 13px 0;
+  color: #333
+}
+.picDl{
+  width: 22.2%;
+  margin-left: 2.2%;
+  height: 133px;
+  overflow: hidden;
+  float: left;
+}
+.picDd{
+  padding-top: 7px;
+  padding-bottom: 10px;
+}
+.picBox{
+  width: 97.5%;
+  height: 23.5vw;
+  overflow: hidden;
+  border: 1px solid #ebebeb;
+}
+.imgSrc{
+  width: 60%;
+  height: 60%;
+  overflow: hidden;
+  margin: 20% 0;
+}
+/*  banner  */
+.banner{
+  width: 100%;
+  height: 89px;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #ccc;
+  overflow: hidden
+}
+.navImg{
+  width: 100%;
+  height: 100%
+}
+/* more小程序 */
+.layerBoxs{
+  width: auto;
+  height: 26px;
+  line-height: 26px;
+  position: fixed;
+  right: 0px;
+  bottom: 100px;
+  color: #fff;
+  background: rgba(0,0,0,0.7);
+  font-size: 12px;
+  text-align: center;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px
+}
+.layerBoxs navigator{
+  padding: 0 10px;
+}

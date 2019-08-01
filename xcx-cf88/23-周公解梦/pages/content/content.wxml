@@ -1,0 +1,10 @@
+<!--pages/content/content.wxml-->
+<view class="conBox">
+  <view class="title">{{title}}</view>
+  <view wx:for="{{content}}" wx:key>{{item}}</view>
+</view>
+<button class="btnBox" bindtap='onShareAppMessage' open-type="share">分享一下</button>
+<!--  广告  -->
+<view class="banner" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images'></image>
+</view>

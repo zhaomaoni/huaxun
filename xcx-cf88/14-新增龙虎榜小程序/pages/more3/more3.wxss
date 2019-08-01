@@ -1,0 +1,321 @@
+/* pages/more/more.wxss */
+page{
+  background: #fff;
+  border: 0
+}
+.body{
+  width: 92%;
+  margin:0 auto;
+}
+.help{
+  line-height: 23px;
+  position: static;
+  padding: 0 10px;
+  font-size: 14px;
+  border-radius: 3px;
+  color: #fff;
+  float: left;
+  background: #de494b;
+  margin: 10px 0;
+  overflow: hidden
+}
+.nav{
+  height: auto;
+  overflow: hidden;
+}
+.rig{
+  float: right;
+  margin: 10px 10px 10px 0
+}
+.rig input{
+  width: 100px;
+  height: 23px;
+  line-height: 23px;
+  border: 1px solid #ddd;
+  float: left;
+}
+.date{
+  width: 30px;
+  height: 25px;
+  background: #de494b;
+  overflow: hidden
+}
+.date image{
+  width: 20px;
+  height: 20px;
+  margin: 2px 5px;
+}
+
+/*左边不动*/
+.left{
+  width: 70px;
+  float: left;
+  overflow: hidden
+}
+.left view{
+  height: 50px;
+  text-align: center;
+  border-bottom: 1px solid #ddd
+}
+.left .name{
+  line-height: 50px
+}
+.left_msg{
+  line-height: 18px;
+}
+.left_msg text{
+  display: block;
+  font-size: 12px;
+}
+.left_msg text:first-child{
+  padding-top: 8px;
+  font-size: 14px
+}
+/*右边滑动*/
+.right{
+  margin-left: 70px;
+  width:calc(100% - 70px);
+  height: 100%;
+  overflow: hidden;
+}
+.right2{
+  margin-left: 150px;
+  width:calc(100% - 150px);
+}
+.right .name{
+  height:100%;
+  overflow: hidden;
+}
+::-webkit-scrollbar{   
+    width: 0px;
+    height: 0px;   
+    background-color: rgba(0,0,0,0);   
+}   
+.right .hidden{
+  width: 100%;
+  height: 100%;
+  overflow-x: scroll;
+  overflow-y:hidden;
+}
+.right .hidden view{
+  height: 50px;
+}
+.right .hidName{
+  width: calc(650%);
+  display: flex;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.right .hidName view{
+  width: 30%;
+  height: 50px;
+  line-height: 50px;
+}
+.right .hidName view view{
+  width: 100%;
+  line-height:23px;
+  display:block;
+  height:23px;
+}
+
+.right .hidName .pad{
+  line-height: normal;
+  margin-top: 8px;
+  height: 42px
+}
+.hidName view text{
+  padding: 0 5px;
+}
+/*点击加载更多*/
+.clickMore{
+  line-height: 40px;
+  text-align: center
+}
+
+/* 月份遮罩 */
+.layerBox{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  display: none
+}
+.layerBox2{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  display: block
+}
+.layerMain{
+  width: 100%;
+  height: auto;
+  background: #fff;
+  position: fixed;
+  top: 50%;
+  margin-top: -50%;
+}
+.month{
+  width: 92%;
+  margin: 0 auto;
+  margin-bottom: 6px;
+}
+.month view{
+  width: 22%;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 15px 1.162%;
+  border: 1px solid #ccc;
+  float: left
+}
+.monBth{
+  width: 92%;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  margin: 0 auto;
+  color: #fff;
+  background: #de494b;
+  margin-bottom: 10px;
+}
+.find{
+  width: 92%;
+  height: auto;
+  margin: 0 auto;
+  padding-top:5px; 
+  border-top: 1px solid #ddd
+}
+.zi{
+  line-height: 30px;
+}
+.dateInp{
+  width: 100%;
+  margin-bottom: 10px;
+  line-height: 25px;
+}
+.dateInp text{
+  float: left;
+  width: 5%;
+  margin-right: 1.5%;
+}
+.dateInp input{
+  border: 1px solid #ccc;
+  width: auto;
+  float: left;
+  height: 25px;
+  max-width: 35%;
+  line-height: 25px;
+  margin-right: 1.5%;
+}
+
+.findBtn{
+  width: 19%;
+  height: 25px;
+  color: #fff;
+  text-align: center;
+  line-height: 25px;
+  background: #de494b;
+  margin: 0 10px;
+}
+/* 帮助 */
+.helpLayer{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: none
+}
+.helpLayer2{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: block
+}
+.helpMain{
+  width: 100%;
+  height: 350px;
+  padding: 10px 0;
+  margin: 0 auto;
+  position: fixed;
+  top: 40%;
+  margin-top: -175px;
+  background: #fff;
+}
+.conHelp{
+  width: 90%;
+  margin: 0 auto
+}
+.conHelp view{
+  line-height: 25px;
+}
+.title{
+  font-weight: 600;
+  font-size: 15px;
+}
+.conHelp .ok{
+  width: 100%;
+  height: 35px;
+  color: #fff;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 5px;
+  font-size: 16px;
+  background: #de494b;
+  margin-top: 10px;
+}
+
+/*泸市，深市tab*/
+.tab{
+  width: 90%;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #ddd;
+  margin: 10px auto;
+}
+.tab view{
+  float: left;
+  width: 33.33%;
+  text-align: center
+}
+.tab .active{
+  background: #de494b;
+  color: #fff;
+}
+
+.content{
+  display: none
+}
+.active1{
+  display: block
+}
+.right .hidName .yin{
+  display:-webkit-box;
+  line-height:24px;
+  word-break:break-all;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.monBg{
+  background:#de494b;
+  color:#fff;
+}
+.green{
+  color: green
+}
+.red{
+  color: #de494b
+}

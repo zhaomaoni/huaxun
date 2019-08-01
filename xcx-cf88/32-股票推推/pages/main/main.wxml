@@ -1,0 +1,30 @@
+<!--pages/main/main.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<wxs module="filter" src="../../utils/date.wxs"></wxs>
+<!-- <web-view src="{{jUrl}}"></web-view> -->
+<view wx:for="{{list}}" wx:key class="section-box">
+  <view class="main-header-box">
+    <view class="main-title">{{item.viewKitsTitle}}</view>
+    <view class="mian-time">{{filter.dateFn(item.publishTime)}}</view>
+  </view>
+  <view class="main-user-box">
+    <view class="head-src">
+      <image src="{{item.publishHeadAddress}}"></image>
+      <!-- <image src="http://img3.imgtn.bdimg.com/it/u=2031324839,4011225758&fm=200&gp=0.jpg"></image> -->
+    </view>
+    <view class="head-msg-box">
+      <view class="head-name">{{item.publishUserName}}</view>
+      <view class="head-guan">
+        <text>观点 206</text>
+        <text>问答 0</text>
+        <text>粉丝数 20</text>
+      </view>
+    </view>
+  </view>
+  <view class="main-content">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
+  <view class="feng-box">
+    <text>风险提示：</text>本产品所载信息仅供参考，请阁下在进行投资操作时，坚持审慎、理性的原则，综合考虑投资风险。
+  </view>
+</view>

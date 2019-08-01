@@ -1,0 +1,47 @@
+/* pages/result/result.wxss */
+page{
+  background: #f0f0f0;
+}
+.body{
+  width: 92%;
+  height: auto;
+  margin: 10px auto 90px auto;
+  background: #fff;
+  overflow: hidden
+}
+.title{
+  font-size: 21px;
+  color: #f47528;
+  font-weight: 600;
+  text-align: center;
+  padding: 20px 0 19px 0;
+}
+.content{
+  width: 88%;
+  margin: 0 auto 15px auto;
+  padding: 10px 10px;
+  background: #fef0dd;
+  color: #333;
+  font-size: 14px;
+  border-radius: 13px;
+  text-indent: 24px;
+  line-height: 22px;
+}
+.msg{
+  width: 80%;
+  color: #999;
+  margin: 10px auto 0 auto;
+  font-size: 12px;
+}
+/*  banner  */
+.banner{
+  width: 100%;
+  height: 89px;
+  position: fixed;
+  bottom: 0;
+  overflow: hidden
+}
+.navImg{
+  width: 100%;
+  height: 100%
+}

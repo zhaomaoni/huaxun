@@ -1,0 +1,207 @@
+/* pages/index/index.wxss */
+/***** tabTitle *****/
+.tabBox{
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  font-size: 14px;
+  border-bottom: 1px solid #ccc;
+}
+.tabBox view{
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+.tabBox .left,.tabBox .right{
+  width: auto;
+  height: 35px;
+  position: relative;
+}
+.tabBox .left::after,.tabBox .right::after{
+  content: "";
+  width: 0;
+  height: 0;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #999 transparent transparent transparent;
+  vertical-align: middle;
+  padding-top: -10px;
+  position: absolute;
+  right: -10px;
+  top: 10px;
+}
+.tabBox .left2,.tabBox .right2{
+  width: auto;
+  height: 35px;
+  color: #de494b;
+  position: relative;
+}
+.tabBox .left2::after,.tabBox .right2::after{
+  content: "";
+  width: 0;
+  height: 0;
+  border-width: 3px;
+  border-style: solid;
+  border-color:transparent transparent #de494b transparent;
+  vertical-align: middle;
+  padding-top: -10px;
+  position: absolute;
+  right: -10px;
+  top: 6px;
+}
+/***** 首页 *****/
+.listBox{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.listBox2{
+  display: none
+}
+.listBox .top{
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
+  font-size: 12px;
+}
+.listBox .top view{
+  width: 33.33%;
+  text-align: center;
+  float: left;
+}
+.listBox .bottom{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.listBom{
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+}
+.listBom view{
+  width: 33.33%;
+  float: left;
+  text-align: center;
+  font-size: 12px;
+}
+.listBom view:first-child view{
+  width: 100%;
+  float: none;
+  line-height: 18px;
+}
+.listBom .bigSize{
+  font-size: 16px;
+  font-weight: 599
+}
+/*上箭头*/
+.shang{
+  color: #f00;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAA0CAYAAACO0MgGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIKSURBVFhH7Zg7SwNREIXTiyAEIZDGJmCnWImVnXaKINppJ1ilE6zsUgoBEYSQKn/AJqUgiCCCIIKlpaUgQiDkznHO7GZWNi4LPrp7YGCYOfNlcx/FbgX/pHLw+zvw/Ay5v4c8PgIvL8DHR9osVjmY0FYL4eAA4egI0u0m8BIVg4dD4O0N0u9DtrYQ5ucRlpchh4eQqyvrmadAxWBCHx4g7TaEwOlpSLUKWV2FnJ1Zz+AFmgSPRsBgAOESdDqQ/X1gbk6damVozpr11EOvzeQ0CSb09RVyeQnZ3U2gU1MZmDnh2jOPeg2e0ySYUK6rbhR0XR2YD+3RQy9n8lJHTnqsoCfAoLqu30IZ7NFDL2dyUkcqbgQ35PQUWFzM/nKjAanXIbOzSTDXmi8RvZzJbWYGZqPZTIwzM75JQWthcxNBT4MFc635ptLLGc6SkariN+viArKyAtRqwNISwJ3XyxB6vQS+vZ0Ec63ZRSGcXs7okYQezfGTV/xmbWwgLCxA1taA83Pg7s5umNzcIBwfZ2DNWbPbR496OSNcb8LTJ8/Ae3sWzFkbS56eEE5OMrDmrLnSednZAdbXv4DHS6G/zjAoa6lKwek8bm+B6+svS1GiUnCBItgVwa4IdkWwK4JdEeyKYFcEuyLYFcGuCHaVgu0Fh29PhBP6688KY/GjB+H6lPakhP7Jh5AfCfgESSpEBwp73yEAAAAASUVORK5CYII=) no-repeat 75% center;
+  background-size: 6% 50%;
+}
+/*下箭头*/
+.xia{
+  color: #008000;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAzCAYAAACT1fi+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJKSURBVFhH7Zg9SJtRFIbjLAoiCOKiizhGXASXjI4iKI46CU7ZBJdmqVFaaEgRg62NUKR/g2BLM7Q0oEhKGhoqioUOaWlp+jMErJCShp72OXiv5Yvp7VC3+8KBwznveb6be+83fAnJBckJPqmdSKlSksMvhxrk1FxyggFtFDcklo1pkFNzyQlmlQAn709qkFNz6Z/BE/cmNP4b+ODzgcSe/QH+nVNzyYOtPNjKg6082MqDrTzYyoOtPNjKg6082OriwJVqRYrlouy83ZHc+5wcfT2S4+/Hp203GC8z+Q95DTMfAhrNRGX09qhMPZiSpd0lbRq5wHiZmd6a1jDzFjx8Y1gGrg/oA1IvUvp0PmL23u3JwtMFCyanRg8PXmbCq2EZuzN2BjZbkXyeVHj3lW4ZSg3p0/lC2ny1KdHHUQsmp0YPD15mRm6OyFph7WwrTn+Rwln54OqgdMQ7pO9an8xszWiNlURuRTTIqdHDg5cZajCMLNisPJFLSDgVltbLrTrYn+yXnqs90rXcpUFOjR4evMwwC8Oo4boVPhZk9uGs7nf7Yru0XGo5N+jhwctMUA3g8reyZN5kZP7JvA6GYqFzgx4evMwE1QCu/qiqcfv1tl6/3kSv/mQDJKdGDw9eZoJqANd/1tXI6a6/XNeTB2TA5NTo4cHLTFANYCNzmCv5FYmkI9K53Clti216JbmawcMKqim4Vq/pYLaUlblHc/YFGr87rvtKD08zNQUb8Yali2k9KG5AfDeuW+CSE2z+CNn/tK/XyrxZf5fIL5eei1FnrhLYAAAAAElFTkSuQmCC) no-repeat 75% center;
+  background-size: 6% 50%;
+}
+/***** 金店 *****/
+.storeBox,.priceBox{
+  width: 100%;
+  height: auto;
+  margin: 0 0 15px 0;
+  overflow: hidden;
+  display: none
+}
+.storeBox2,.priceBox2{
+  display: block
+}
+.store,.price{
+  width: 92%;
+  margin: 0 auto;
+  overflow: hidden
+}
+.storeV,.priceV{
+  width: 30%;
+  height: 33px;
+  float: left;
+  font-size: 12px;
+  line-height: 33px;
+  text-align: center;
+  border: 1px solid #ccc;
+  margin: 15px 1.3% 0 1.3%;
+  border-radius: 5px;
+}
+.bgs{
+  color: #de494b;
+  border: 1px solid #de494b;
+}
+/*时间选择*/
+.dateBox{
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background: #f1f1f1;
+}
+.dateCon{
+  width: 94%;
+  margin: 0 auto
+}
+.dateCon view{
+  float: left;
+  padding: 0 5px;
+  font-size: 12px;
+}
+.dateCon view:first-child{
+  padding-left: 20px;
+}
+.dateCon .dateImg{
+  float: right;
+  height: 30px;
+}
+.dateCon .dateImg text{
+  width: 20px;
+  height: 22px;
+  background: #de494b;
+  color: #fff;
+  padding: 3px 6px;
+  border-radius: 5px;
+}
+.dateMain{
+  display: none
+}
+.dateMain2{
+  display: block
+}
+.date{
+  border-top: 1px solid #eee;
+  margin-top: 15px
+}
+.date view{
+  width: 33.3%;
+  text-align: center;
+  float: left;
+  line-height: 35px;
+  margin-top: 10px;
+}
+/* more小程序 */
+.layerBoxs{
+  width: auto;
+  height: 26px;
+  line-height: 26px;
+  position: fixed;
+  right: 0px;
+  bottom: 100px;
+  color: #fff;
+  background: rgba(0,0,0,0.7);
+  font-size: 12px;
+  text-align: center;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px
+}
+.layerBoxs view{
+  padding: 0 10px;
+}

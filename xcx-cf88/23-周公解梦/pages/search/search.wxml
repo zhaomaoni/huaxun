@@ -1,0 +1,26 @@
+<!--pages/search/search.wxml-->
+<view class="inpBox">
+  <view class="valBox">
+    <input placeholder='悄悄告诉周公你梦到的' value='{{value}}' bindinput='input1' focus='ture'></input>
+  </view>
+  <view class="picBox" bindtap='searchList' data-value="{{value}}">
+    <image src="https://api.51gsl.com/program/Constellation/images/icon_search.png" class="pic"></image>
+  </view>
+</view>
+<view class="listBox {{isShow ? 'show':''}}">
+  <view class="list {{txt==idx ? 'bg':''}}" wx:for="{{list}}" wx:key bindtap='jump' wx:for-index="idx" data-index="{{idx}}" data-title="{{item}}">{{item}}</view>
+</view>
+<view class="noDataBox {{isShow2 ? 'show2':''}}">
+  <view class="noPic">
+    <image src="https://api.51gsl.com/program/Constellation/images/icon_nodata.png"></image>
+  </view>
+  <view class="noMsg">暂无结果，请换相似关键词尝试下</view>
+</view>
+<!--  广告  -->
+<view class="banner" wx:if="{{showAd}}">
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images'></image>
+</view>
+<!-- 更多小程序 -->
+<view class="layerBoxs">
+  <navigator target="miniProgram" open-type="navigate" app-id="wx81dacf7d77359d1d" path="" extra-data="" version="release">更多小程序</navigator> <!-- release -->
+</view>

@@ -1,0 +1,12 @@
+<!--pages/content/content.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+  <view class="contentBox">
+   <text class="contentTitle">{{ titles }}</text>
+  <view class="contentMsg">
+    <text class="conTime">来源：{{ frommedia }}</text>
+  </view> 
+  <view class="conMain">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+  <image src="https://api.51gsl.com/images/banner.jpg" class="navImg" bindtap='images' wx:if="{{showAd}}"></image>
+</view>

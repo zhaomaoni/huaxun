@@ -1,0 +1,30 @@
+var filter = {
+  dateFilter: function (timestamp) {
+    var date = getDate(timestamp);
+    var Y = date.getFullYear() + '-';
+    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+    var D = (date.getDate() < 10 ? '0' + date.getDate() : date.getDate()) + ' ';
+    var h = date.getHours() + ':';
+    var m = date.getMinutes() + ':';
+    var s = date.getSeconds();
+    var day = M + D
+    return day;
+  },
+  numFilter1:function(value){
+    if(value>100000000){
+      value = (value / 100000000).toFixed(2)
+    }else{
+      value = (value / 10000).toFixed(2)
+    }
+    return value
+  },
+  numFilter2: function (value) {
+    value = value.toFixed(2)
+    return value
+  }
+}
+module.exports = {
+  dateFilter: filter.dateFilter,
+  numFilter1: filter.numFilter1,
+  numFilter2: filter.numFilter2
+}

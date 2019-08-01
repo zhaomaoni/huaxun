@@ -1,0 +1,12 @@
+<!--pages/listMain/listMain.wxml-->
+<wxs module="filter" src="../../utils/numbertofix.wxs"></wxs>
+<view class="listBox">
+  <view class='hui'>
+    <text class="left">{{text}}</text>
+    <!-- <text class="rig">46个</text> -->
+  </view>
+  <view class="list" wx:for="{{list}}" wx:key bindtap='jump'>{{filter.numberToFix4(item.SalesName)}}</view>
+</view>
+<view>
+  <button class="loadText" type="default"  loading="{{loading}}" disabled="{{disabled}}" bindtap="setLoading">{{loadText}}</button>
+</view>

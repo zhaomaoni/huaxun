@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/banner/banner"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#e93030",
+    "navigationBarTitleText": "股票资金流向",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true
+  }
+}
